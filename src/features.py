@@ -25,12 +25,22 @@ def site_rows(sites, world):
     return pd.DataFrame(rows)
 
 
+def merge_raw(sites, raw):
+    """Join measured values; a value set by hand in sites.yaml (manual) wins over the measured one."""
+    merged = sites[ID_COLS].merge(raw, on="id", how="left").set_index("id")
+    manual = sites.set_index("id").drop(columns=[c for c in ID_COLS if c != "id"])
+    for col in manual.columns:
+        if col in merged.columns:
+            merged[col] = manual[col].combine_first(merged[col])
+        else:
+            merged[col] = manual[col]
+    return merged.reset_index()
+
+
 def build():
     cfg = load_sites()
-    earth = site_rows(cfg["candidates"], "earth").merge(
-        pd.read_csv(RAW / "earth_raw.csv"), on="id", how="left")
-    mars = site_rows(cfg["targets"], "mars").merge(
-        pd.read_csv(RAW / "mars_raw.csv"), on="id", how="left")
+    earth = merge_raw(site_rows(cfg["candidates"], "earth"), pd.read_csv(RAW / "earth_raw.csv"))
+    mars = merge_raw(site_rows(cfg["targets"], "mars"), pd.read_csv(RAW / "mars_raw.csv"))
 
     # Mars has no rain and no plants
     mars["aridity"] = 0.0
