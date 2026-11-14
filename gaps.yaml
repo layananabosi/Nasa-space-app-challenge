@@ -1,0 +1,42 @@
+# Environmental gaps Earth cannot close
+# ------------------------------------------------------------------
+# These are the same for every Earth site, so they are NOT part of the score.
+# They appear on every mission brief, so the tool is honest about its limits.
+# Every number needs a source. Mark verify: true until someone checked it.
+# ------------------------------------------------------------------
+
+gaps:
+  - factor: "Surface gravity"
+    earth: "9.81 m/s^2"
+    mars: "3.71 m/s^2 (0.38 g)"
+    impact: "Drilling forces, rover traction and human movement differ"
+    source: "NASA Mars Fact Sheet (NSSDCA)"
+    verify: true
+
+  - factor: "Atmospheric pressure"
+    earth: "~1013 hPa"
+    mars: "~6 hPa (under 1% of Earth)"
+    impact: "Water ice sublimates instead of melting; dust and heat behave differently"
+    source: "NASA Mars Fact Sheet (NSSDCA)"
+    verify: true
+
+  - factor: "Surface radiation"
+    earth: "~2.4 mSv per year (natural background)"
+    mars: "~0.64 mSv per day measured at Gale Crater"
+    impact: "Crew dose and radiation effects on organics cannot be tested on Earth"
+    source: "Hassler et al. (2014) Science 343, 1244797"
+    verify: true
+
+  - factor: "Magnetic field"
+    earth: "~25-65 uT, everywhere"
+    mars: "No global field; local crustal fields, ~2 uT at the InSight site"
+    impact: "Earth sites are always shielded; magnetic navigation does not transfer"
+    source: "Johnson et al. (2020) Nature Geoscience 13, 199-204"
+    verify: true
+
+  - factor: "Coldest temperatures"
+    earth: "Rarely below ~-60 C outside Antarctica"
+    mars: "Night surface temperatures far below Earth deserts"
+    impact: "Cold-soak tests need a thermal chamber on top of the field site"
+    source: "TODO: Mars Climate Database"
+    verify: true

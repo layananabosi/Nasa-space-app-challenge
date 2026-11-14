@@ -1,0 +1,19 @@
+# big downloads stay out of git
+data/raw/*
+!data/raw/.gitkeep
+*.tif
+*.img
+*.IMG
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# os / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

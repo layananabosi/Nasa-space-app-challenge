@@ -1,0 +1,133 @@
+# AnaloGraph sites
+# ------------------------------------------------------------------
+# targets    = places on Mars we want analogs for
+# candidates = places on Earth we test
+#   type: positive  -> known Mars analog (should score HIGH)  = positive control
+#         candidate -> place we are testing (our discoveries)
+#         negative  -> clearly not Mars-like (should score LOW) = negative control
+#
+# lat/lon in degrees, lon east-positive in -180..180.
+# radius_km: half-width of the square box we measure (10 -> 20 x 20 km).
+# manual: values from literature, NOT computed from rasters. Every one needs a source.
+#
+# !!! Coordinates are approximate. Check each one in NASA Worldview / Mars Trek
+# !!! before running ingest, and fix the "verify" items.
+# ------------------------------------------------------------------
+
+targets:
+  - id: jezero
+    name: Jezero Crater
+    mission: Perseverance
+    lat: 18.44
+    lon: 77.45
+    radius_km: 10
+    manual:
+      temp_swing_K: null   # TODO: day-night surface temp difference (Mars Climate Database or MEDA papers)
+      temp_min_K: null     # TODO: coldest night surface temp
+      ground_ice: 0
+    sources:
+      ground_ice: "No near-surface ice at equatorial latitudes; SWIM maps (verify)"
+      temperature: "TODO"
+
+  - id: gale
+    name: Gale Crater
+    mission: Curiosity
+    lat: -4.59
+    lon: 137.44
+    radius_km: 10
+    manual:
+      temp_swing_K: null   # TODO: REMS ground temperature papers / MCD
+      temp_min_K: null
+      ground_ice: 0
+    sources:
+      ground_ice: "Equatorial site, no shallow ice (verify)"
+      temperature: "TODO"
+
+  - id: meridiani
+    name: Meridiani Planum
+    mission: Opportunity
+    lat: -1.95
+    lon: -5.53
+    radius_km: 10
+    manual:
+      temp_swing_K: null
+      temp_min_K: null
+      ground_ice: 0
+    sources:
+      ground_ice: "Equatorial site, no shallow ice (verify)"
+      temperature: "TODO"
+
+  - id: elysium_insight
+    name: Elysium Planitia
+    mission: InSight
+    lat: 4.50
+    lon: 135.62
+    radius_km: 10
+    manual:
+      temp_swing_K: null   # TODO: InSight HP3 / TWINS papers or MCD
+      temp_min_K: null
+      ground_ice: 0
+    sources:
+      ground_ice: "No shallow ice at the InSight site (verify)"
+      temperature: "TODO"
+
+  - id: arcadia
+    name: Arcadia Planitia
+    mission: "SWIM ice candidate"
+    lat: 40.0     # verify: pick a point inside the SWIM high-ice zone
+    lon: -155.0   # verify
+    radius_km: 10
+    manual:
+      temp_swing_K: null
+      temp_min_K: null
+      ground_ice: 1
+    sources:
+      ground_ice: "SWIM ice consistency maps; Morgan et al. (2021) Nature Astronomy 5, 230-236"
+      temperature: "TODO"
+
+  - id: deuteronilus
+    name: Deuteronilus Mensae
+    mission: "SWIM ice candidate"
+    lat: 44.0     # verify
+    lon: 23.0     # verify
+    radius_km: 10
+    manual:
+      temp_swing_K: null
+      temp_min_K: null
+      ground_ice: 1
+    sources:
+      ground_ice: "Debris-covered glaciers / SWIM maps (verify)"
+      temperature: "TODO"
+
+candidates:
+  # ---------- known analogs (positive controls) ----------
+  - {id: atacama_yungay,  name: "Atacama (Yungay)",          type: positive, lat: -24.08, lon: -70.01,  radius_km: 10, manual: {ground_ice: 0}}
+  - {id: haughton,        name: "Haughton Crater, Devon Is.", type: positive, lat: 75.38,  lon: -89.68,  radius_km: 10, manual: {ground_ice: 1}}
+  - {id: death_valley,    name: "Death Valley",              type: positive, lat: 36.25,  lon: -116.82, radius_km: 10, manual: {ground_ice: 0}}
+  - {id: wright_valley,   name: "McMurdo Dry Valleys (Wright)", type: positive, lat: -77.52, lon: 161.85, radius_km: 10, manual: {ground_ice: 1}}
+  - {id: mdrs_utah,       name: "MDRS, Utah",                type: positive, lat: 38.41,  lon: -110.79, radius_km: 10, manual: {ground_ice: 0}}
+  - {id: rio_tinto,       name: "Rio Tinto, Spain",          type: positive, lat: 37.69,  lon: -6.62,   radius_km: 10, manual: {ground_ice: 0}}
+  - {id: svalbard,        name: "Bockfjorden, Svalbard",     type: positive, lat: 79.43,  lon: 13.30,   radius_km: 10, manual: {ground_ice: 1}}
+  - {id: lanzarote,       name: "Lanzarote",                 type: positive, lat: 29.03,  lon: -13.73,  radius_km: 10, manual: {ground_ice: 0}}
+  - {id: pilbara,         name: "Pilbara, Australia",        type: positive, lat: -21.17, lon: 119.43,  radius_km: 10, manual: {ground_ice: 0}}
+  - {id: holuhraun,       name: "Holuhraun, Iceland",        type: positive, lat: 64.85,  lon: -16.83,  radius_km: 10, manual: {ground_ice: 0}}
+  - {id: mauna_kea,       name: "Mauna Kea, Hawaii",         type: positive, lat: 19.82,  lon: -155.47, radius_km: 10, manual: {ground_ice: 0}}
+
+  # ---------- our candidates ----------
+  - {id: makhtesh_ramon,  name: "Makhtesh Ramon (D-MARS)",   type: candidate, lat: 30.58, lon: 34.83,   radius_km: 10, manual: {ground_ice: 0}}
+  - {id: makhtesh_gadol,  name: "HaMakhtesh HaGadol",        type: candidate, lat: 30.95, lon: 35.05,   radius_km: 10, manual: {ground_ice: 0}}
+  - {id: mount_sodom,     name: "Mount Sodom, Dead Sea",     type: candidate, lat: 31.05, lon: 35.38,   radius_km: 10, manual: {ground_ice: 0}}
+  - {id: timna,           name: "Timna",                     type: candidate, lat: 29.78, lon: 34.99,   radius_km: 10, manual: {ground_ice: 0}}
+  - {id: wadi_rum,        name: "Wadi Rum, Jordan",          type: candidate, lat: 29.57, lon: 35.42,   radius_km: 10, manual: {ground_ice: 0}}
+  - {id: namib,           name: "Namib (Sossusvlei)",        type: candidate, lat: -24.73, lon: 15.29,  radius_km: 10, manual: {ground_ice: 0}}
+  - {id: uyuni,           name: "Salar de Uyuni",            type: candidate, lat: -20.13, lon: -67.49, radius_km: 10, manual: {ground_ice: 0}}
+
+  # ---------- negative controls ----------
+  - {id: amazon,          name: "Amazon rainforest",         type: negative, lat: -3.40,  lon: -62.20,  radius_km: 10, manual: {ground_ice: 0}}
+  - {id: netherlands,     name: "Dutch farmland",            type: negative, lat: 52.20,  lon: 5.30,    radius_km: 10, manual: {ground_ice: 0}}
+  - {id: congo,           name: "Congo rainforest",          type: negative, lat: -1.00,  lon: 21.00,   radius_km: 10, manual: {ground_ice: 0}}
+  - {id: black_forest,    name: "Black Forest, Germany",     type: negative, lat: 48.00,  lon: 8.20,    radius_km: 10, manual: {ground_ice: 0}}
+  - {id: sundarbans,      name: "Sundarbans",                type: negative, lat: 21.95,  lon: 89.18,   radius_km: 10, manual: {ground_ice: 0}}
+
+# Source for Earth ground_ice values: TODO, add a citation per site with ground_ice: 1
+# (Haughton, Wright Valley, Svalbard are permafrost sites).
