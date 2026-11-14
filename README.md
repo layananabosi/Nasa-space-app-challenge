@@ -126,7 +126,7 @@ Tasks are tracked in [Issues](../../issues). Workflow: [CONTRIBUTING.md](CONTRIB
 
 ## Use of AI tools
 
-We used an AI assistant (Claude) for planning, code scaffolding and documentation. All data choices, thresholds, results and conclusions were reviewed by the team.
+We used an AI assistant for code scaffolding and documentation. All data choices, thresholds, results and conclusions were reviewed by the team.
 
 ## License
 
