@@ -104,9 +104,13 @@ candidates:
   - {id: atacama_yungay,  name: "Atacama (Yungay)",          type: positive, lat: -24.08, lon: -70.01,  radius_km: 10, manual: {ground_ice: 0}}
   - {id: haughton,        name: "Haughton Crater, Devon Is.", type: positive, lat: 75.38,  lon: -89.68,  radius_km: 10, manual: {ground_ice: 1}}
   - {id: death_valley,    name: "Death Valley",              type: positive, lat: 36.25,  lon: -116.82, radius_km: 10, manual: {ground_ice: 0}}
-  - {id: wright_valley,   name: "McMurdo Dry Valleys (Wright)", type: positive, lat: -77.52, lon: 161.85, radius_km: 10, manual: {ground_ice: 1}}
+  - {id: wright_valley,   name: "McMurdo Dry Valleys (Wright)", type: positive, lat: -77.52, lon: 161.85, radius_km: 10, manual: {ground_ice: 1, bare_fraction: 1.0}}
+  # wright_valley bare_fraction: ESA WorldCover does not cover Antarctica; no vegetation in the Dry Valleys,
+  # so rock + ice = 1.0 under our class 60 + 70 definition.
   - {id: mdrs_utah,       name: "MDRS, Utah",                type: positive, lat: 38.41,  lon: -110.79, radius_km: 10, manual: {ground_ice: 0}}
-  - {id: rio_tinto,       name: "Rio Tinto, Spain",          type: positive, lat: 37.69,  lon: -6.62,   radius_km: 10, manual: {ground_ice: 0}}
+  - {id: rio_tinto,       name: "Rio Tinto (Peña de Hierro)", type: positive, lat: 37.726, lon: -6.555, radius_km: 10, manual: {ground_ice: 0}}
+  # moved 14 Nov from 37.69, -6.62 (citrus orchards). Peña de Hierro = NASA MARTE drilling site, source of the Rio Tinto.
+  # Coordinates: IGME mining heritage sheet, UTM 29N X=715470 Y=4178190.
   - {id: svalbard,        name: "Bockfjorden, Svalbard",     type: positive, lat: 79.43,  lon: 13.30,   radius_km: 10, manual: {ground_ice: 1}}
   - {id: lanzarote,       name: "Lanzarote",                 type: positive, lat: 29.03,  lon: -13.73,  radius_km: 10, manual: {ground_ice: 0}}
   - {id: pilbara,         name: "Pilbara, Australia",        type: positive, lat: -21.17, lon: 119.43,  radius_km: 10, manual: {ground_ice: 0}}
@@ -115,16 +119,24 @@ candidates:
 
   # ---------- our candidates ----------
   - {id: makhtesh_ramon,  name: "Makhtesh Ramon (D-MARS)",   type: candidate, lat: 30.58, lon: 34.83,   radius_km: 10, manual: {ground_ice: 0}}
-  - {id: makhtesh_gadol,  name: "HaMakhtesh HaGadol",        type: candidate, lat: 30.95, lon: 35.05,   radius_km: 10, manual: {ground_ice: 0}}
-  - {id: mount_sodom,     name: "Mount Sodom, Dead Sea",     type: candidate, lat: 31.05, lon: 35.38,   radius_km: 10, manual: {ground_ice: 0}}
-  - {id: timna,           name: "Timna",                     type: candidate, lat: 29.78, lon: 34.99,   radius_km: 10, manual: {ground_ice: 0}}
-  - {id: wadi_rum,        name: "Wadi Rum, Jordan",          type: candidate, lat: 29.57, lon: 35.42,   radius_km: 10, manual: {ground_ice: 0}}
+  - {id: makhtesh_gadol,  name: "HaMakhtesh HaGadol",        type: candidate, lat: 30.93, lon: 34.98,   radius_km: 10, manual: {ground_ice: 0}}
+  # moved 14 Nov from 30.95, 35.05 (Nahal Mamshit, outside the crater). Centre per Wikipedia / NGA GeoNames.
+  - {id: mount_sodom,     name: "Rotem Plain (west of Mount Sodom)", type: candidate, lat: 31.03, lon: 35.26, radius_km: 10, manual: {ground_ice: 0}}
+  # moved 14 Nov from 31.05, 35.38: the old box was half Dead Sea Works evaporation ponds.
+  # The new box includes a small part of the Rotem industrial zone (~1-2% of the area).
+  - {id: timna,           name: "Timna Valley",              type: candidate, lat: 29.78, lon: 34.96,   radius_km: 10, manual: {ground_ice: 0}}
+  # moved 14 Nov from 29.78, 34.99 (mountains east of the valley). Valley centre per Wikipedia. Ramon Airport is inside the box.
+  - {id: wadi_rum,        name: "Wadi Rum Protected Area",   type: candidate, lat: 29.48, lon: 35.46,   radius_km: 10, manual: {ground_ice: 0}}
+  # moved 14 Nov from 29.57, 35.42 (centre of Rum village) into the open desert of the protected area.
   - {id: namib,           name: "Namib (Sossusvlei)",        type: candidate, lat: -24.73, lon: 15.29,  radius_km: 10, manual: {ground_ice: 0}}
   - {id: uyuni,           name: "Salar de Uyuni",            type: candidate, lat: -20.13, lon: -67.49, radius_km: 10, manual: {ground_ice: 0}}
+  # uyuni: slope, roughness and relief come out as 0. The salar is the flattest surface on Earth (used to calibrate
+  # satellite altimeters), so this is close to real. It makes Uyuni look very like the flat Mars plains.
 
   # ---------- negative controls ----------
   - {id: amazon,          name: "Amazon rainforest",         type: negative, lat: -3.40,  lon: -62.20,  radius_km: 10, manual: {ground_ice: 0}}
-  - {id: netherlands,     name: "Dutch farmland",            type: negative, lat: 52.20,  lon: 5.30,    radius_km: 10, manual: {ground_ice: 0}}
+  - {id: netherlands,     name: "Flevoland farmland",        type: negative, lat: 52.55,  lon: 5.62,    radius_km: 10, manual: {ground_ice: 0}}
+  # moved 14 Nov from 52.20, 5.30 (Amersfoort residential area) to the Flevoland polder.
   - {id: congo,           name: "Congo rainforest",          type: negative, lat: -1.00,  lon: 21.00,   radius_km: 10, manual: {ground_ice: 0}}
   - {id: black_forest,    name: "Black Forest, Germany",     type: negative, lat: 48.00,  lon: 8.20,    radius_km: 10, manual: {ground_ice: 0}}
   - {id: sundarbans,      name: "Sundarbans",                type: negative, lat: 21.95,  lon: 89.18,   radius_km: 10, manual: {ground_ice: 0}}
