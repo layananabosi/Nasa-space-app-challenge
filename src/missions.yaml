@@ -1,0 +1,79 @@
+# Mission profiles
+# ------------------------------------------------------------------
+# Each profile = one question a mission planner asks:
+#   "Where on Earth should I practice THIS, before doing it at THESE Mars targets?"
+#
+# weights:     how much each feature matters (any positive numbers, normalized in code)
+# constraints: pass/fail rules applied BEFORE scoring (like NASA landing-site engineering limits)
+#              op is one of: <=  >=  <  >  ==
+# targets:     which Mars targets this profile is about
+#
+# !!! Thresholds FROZEN on 14 Nov, before the first run on real data.
+# !!! Changing them after seeing results to make a favorite site win is easy for judges to spot.
+#
+# Features available (see src/common.py):
+#   slope_mean_deg, slope_p90_deg, roughness_m, relief_m,
+#   temp_swing_K, temp_min_K, aridity, bare_fraction, ground_ice
+#
+# aridity = annual precipitation in mm (TerraClimate). Mars = 0.
+#   We use precipitation instead of P/PET because P/PET calls cold polar deserts
+#   (Haughton, Svalbard) "humid": their potential evapotranspiration is near zero.
+#   < 250 mm/yr is the common definition of a desert.
+# ------------------------------------------------------------------
+
+profiles:
+  ice_drilling:
+    label: "Ice drilling"
+    question: "Where can a team practice drilling into ground ice before Arcadia Planitia or Deuteronilus Mensae?"
+    targets: [arcadia, deuteronilus]
+    weights:
+      # ground_ice is a constraint, not a weight: every site that passes has the same value
+      temp_min_K: 2
+      temp_swing_K: 1
+      aridity: 1
+      bare_fraction: 1
+      roughness_m: 1
+    constraints:
+      - {feature: ground_ice, op: ">=", value: 1, reason: "no ground ice or permafrost"}
+
+  landing_rover:
+    label: "Landing and rover traverse"
+    question: "Where can we test landing hazard detection and rover driving on Mars-like terrain?"
+    targets: [jezero, gale, meridiani, elysium_insight]
+    weights:
+      slope_mean_deg: 2
+      slope_p90_deg: 2
+      roughness_m: 2
+      relief_m: 1
+      bare_fraction: 1
+      aridity: 1
+    constraints:
+      - {feature: slope_mean_deg, op: "<=", value: 15, reason: "too steep for landing and driving tests"}
+      - {feature: bare_fraction, op: ">=", value: 0.5, reason: "vegetated surface"}
+
+  habitat:
+    label: "Habitat and crew operations"
+    question: "Where can a crew live and work in conditions closest to a future base site?"
+    targets: [jezero, gale, arcadia, elysium_insight]
+    weights:
+      temp_swing_K: 2
+      temp_min_K: 2
+      aridity: 2
+      bare_fraction: 1
+      slope_mean_deg: 1
+    constraints:
+      - {feature: aridity, op: "<", value: 250, reason: "not a desert (>= 250 mm rain per year)"}
+
+  astrobiology:
+    label: "Astrobiology and life detection"
+    question: "Where can we test life-detection instruments in the most Mars-like dry, barren ground?"
+    targets: [jezero, gale, meridiani]
+    weights:
+      aridity: 3
+      bare_fraction: 2
+      temp_swing_K: 1
+      temp_min_K: 1
+      roughness_m: 1
+    constraints:
+      - {feature: bare_fraction, op: ">=", value: 0.5, reason: "too much vegetation"}
+      - {feature: aridity, op: "<", value: 250, reason: "not a desert (>= 250 mm rain per year)"}
