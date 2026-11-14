@@ -1,0 +1,14 @@
+profile,target,separation
+astrobiology,gale,1.0
+astrobiology,jezero,1.0
+astrobiology,meridiani,1.0
+habitat,arcadia,1.0
+habitat,elysium_insight,1.0
+habitat,gale,1.0
+habitat,jezero,1.0
+ice_drilling,arcadia,1.0
+ice_drilling,deuteronilus,1.0
+landing_rover,elysium_insight,1.0
+landing_rover,gale,1.0
+landing_rover,jezero,1.0
+landing_rover,meridiani,1.0

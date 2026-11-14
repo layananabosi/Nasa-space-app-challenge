@@ -1,0 +1,93 @@
+profile,id,eligible,failed
+ice_drilling,atacama_yungay,False,no ground ice or permafrost
+ice_drilling,haughton,True,
+ice_drilling,death_valley,False,no ground ice or permafrost
+ice_drilling,wright_valley,True,
+ice_drilling,mdrs_utah,False,no ground ice or permafrost
+ice_drilling,rio_tinto,False,no ground ice or permafrost
+ice_drilling,svalbard,True,
+ice_drilling,lanzarote,False,no ground ice or permafrost
+ice_drilling,pilbara,False,no ground ice or permafrost
+ice_drilling,holuhraun,False,no ground ice or permafrost
+ice_drilling,mauna_kea,False,no ground ice or permafrost
+ice_drilling,makhtesh_ramon,False,no ground ice or permafrost
+ice_drilling,makhtesh_gadol,False,no ground ice or permafrost
+ice_drilling,mount_sodom,False,no ground ice or permafrost
+ice_drilling,timna,False,no ground ice or permafrost
+ice_drilling,wadi_rum,False,no ground ice or permafrost
+ice_drilling,namib,False,no ground ice or permafrost
+ice_drilling,uyuni,False,no ground ice or permafrost
+ice_drilling,amazon,False,no ground ice or permafrost
+ice_drilling,netherlands,False,no ground ice or permafrost
+ice_drilling,congo,False,no ground ice or permafrost
+ice_drilling,black_forest,False,no ground ice or permafrost
+ice_drilling,sundarbans,False,no ground ice or permafrost
+landing_rover,atacama_yungay,True,
+landing_rover,haughton,True,
+landing_rover,death_valley,True,
+landing_rover,wright_valley,True,
+landing_rover,mdrs_utah,True,
+landing_rover,rio_tinto,True,
+landing_rover,svalbard,True,
+landing_rover,lanzarote,True,
+landing_rover,pilbara,True,
+landing_rover,holuhraun,True,
+landing_rover,mauna_kea,True,
+landing_rover,makhtesh_ramon,True,
+landing_rover,makhtesh_gadol,True,
+landing_rover,mount_sodom,True,
+landing_rover,timna,True,
+landing_rover,wadi_rum,True,
+landing_rover,namib,True,
+landing_rover,uyuni,True,
+landing_rover,amazon,True,
+landing_rover,netherlands,True,
+landing_rover,congo,True,
+landing_rover,black_forest,True,
+landing_rover,sundarbans,True,
+habitat,atacama_yungay,True,
+habitat,haughton,True,
+habitat,death_valley,True,
+habitat,wright_valley,True,
+habitat,mdrs_utah,True,
+habitat,rio_tinto,True,
+habitat,svalbard,True,
+habitat,lanzarote,True,
+habitat,pilbara,True,
+habitat,holuhraun,True,
+habitat,mauna_kea,True,
+habitat,makhtesh_ramon,True,
+habitat,makhtesh_gadol,True,
+habitat,mount_sodom,True,
+habitat,timna,True,
+habitat,wadi_rum,True,
+habitat,namib,True,
+habitat,uyuni,True,
+habitat,amazon,False,not arid enough
+habitat,netherlands,False,not arid enough
+habitat,congo,False,not arid enough
+habitat,black_forest,False,not arid enough
+habitat,sundarbans,False,not arid enough
+astrobiology,atacama_yungay,True,
+astrobiology,haughton,True,
+astrobiology,death_valley,True,
+astrobiology,wright_valley,True,
+astrobiology,mdrs_utah,True,
+astrobiology,rio_tinto,True,
+astrobiology,svalbard,True,
+astrobiology,lanzarote,True,
+astrobiology,pilbara,True,
+astrobiology,holuhraun,True,
+astrobiology,mauna_kea,True,
+astrobiology,makhtesh_ramon,True,
+astrobiology,makhtesh_gadol,True,
+astrobiology,mount_sodom,True,
+astrobiology,timna,True,
+astrobiology,wadi_rum,True,
+astrobiology,namib,True,
+astrobiology,uyuni,True,
+astrobiology,amazon,False,too much vegetation; not arid enough
+astrobiology,netherlands,False,too much vegetation; not arid enough
+astrobiology,congo,False,too much vegetation; not arid enough
+astrobiology,black_forest,False,too much vegetation; not arid enough
+astrobiology,sundarbans,False,too much vegetation; not arid enough

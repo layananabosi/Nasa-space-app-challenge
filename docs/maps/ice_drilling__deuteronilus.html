@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_2093ef803756860809940d9473a16c8c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_2093ef803756860809940d9473a16c8c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_2093ef803756860809940d9473a16c8c = L.map(
+                "map_2093ef803756860809940d9473a16c8c",
+                {
+                    center: [20.0, 10.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_0ab2442d6a8105887964bf37f5683afa = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_0ab2442d6a8105887964bf37f5683afa.addTo(map_2093ef803756860809940d9473a16c8c);
+        
+    
+            var tile_layer_b984ebeec0251337b9db09b5113e111d = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri World Imagery",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_b984ebeec0251337b9db09b5113e111d.addTo(map_2093ef803756860809940d9473a16c8c);
+        
+    
+            var circle_marker_8f8a3a1f3c9f681dd5c3c0afef8a4105 = L.circleMarker(
+                [-77.52, 161.85],
+                {"bubblingMouseEvents": true, "color": "#1a9850", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1a9850", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_2093ef803756860809940d9473a16c8c);
+        
+    
+        var popup_a4afb22aa169e46f6fa5bc01a91b485c = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_cd4de3dca81d79124b50075c33255a19 = $(`<div id="html_cd4de3dca81d79124b50075c33255a19" style="width: 100.0%; height: 100.0%;"><b>McMurdo Dry Valleys (Wright)</b><br>AFS 78 (74-82)<br>Gap Index 23<br>known analog</div>`)[0];
+                popup_a4afb22aa169e46f6fa5bc01a91b485c.setContent(html_cd4de3dca81d79124b50075c33255a19);
+            
+        
+
+        circle_marker_8f8a3a1f3c9f681dd5c3c0afef8a4105.bindPopup(popup_a4afb22aa169e46f6fa5bc01a91b485c)
+        ;
+
+        
+    
+    
+            circle_marker_8f8a3a1f3c9f681dd5c3c0afef8a4105.bindTooltip(
+                `<div>
+                     McMurdo Dry Valleys (Wright)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a1bec1a7182c3786893ca9fb5c2b7eb7 = L.circleMarker(
+                [75.38, -89.68],
+                {"bubblingMouseEvents": true, "color": "#1a9850", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1a9850", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_2093ef803756860809940d9473a16c8c);
+        
+    
+        var popup_cf5d1ef2659d2ecf65ab1324d5b693f9 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_55811db3ef1138ca41796afadfe9866e = $(`<div id="html_55811db3ef1138ca41796afadfe9866e" style="width: 100.0%; height: 100.0%;"><b>Haughton Crater, Devon Is.</b><br>AFS 75 (72-79)<br>Gap Index 25<br>known analog</div>`)[0];
+                popup_cf5d1ef2659d2ecf65ab1324d5b693f9.setContent(html_55811db3ef1138ca41796afadfe9866e);
+            
+        
+
+        circle_marker_a1bec1a7182c3786893ca9fb5c2b7eb7.bindPopup(popup_cf5d1ef2659d2ecf65ab1324d5b693f9)
+        ;
+
+        
+    
+    
+            circle_marker_a1bec1a7182c3786893ca9fb5c2b7eb7.bindTooltip(
+                `<div>
+                     Haughton Crater, Devon Is.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_16daf01fcfa15ec8c77f84f1f96a14ef = L.circleMarker(
+                [79.43, 13.3],
+                {"bubblingMouseEvents": true, "color": "#e8b10c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e8b10c", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_2093ef803756860809940d9473a16c8c);
+        
+    
+        var popup_58ae564fe8102486fd776568bcd95ef2 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_036c876fab5d5c155557b4d50e4fe6cc = $(`<div id="html_036c876fab5d5c155557b4d50e4fe6cc" style="width: 100.0%; height: 100.0%;"><b>Bockfjorden, Svalbard</b><br>AFS 74 (70-78)<br>Gap Index 26<br>known analog</div>`)[0];
+                popup_58ae564fe8102486fd776568bcd95ef2.setContent(html_036c876fab5d5c155557b4d50e4fe6cc);
+            
+        
+
+        circle_marker_16daf01fcfa15ec8c77f84f1f96a14ef.bindPopup(popup_58ae564fe8102486fd776568bcd95ef2)
+        ;
+
+        
+    
+    
+            circle_marker_16daf01fcfa15ec8c77f84f1f96a14ef.bindTooltip(
+                `<div>
+                     Bockfjorden, Svalbard
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cf86ee9986e8ad2fd48e645f51fcdfd0 = L.circleMarker(
+                [36.25, -116.82],
+                {"bubblingMouseEvents": true, "color": "#9a9a9a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9a9a9a", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_2093ef803756860809940d9473a16c8c);
+        
+    
+        var popup_513fe06c1094a3d060e0117f1173930e = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_fe0272e0ff81829ad2106bf58a05cc7a = $(`<div id="html_fe0272e0ff81829ad2106bf58a05cc7a" style="width: 100.0%; height: 100.0%;"><b>Death Valley</b><br>AFS 41 (36-47)<br>Gap Index 42<br>known analog<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_513fe06c1094a3d060e0117f1173930e.setContent(html_fe0272e0ff81829ad2106bf58a05cc7a);
+            
+        
+
+        circle_marker_cf86ee9986e8ad2fd48e645f51fcdfd0.bindPopup(popup_513fe06c1094a3d060e0117f1173930e)
+        ;
+
+        
+    
+    
+            circle_marker_cf86ee9986e8ad2fd48e645f51fcdfd0.bindTooltip(
+                `<div>
+                     Death Valley
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d500863d53d105feace78a9c8371527e = L.circleMarker(
+                [64.85, -16.83],
+                {"bubblingMouseEvents": true, "color": "#9a9a9a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9a9a9a", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_2093ef803756860809940d9473a16c8c);
+        
+    
+        var popup_386d110994aad9fd2e69eedd462689c7 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_e9f37f58c2db7311f1050579c0601226 = $(`<div id="html_e9f37f58c2db7311f1050579c0601226" style="width: 100.0%; height: 100.0%;"><b>Holuhraun, Iceland</b><br>AFS 41 (35-46)<br>Gap Index 41<br>known analog<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_386d110994aad9fd2e69eedd462689c7.setContent(html_e9f37f58c2db7311f1050579c0601226);
+            
+        
+
+        circle_marker_d500863d53d105feace78a9c8371527e.bindPopup(popup_386d110994aad9fd2e69eedd462689c7)
+        ;
+
+        
+    
+    
+            circle_marker_d500863d53d105feace78a9c8371527e.bindTooltip(
+                `<div>
+                     Holuhraun, Iceland
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dae2e980b9a20a938373dd45caa20c70 = L.circleMarker(
+                [-21.17, 119.43],
+                {"bubblingMouseEvents": true, "color": "#9a9a9a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9a9a9a", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_2093ef803756860809940d9473a16c8c);
+        
+    
+        var popup_accd95839156fc4e1b37e35a303aa0e7 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_f59d9eb63aad33ac023ccf5722e2d692 = $(`<div id="html_f59d9eb63aad33ac023ccf5722e2d692" style="width: 100.0%; height: 100.0%;"><b>Pilbara, Australia</b><br>AFS 40 (34-47)<br>Gap Index 43<br>known analog<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_accd95839156fc4e1b37e35a303aa0e7.setContent(html_f59d9eb63aad33ac023ccf5722e2d692);
+            
+        
+
+        circle_marker_dae2e980b9a20a938373dd45caa20c70.bindPopup(popup_accd95839156fc4e1b37e35a303aa0e7)
+        ;
+
+        
+    
+    
+            circle_marker_dae2e980b9a20a938373dd45caa20c70.bindTooltip(
+                `<div>
+                     Pilbara, Australia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b3b33ae7a14b199e8840b4cac4741bab = L.circleMarker(
+                [-24.08, -70.01],
+                {"bubblingMouseEvents": true, "color": "#9a9a9a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9a9a9a", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_2093ef803756860809940d9473a16c8c);
+        
+    
+        var popup_034bb9af7e84bd65575629f70d7d3983 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_58fe76129d98d7603228162f0e48e44f = $(`<div id="html_58fe76129d98d7603228162f0e48e44f" style="width: 100.0%; height: 100.0%;"><b>Atacama (Yungay)</b><br>AFS 40 (35-46)<br>Gap Index 42<br>known analog<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_034bb9af7e84bd65575629f70d7d3983.setContent(html_58fe76129d98d7603228162f0e48e44f);
+            
+        
+
+        circle_marker_b3b33ae7a14b199e8840b4cac4741bab.bindPopup(popup_034bb9af7e84bd65575629f70d7d3983)
+        ;
+
+        
+    
+    
+            circle_marker_b3b33ae7a14b199e8840b4cac4741bab.bindTooltip(
+                `<div>
+                     Atacama (Yungay)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a651de11510d201251e37cc787475dff = L.circleMarker(
+                [30.95, 35.05],
+                {"bubblingMouseEvents": true, "color": "#9a9a9a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9a9a9a", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_2093ef803756860809940d9473a16c8c);
+        
+    
+        var popup_ce439303ef3ed4a4e36225463975ffa1 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_4b640c2a21c7666a10d8b43b6b40a00e = $(`<div id="html_4b640c2a21c7666a10d8b43b6b40a00e" style="width: 100.0%; height: 100.0%;"><b>HaMakhtesh HaGadol</b><br>AFS 40 (34-46)<br>Gap Index 41<br>new candidate<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_ce439303ef3ed4a4e36225463975ffa1.setContent(html_4b640c2a21c7666a10d8b43b6b40a00e);
+            
+        
+
+        circle_marker_a651de11510d201251e37cc787475dff.bindPopup(popup_ce439303ef3ed4a4e36225463975ffa1)
+        ;
+
+        
+    
+    
+            circle_marker_a651de11510d201251e37cc787475dff.bindTooltip(
+                `<div>
+                     HaMakhtesh HaGadol
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_64511b3d449c1ed4a285c3a451e7b40a = L.circleMarker(
+                [29.03, -13.73],
+                {"bubblingMouseEvents": true, "color": "#9a9a9a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9a9a9a", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_2093ef803756860809940d9473a16c8c);
+        
+    
+        var popup_951e57d746051ae694802375b86c4008 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_5557861fc748f4b39aea09e7f092f37d = $(`<div id="html_5557861fc748f4b39aea09e7f092f37d" style="width: 100.0%; height: 100.0%;"><b>Lanzarote</b><br>AFS 39 (34-45)<br>Gap Index 43<br>known analog<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_951e57d746051ae694802375b86c4008.setContent(html_5557861fc748f4b39aea09e7f092f37d);
+            
+        
+
+        circle_marker_64511b3d449c1ed4a285c3a451e7b40a.bindPopup(popup_951e57d746051ae694802375b86c4008)
+        ;
+
+        
+    
+    
+            circle_marker_64511b3d449c1ed4a285c3a451e7b40a.bindTooltip(
+                `<div>
+                     Lanzarote
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_63f5e72c21aa87b4f903b39e2acd0d20 = L.circleMarker(
+                [-24.73, 15.29],
+                {"bubblingMouseEvents": true, "color": "#9a9a9a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9a9a9a", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_2093ef803756860809940d9473a16c8c);
+        
+    
+        var popup_96b3fdaa097c4a06f4983a181b8cf5ef = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_ea6ada8c1251fb1b1510be3aa561a917 = $(`<div id="html_ea6ada8c1251fb1b1510be3aa561a917" style="width: 100.0%; height: 100.0%;"><b>Namib (Sossusvlei)</b><br>AFS 39 (33-46)<br>Gap Index 42<br>new candidate<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_96b3fdaa097c4a06f4983a181b8cf5ef.setContent(html_ea6ada8c1251fb1b1510be3aa561a917);
+            
+        
+
+        circle_marker_63f5e72c21aa87b4f903b39e2acd0d20.bindPopup(popup_96b3fdaa097c4a06f4983a181b8cf5ef)
+        ;
+
+        
+    
+    
+            circle_marker_63f5e72c21aa87b4f903b39e2acd0d20.bindTooltip(
+                `<div>
+                     Namib (Sossusvlei)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f3ac6841ab00ce24561ec8ca8fe58d2f = L.circleMarker(
+                [19.82, -155.47],
+                {"bubblingMouseEvents": true, "color": "#9a9a9a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9a9a9a", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_2093ef803756860809940d9473a16c8c);
+        
+    
+        var popup_3e3f2ec56f928ae8e1ca85a962c0f851 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_5b53b87c9e259ca697d2e233fbae9985 = $(`<div id="html_5b53b87c9e259ca697d2e233fbae9985" style="width: 100.0%; height: 100.0%;"><b>Mauna Kea, Hawaii</b><br>AFS 38 (32-44)<br>Gap Index 45<br>known analog<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_3e3f2ec56f928ae8e1ca85a962c0f851.setContent(html_5b53b87c9e259ca697d2e233fbae9985);
+            
+        
+
+        circle_marker_f3ac6841ab00ce24561ec8ca8fe58d2f.bindPopup(popup_3e3f2ec56f928ae8e1ca85a962c0f851)
+        ;
+
+        
+    
+    
+            circle_marker_f3ac6841ab00ce24561ec8ca8fe58d2f.bindTooltip(
+                `<div>
+                     Mauna Kea, Hawaii
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_018aa33c20207b5b0cc1b95bdeed8abe = L.circleMarker(
+                [38.41, -110.79],
+                {"bubblingMouseEvents": true, "color": "#9a9a9a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9a9a9a", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_2093ef803756860809940d9473a16c8c);
+        
+    
+        var popup_c435995d0e85e43581730966f848b719 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_874152f8fc08196d4b6340cf0e16dfef = $(`<div id="html_874152f8fc08196d4b6340cf0e16dfef" style="width: 100.0%; height: 100.0%;"><b>MDRS, Utah</b><br>AFS 36 (31-42)<br>Gap Index 46<br>known analog<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_c435995d0e85e43581730966f848b719.setContent(html_874152f8fc08196d4b6340cf0e16dfef);
+            
+        
+
+        circle_marker_018aa33c20207b5b0cc1b95bdeed8abe.bindPopup(popup_c435995d0e85e43581730966f848b719)
+        ;
+
+        
+    
+    
+            circle_marker_018aa33c20207b5b0cc1b95bdeed8abe.bindTooltip(
+                `<div>
+                     MDRS, Utah
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_70ebb4541646cffe05b41100cedaf449 = L.circleMarker(
+                [-20.13, -67.49],
+                {"bubblingMouseEvents": true, "color": "#9a9a9a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9a9a9a", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_2093ef803756860809940d9473a16c8c);
+        
+    
+        var popup_c877a930892e9f7e621651d351f0d461 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_902049ec70666361e2162f63f9c096a0 = $(`<div id="html_902049ec70666361e2162f63f9c096a0" style="width: 100.0%; height: 100.0%;"><b>Salar de Uyuni</b><br>AFS 36 (31-43)<br>Gap Index 45<br>new candidate<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_c877a930892e9f7e621651d351f0d461.setContent(html_902049ec70666361e2162f63f9c096a0);
+            
+        
+
+        circle_marker_70ebb4541646cffe05b41100cedaf449.bindPopup(popup_c877a930892e9f7e621651d351f0d461)
+        ;
+
+        
+    
+    
+            circle_marker_70ebb4541646cffe05b41100cedaf449.bindTooltip(
+                `<div>
+                     Salar de Uyuni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ffb43402a4e23224a2860069d35d4551 = L.circleMarker(
+                [29.78, 34.99],
+                {"bubblingMouseEvents": true, "color": "#9a9a9a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9a9a9a", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_2093ef803756860809940d9473a16c8c);
+        
+    
+        var popup_b0f5df4f62a33773d53cd1e547028a43 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_c54c6e5c192fe71d6d752c80f3a9fca2 = $(`<div id="html_c54c6e5c192fe71d6d752c80f3a9fca2" style="width: 100.0%; height: 100.0%;"><b>Timna</b><br>AFS 36 (30-42)<br>Gap Index 45<br>new candidate<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_b0f5df4f62a33773d53cd1e547028a43.setContent(html_c54c6e5c192fe71d6d752c80f3a9fca2);
+            
+        
+
+        circle_marker_ffb43402a4e23224a2860069d35d4551.bindPopup(popup_b0f5df4f62a33773d53cd1e547028a43)
+        ;
+
+        
+    
+    
+            circle_marker_ffb43402a4e23224a2860069d35d4551.bindTooltip(
+                `<div>
+                     Timna
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_020bb2d6bdd05f833436f9ed2f28f50d = L.circleMarker(
+                [31.05, 35.38],
+                {"bubblingMouseEvents": true, "color": "#9a9a9a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9a9a9a", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_2093ef803756860809940d9473a16c8c);
+        
+    
+        var popup_bcb112944b8f13213bd81dcbbc93c901 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_7e2ae6db4d8bb7d53ea79c0303d5fb85 = $(`<div id="html_7e2ae6db4d8bb7d53ea79c0303d5fb85" style="width: 100.0%; height: 100.0%;"><b>Mount Sodom, Dead Sea</b><br>AFS 35 (30-41)<br>Gap Index 46<br>new candidate<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_bcb112944b8f13213bd81dcbbc93c901.setContent(html_7e2ae6db4d8bb7d53ea79c0303d5fb85);
+            
+        
+
+        circle_marker_020bb2d6bdd05f833436f9ed2f28f50d.bindPopup(popup_bcb112944b8f13213bd81dcbbc93c901)
+        ;
+
+        
+    
+    
+            circle_marker_020bb2d6bdd05f833436f9ed2f28f50d.bindTooltip(
+                `<div>
+                     Mount Sodom, Dead Sea
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_73789a4c9f9989e7ade762bf1bd5a816 = L.circleMarker(
+                [29.57, 35.42],
+                {"bubblingMouseEvents": true, "color": "#9a9a9a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9a9a9a", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_2093ef803756860809940d9473a16c8c);
+        
+    
+        var popup_844054b243d5f4ea2c7ff55f00b228e2 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_f4edd6280d2b94909784fe01b19f216c = $(`<div id="html_f4edd6280d2b94909784fe01b19f216c" style="width: 100.0%; height: 100.0%;"><b>Wadi Rum, Jordan</b><br>AFS 33 (28-38)<br>Gap Index 49<br>new candidate<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_844054b243d5f4ea2c7ff55f00b228e2.setContent(html_f4edd6280d2b94909784fe01b19f216c);
+            
+        
+
+        circle_marker_73789a4c9f9989e7ade762bf1bd5a816.bindPopup(popup_844054b243d5f4ea2c7ff55f00b228e2)
+        ;
+
+        
+    
+    
+            circle_marker_73789a4c9f9989e7ade762bf1bd5a816.bindTooltip(
+                `<div>
+                     Wadi Rum, Jordan
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a0d774eb72505c025283802399e30533 = L.circleMarker(
+                [37.69, -6.62],
+                {"bubblingMouseEvents": true, "color": "#9a9a9a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9a9a9a", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_2093ef803756860809940d9473a16c8c);
+        
+    
+        var popup_4cd6946d1e263a475b26d891c1148fab = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_0cfa05c86bdc563d8f6439337bfefbaf = $(`<div id="html_0cfa05c86bdc563d8f6439337bfefbaf" style="width: 100.0%; height: 100.0%;"><b>Rio Tinto, Spain</b><br>AFS 33 (27-39)<br>Gap Index 47<br>known analog<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_4cd6946d1e263a475b26d891c1148fab.setContent(html_0cfa05c86bdc563d8f6439337bfefbaf);
+            
+        
+
+        circle_marker_a0d774eb72505c025283802399e30533.bindPopup(popup_4cd6946d1e263a475b26d891c1148fab)
+        ;
+
+        
+    
+    
+            circle_marker_a0d774eb72505c025283802399e30533.bindTooltip(
+                `<div>
+                     Rio Tinto, Spain
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e08bb1f295487d5283e504028c2a445a = L.circleMarker(
+                [30.58, 34.83],
+                {"bubblingMouseEvents": true, "color": "#9a9a9a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9a9a9a", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_2093ef803756860809940d9473a16c8c);
+        
+    
+        var popup_36685b0602da88181a9204aa1c3eb479 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_89470e1eae24e293d55eb1b401705554 = $(`<div id="html_89470e1eae24e293d55eb1b401705554" style="width: 100.0%; height: 100.0%;"><b>Makhtesh Ramon (D-MARS)</b><br>AFS 28 (23-34)<br>Gap Index 53<br>new candidate<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_36685b0602da88181a9204aa1c3eb479.setContent(html_89470e1eae24e293d55eb1b401705554);
+            
+        
+
+        circle_marker_e08bb1f295487d5283e504028c2a445a.bindPopup(popup_36685b0602da88181a9204aa1c3eb479)
+        ;
+
+        
+    
+    
+            circle_marker_e08bb1f295487d5283e504028c2a445a.bindTooltip(
+                `<div>
+                     Makhtesh Ramon (D-MARS)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_df776bd05d084c651ea0c5d45dfed933 = L.circleMarker(
+                [-3.4, -62.2],
+                {"bubblingMouseEvents": true, "color": "#9a9a9a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9a9a9a", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_2093ef803756860809940d9473a16c8c);
+        
+    
+        var popup_e2864b154de4506ec752cfe89b0c1730 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_3edde5109296790cb2dba44a348c0f4a = $(`<div id="html_3edde5109296790cb2dba44a348c0f4a" style="width: 100.0%; height: 100.0%;"><b>Amazon rainforest</b><br>AFS 10 (8-13)<br>Gap Index 82<br>negative control<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_e2864b154de4506ec752cfe89b0c1730.setContent(html_3edde5109296790cb2dba44a348c0f4a);
+            
+        
+
+        circle_marker_df776bd05d084c651ea0c5d45dfed933.bindPopup(popup_e2864b154de4506ec752cfe89b0c1730)
+        ;
+
+        
+    
+    
+            circle_marker_df776bd05d084c651ea0c5d45dfed933.bindTooltip(
+                `<div>
+                     Amazon rainforest
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ebf3a6046bbeb32762df72c2d6d2656a = L.circleMarker(
+                [21.95, 89.18],
+                {"bubblingMouseEvents": true, "color": "#9a9a9a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9a9a9a", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_2093ef803756860809940d9473a16c8c);
+        
+    
+        var popup_6dd34614c618dd8f8e8254fedbe11b9e = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_7cce001e7a237e7fad766446bbd603de = $(`<div id="html_7cce001e7a237e7fad766446bbd603de" style="width: 100.0%; height: 100.0%;"><b>Sundarbans</b><br>AFS 9 (7-11)<br>Gap Index 82<br>negative control<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_6dd34614c618dd8f8e8254fedbe11b9e.setContent(html_7cce001e7a237e7fad766446bbd603de);
+            
+        
+
+        circle_marker_ebf3a6046bbeb32762df72c2d6d2656a.bindPopup(popup_6dd34614c618dd8f8e8254fedbe11b9e)
+        ;
+
+        
+    
+    
+            circle_marker_ebf3a6046bbeb32762df72c2d6d2656a.bindTooltip(
+                `<div>
+                     Sundarbans
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f9fa3b2d31ade8657b2ad23d0c6864a0 = L.circleMarker(
+                [52.2, 5.3],
+                {"bubblingMouseEvents": true, "color": "#9a9a9a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9a9a9a", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_2093ef803756860809940d9473a16c8c);
+        
+    
+        var popup_0e51113b18808e1a29ec62410d5261ed = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_faa17e48b60a389c120ad02de51d8849 = $(`<div id="html_faa17e48b60a389c120ad02de51d8849" style="width: 100.0%; height: 100.0%;"><b>Dutch farmland</b><br>AFS 9 (7-10)<br>Gap Index 83<br>negative control<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_0e51113b18808e1a29ec62410d5261ed.setContent(html_faa17e48b60a389c120ad02de51d8849);
+            
+        
+
+        circle_marker_f9fa3b2d31ade8657b2ad23d0c6864a0.bindPopup(popup_0e51113b18808e1a29ec62410d5261ed)
+        ;
+
+        
+    
+    
+            circle_marker_f9fa3b2d31ade8657b2ad23d0c6864a0.bindTooltip(
+                `<div>
+                     Dutch farmland
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b49b80babcd04b7c18ee213ed8518c8d = L.circleMarker(
+                [-1.0, 21.0],
+                {"bubblingMouseEvents": true, "color": "#9a9a9a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9a9a9a", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_2093ef803756860809940d9473a16c8c);
+        
+    
+        var popup_93d73df7163b06f9e3b468884c1b5b59 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_a810e16c60c10ae09713fad63d8b962f = $(`<div id="html_a810e16c60c10ae09713fad63d8b962f" style="width: 100.0%; height: 100.0%;"><b>Congo rainforest</b><br>AFS 7 (6-9)<br>Gap Index 84<br>negative control<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_93d73df7163b06f9e3b468884c1b5b59.setContent(html_a810e16c60c10ae09713fad63d8b962f);
+            
+        
+
+        circle_marker_b49b80babcd04b7c18ee213ed8518c8d.bindPopup(popup_93d73df7163b06f9e3b468884c1b5b59)
+        ;
+
+        
+    
+    
+            circle_marker_b49b80babcd04b7c18ee213ed8518c8d.bindTooltip(
+                `<div>
+                     Congo rainforest
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_07f2258f1cfed5f1a8ca8e6d4d4976b6 = L.circleMarker(
+                [48.0, 8.2],
+                {"bubblingMouseEvents": true, "color": "#9a9a9a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9a9a9a", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_2093ef803756860809940d9473a16c8c);
+        
+    
+        var popup_19afafde2cad627e1edced8f9d9d75ed = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_9ee6e33f0fcb4e43a8f4183102abccf3 = $(`<div id="html_9ee6e33f0fcb4e43a8f4183102abccf3" style="width: 100.0%; height: 100.0%;"><b>Black Forest, Germany</b><br>AFS 7 (4-9)<br>Gap Index 84<br>negative control<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_19afafde2cad627e1edced8f9d9d75ed.setContent(html_9ee6e33f0fcb4e43a8f4183102abccf3);
+            
+        
+
+        circle_marker_07f2258f1cfed5f1a8ca8e6d4d4976b6.bindPopup(popup_19afafde2cad627e1edced8f9d9d75ed)
+        ;
+
+        
+    
+    
+            circle_marker_07f2258f1cfed5f1a8ca8e6d4d4976b6.bindTooltip(
+                `<div>
+                     Black Forest, Germany
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var layer_control_5950a96fd7e2b7f4a8c0b23b27dbf93c_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_0ab2442d6a8105887964bf37f5683afa,
+                    "Satellite" : tile_layer_b984ebeec0251337b9db09b5113e111d,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_5950a96fd7e2b7f4a8c0b23b27dbf93c = L.control.layers(
+                layer_control_5950a96fd7e2b7f4a8c0b23b27dbf93c_layers.base_layers,
+                layer_control_5950a96fd7e2b7f4a8c0b23b27dbf93c_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_2093ef803756860809940d9473a16c8c);
+
+        
+</script>
+</html>

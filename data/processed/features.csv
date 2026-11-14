@@ -1,0 +1,30 @@
+id,name,world,type,lat,lon,slope_mean_deg,slope_p90_deg,roughness_m,relief_m,temp_swing_K,temp_min_K,aridity,bare_fraction,ground_ice
+atacama_yungay,Atacama (Yungay),earth,positive,-24.08,-70.01,5.002,12.896,10.903,243.129,19.727,254.067,0.082,0.957,0
+haughton,"Haughton Crater, Devon Is.",earth,positive,75.38,-89.68,4.262,10.139,13.959,392.826,22.527,226.9,0.079,0.906,1
+death_valley,Death Valley,earth,positive,36.25,-116.82,4.314,6.296,6.842,128.992,20.825,251.86,0.091,0.863,0
+wright_valley,McMurdo Dry Valleys (Wright),earth,positive,-77.52,161.85,4.72,4.45,9.845,344.18,22.567,230.1,0.061,0.772,1
+mdrs_utah,"MDRS, Utah",earth,positive,38.41,-110.79,6.591,9.577,11.87,456.127,19.082,261.106,0.084,0.855,0
+rio_tinto,"Rio Tinto, Spain",earth,positive,37.69,-6.62,3.162,12.228,17.435,164.343,26.297,262.955,0.054,1.0,0
+svalbard,"Bockfjorden, Svalbard",earth,positive,79.43,13.3,6.143,8.402,12.298,419.203,21.056,243.6,0.077,0.903,1
+lanzarote,Lanzarote,earth,positive,29.03,-13.73,3.987,12.609,10.147,365.272,16.064,257.366,0.072,0.922,0
+pilbara,"Pilbara, Australia",earth,positive,-21.17,119.43,6.718,8.029,8.821,427.628,12.038,258.295,0.076,0.951,0
+holuhraun,"Holuhraun, Iceland",earth,positive,64.85,-16.83,6.034,11.018,10.526,319.977,29.618,258.576,0.068,0.878,0
+mauna_kea,"Mauna Kea, Hawaii",earth,positive,19.82,-155.47,4.819,11.408,7.544,348.617,19.782,271.329,0.106,0.848,0
+makhtesh_ramon,Makhtesh Ramon (D-MARS),earth,candidate,30.58,34.83,7.003,12.98,18.209,399.352,22.917,264.673,0.074,0.765,0
+makhtesh_gadol,HaMakhtesh HaGadol,earth,candidate,30.95,35.05,2.947,13.087,10.4,419.686,31.224,268.346,0.035,0.916,0
+mount_sodom,"Mount Sodom, Dead Sea",earth,candidate,31.05,35.38,6.74,13.471,13.176,484.296,22.6,266.731,0.057,0.903,0
+timna,Timna,earth,candidate,29.78,34.99,4.418,14.78,10.568,516.648,20.964,275.714,0.036,0.891,0
+wadi_rum,"Wadi Rum, Jordan",earth,candidate,29.57,35.42,3.003,10.606,15.451,144.572,24.233,261.031,0.09,0.832,0
+namib,Namib (Sossusvlei),earth,candidate,-24.73,15.29,7.168,14.393,7.853,549.898,27.209,274.474,0.049,0.887,0
+uyuni,Salar de Uyuni,earth,candidate,-20.13,-67.49,4.537,17.296,11.828,393.857,16.034,269.991,0.009,1.0,0
+amazon,Amazon rainforest,earth,negative,-3.4,-62.2,1.769,7.898,4.053,0.0,5.367,278.518,1.4,0.0,0
+netherlands,Dutch farmland,earth,negative,52.2,5.3,1.55,0.864,0.773,278.487,3.644,274.567,1.413,0.143,0
+congo,Congo rainforest,earth,negative,-1.0,21.0,0.0,4.374,1.472,0.0,10.675,282.812,1.403,0.0,0
+black_forest,"Black Forest, Germany",earth,negative,48.0,8.2,2.682,3.382,3.428,0.0,0.919,293.684,1.38,0.053,0
+sundarbans,Sundarbans,earth,negative,21.95,89.18,1.949,3.677,1.968,155.61,5.491,281.788,1.401,0.124,0
+jezero,Jezero Crater,mars,target,18.44,77.45,4.51,10.574,8.873,217.082,72.374,183.866,0.0,1.0,0
+gale,Gale Crater,mars,target,-4.59,137.44,4.586,11.247,11.843,272.663,73.787,175.014,0.0,1.0,0
+meridiani,Meridiani Planum,mars,target,-1.95,-5.53,4.655,12.819,12.969,231.289,65.778,183.268,0.0,1.0,0
+elysium_insight,Elysium Planitia,mars,target,4.5,135.62,4.63,7.534,5.78,315.558,70.111,179.017,0.0,1.0,0
+arcadia,Arcadia Planitia,mars,target,40.0,-155.0,2.865,9.75,8.057,201.391,71.264,179.754,0.0,1.0,1
+deuteronilus,Deuteronilus Mensae,mars,target,44.0,23.0,3.506,8.501,8.227,311.724,68.043,181.424,0.0,1.0,1
