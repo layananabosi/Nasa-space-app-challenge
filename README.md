@@ -4,8 +4,7 @@
 
 Built for the [2026 NASA Space Apps Challenge](https://www.spaceappschallenge.org/2026/), challenge *Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars*. See [CHALLENGE.md](CHALLENGE.md).
 
-> **Status:** in progress during the hackathon (Nov 14–15, 2026). Results on the site are **fake sample data** until the real pipeline run.
-
+**🌍 Live site: [layananabosi.github.io/Nasa-space-app-challenge](https://layananabosi.github.io/Nasa-space-app-challenge/)**: the mission briefs, maps and validation.
 ## The problem
 
 Mission teams test equipment and methods at terrestrial analogs (Atacama, Haughton Crater, Death Valley) before they fly, but these sites are chosen largely by experience, and their similarity to specific Mars targets is not well characterized.
