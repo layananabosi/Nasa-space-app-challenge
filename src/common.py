@@ -21,7 +21,7 @@ FEATURES = [
     "relief_m",        # elevation p95 - p5 inside the box (m)
     "temp_swing_K",    # mean day minus mean night surface temperature (K)
     "temp_min_K",      # coldest night surface temperature (K)
-    "aridity",         # precipitation / potential evapotranspiration (Mars = 0)
+    "aridity",         # yearly precipitation in mm (Mars = 0); name kept for compatibility
     "bare_fraction",   # share of bare or non-vegetated ground, 0..1 (Mars = 1)
     "ground_ice",      # 1 = ground ice / permafrost present, 0 = not (literature)
 ]

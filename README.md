@@ -32,9 +32,24 @@ For each **mission profile** (ice drilling, landing and rover traverse, habitat,
 | --- | --- | --- |
 | Mean and 90th-percentile slope, local roughness, relief (at ~463 m) | Copernicus DEM GLO-30 | MGS MOLA DEM 463 m |
 | Day–night surface temperature swing, coldest night | MODIS MOD11A2 LST | Literature / Mars Climate Database |
-| Aridity (precipitation / potential evapotranspiration) | TerraClimate | 0 (no precipitation) |
-| Bare ground fraction | ESA WorldCover v200 | 1 (no vegetation) |
+| Dryness: yearly precipitation in mm (column `aridity`) | TerraClimate | 0 (no precipitation) |
+| Bare ground fraction (land only) | ESA WorldCover v200 | 1 (no vegetation) |
 | Ground ice (0/1) | Literature (permafrost sites) | SWIM ice maps, literature |
+
+We use yearly precipitation rather than the aridity index (precipitation / potential evapotranspiration), because the index calls cold polar deserts such as the McMurdo Dry Valleys "humid": their evapotranspiration is close to zero.
+
+### Mission rules and why
+
+Rules and weights were set before the real data run and not changed after seeing results.
+
+| Profile | Rule | Why |
+| --- | --- | --- |
+| Landing and rover traverse | mean slope ≤ 15° | NASA's InSight landing site required slopes under 15° at 84 m and 2 m scales ([Golombek et al., 2017](https://pubs.usgs.gov/publication/70190673)). Our slopes are averaged over 463 m, which makes them gentler, so we never reject a site NASA's limit would accept. |
+| Habitat and crew operations | precipitation < 250 mm/year | The standard desert threshold in Meigs's classification of arid lands (1953); 250–500 mm is semi-arid steppe. |
+| Astrobiology and life detection | precipitation < 250 mm/year, bare ground ≥ 50% | Same desert threshold; dryness carries the highest weight (3) in this profile, so the driest sites rank first. Most of the area must be free of vegetation. |
+| Ice drilling | ground ice present | No ice, no drilling practice. |
+
+**Weights** follow the idea of functional analogs (Foucher et al., 2021): a site only needs to match the properties that matter for the test. 3 = the test fails without it, 2 = strongly affects the result, 1 = useful context. The confidence ranges show how much rankings move when the weights change.
 
 ## Pipeline
 
