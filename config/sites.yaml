@@ -104,7 +104,9 @@ candidates:
   - {id: atacama_yungay,  name: "Atacama (Yungay)",          type: positive, lat: -24.08, lon: -70.01,  radius_km: 10, manual: {ground_ice: 0}}
   - {id: haughton,        name: "Haughton Crater, Devon Is.", type: positive, lat: 75.38,  lon: -89.68,  radius_km: 10, manual: {ground_ice: 1}}
   - {id: death_valley,    name: "Death Valley",              type: positive, lat: 36.25,  lon: -116.82, radius_km: 10, manual: {ground_ice: 0}}
-  - {id: wright_valley,   name: "McMurdo Dry Valleys (Wright)", type: positive, lat: -77.52, lon: 161.85, radius_km: 10, manual: {ground_ice: 1}}
+  - {id: wright_valley,   name: "McMurdo Dry Valleys (Wright)", type: positive, lat: -77.52, lon: 161.85, radius_km: 10, manual: {ground_ice: 1, bare_fraction: 1.0}}
+  # wright_valley bare_fraction: ESA WorldCover does not cover Antarctica; no vegetation in the Dry Valleys,
+  # so rock + ice = 1.0 under our class 60 + 70 definition.
   - {id: mdrs_utah,       name: "MDRS, Utah",                type: positive, lat: 38.41,  lon: -110.79, radius_km: 10, manual: {ground_ice: 0}}
   - {id: rio_tinto,       name: "Rio Tinto, Spain",          type: positive, lat: 37.69,  lon: -6.62,   radius_km: 10, manual: {ground_ice: 0}}
   - {id: svalbard,        name: "Bockfjorden, Svalbard",     type: positive, lat: 79.43,  lon: 13.30,   radius_km: 10, manual: {ground_ice: 1}}
@@ -121,6 +123,8 @@ candidates:
   - {id: wadi_rum,        name: "Wadi Rum, Jordan",          type: candidate, lat: 29.57, lon: 35.42,   radius_km: 10, manual: {ground_ice: 0}}
   - {id: namib,           name: "Namib (Sossusvlei)",        type: candidate, lat: -24.73, lon: 15.29,  radius_km: 10, manual: {ground_ice: 0}}
   - {id: uyuni,           name: "Salar de Uyuni",            type: candidate, lat: -20.13, lon: -67.49, radius_km: 10, manual: {ground_ice: 0}}
+  # uyuni: Copernicus DEM flattens the salt flat (water-body editing), so slope, roughness and relief come out as 0.
+  # Treat its terrain match as an artifact, not a finding.
 
   # ---------- negative controls ----------
   - {id: amazon,          name: "Amazon rainforest",         type: negative, lat: -3.40,  lon: -62.20,  radius_km: 10, manual: {ground_ice: 0}}
