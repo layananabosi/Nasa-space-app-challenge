@@ -120,7 +120,7 @@ Software: Python, NumPy, pandas, SciPy, rasterio, Matplotlib, folium / Leaflet, 
 
 ## Team
 
-**ML Mappers**: Mia Anabosi, [your name]
+**ML Mappers**: Mia Anabosi , Layan Anabosi
 
 Tasks are tracked in [Issues](../../issues). Workflow: [CONTRIBUTING.md](CONTRIBUTING.md).
 
