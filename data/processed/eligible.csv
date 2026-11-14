@@ -50,12 +50,12 @@ habitat,haughton,True,
 habitat,death_valley,True,
 habitat,wright_valley,True,
 habitat,mdrs_utah,True,
-habitat,rio_tinto,True,
-habitat,svalbard,True,
+habitat,rio_tinto,False,not a desert (250 mm/year or more rain)
+habitat,svalbard,False,not a desert (250 mm/year or more rain)
 habitat,lanzarote,True,
 habitat,pilbara,True,
-habitat,holuhraun,True,
-habitat,mauna_kea,True,
+habitat,holuhraun,False,not a desert (250 mm/year or more rain)
+habitat,mauna_kea,False,not a desert (250 mm/year or more rain)
 habitat,makhtesh_ramon,True,
 habitat,makhtesh_gadol,True,
 habitat,mount_sodom,True,
@@ -63,22 +63,22 @@ habitat,timna,True,
 habitat,wadi_rum,True,
 habitat,namib,True,
 habitat,uyuni,True,
-habitat,amazon,False,not arid enough
-habitat,netherlands,False,not arid enough
-habitat,congo,False,not arid enough
-habitat,black_forest,False,not arid enough
-habitat,sundarbans,False,not arid enough
+habitat,amazon,False,not a desert (250 mm/year or more rain)
+habitat,netherlands,False,not a desert (250 mm/year or more rain)
+habitat,congo,False,not a desert (250 mm/year or more rain)
+habitat,black_forest,False,not a desert (250 mm/year or more rain)
+habitat,sundarbans,False,not a desert (250 mm/year or more rain)
 astrobiology,atacama_yungay,True,
-astrobiology,haughton,True,
+astrobiology,haughton,False,too much vegetation
 astrobiology,death_valley,True,
 astrobiology,wright_valley,True,
 astrobiology,mdrs_utah,True,
-astrobiology,rio_tinto,True,
-astrobiology,svalbard,True,
+astrobiology,rio_tinto,False,too much vegetation; not a desert (250 mm/year or more rain)
+astrobiology,svalbard,False,not a desert (250 mm/year or more rain)
 astrobiology,lanzarote,True,
-astrobiology,pilbara,True,
-astrobiology,holuhraun,True,
-astrobiology,mauna_kea,True,
+astrobiology,pilbara,False,too much vegetation
+astrobiology,holuhraun,False,not a desert (250 mm/year or more rain)
+astrobiology,mauna_kea,False,too much vegetation; not a desert (250 mm/year or more rain)
 astrobiology,makhtesh_ramon,True,
 astrobiology,makhtesh_gadol,True,
 astrobiology,mount_sodom,True,
@@ -86,8 +86,8 @@ astrobiology,timna,True,
 astrobiology,wadi_rum,True,
 astrobiology,namib,True,
 astrobiology,uyuni,True,
-astrobiology,amazon,False,too much vegetation; not arid enough
-astrobiology,netherlands,False,too much vegetation; not arid enough
-astrobiology,congo,False,too much vegetation; not arid enough
-astrobiology,black_forest,False,too much vegetation; not arid enough
-astrobiology,sundarbans,False,too much vegetation; not arid enough
+astrobiology,amazon,False,too much vegetation; not a desert (250 mm/year or more rain)
+astrobiology,netherlands,False,too much vegetation; not a desert (250 mm/year or more rain)
+astrobiology,congo,False,too much vegetation; not a desert (250 mm/year or more rain)
+astrobiology,black_forest,False,too much vegetation; not a desert (250 mm/year or more rain)
+astrobiology,sundarbans,False,too much vegetation; not a desert (250 mm/year or more rain)
