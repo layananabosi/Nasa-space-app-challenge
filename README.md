@@ -100,13 +100,23 @@ NASA and partner resources listed by the challenge:
 [Copernicus Data Space Ecosystem (ESA)](https://dataspace.copernicus.eu/) ·
 [JAXA G-Portal](https://gportal.jaxa.jp/gpr/index/index)
 
-Datasets used (TODO: add exact versions and access dates):
-- Copernicus DEM GLO-30 (ESA), via Google Earth Engine
-- MODIS Terra Land Surface Temperature MOD11A2 v6.1 (NASA LP DAAC), via Google Earth Engine
-- TerraClimate (Abatzoglou et al., 2018), via Google Earth Engine
-- ESA WorldCover 10 m v200
-- Mars Global Surveyor MOLA DEM 463 m (NASA / USGS Astrogeology)
-- Subsurface Water Ice Mapping (SWIM) project maps
+Datasets used (accessed 2026-11-14)
+
+**Earth**
+- **Copernicus DEM GLO-30** (ESA). Earth Engine ID `COPERNICUS/DEM/GLO30`. https://doi.org/10.5270/ESA-c5d3d65
+- **MODIS/Terra Land Surface Temperature/Emissivity 8-Day L3 Global 1km SIN Grid, V061 (MOD11A2)**. Wan, Z., Hook, S., Hulley, G. (2021). NASA LP DAAC. Earth Engine ID `MODIS/061/MOD11A2`. https://doi.org/10.5067/MODIS/MOD11A2.061
+- **TerraClimate**. Abatzoglou, J.T. et al. (2018). *Scientific Data* 5, 170191. Earth Engine ID `IDAHO_EPSCOR/TERRACLIMATE`. https://doi.org/10.1038/sdata.2017.191
+- **ESA WorldCover 10 m 2021 v200**. Zanaga, D. et al. (2022). Earth Engine ID `ESA/WorldCover/v200`. https://doi.org/10.5281/zenodo.7254221
+
+**Mars**
+- **Mars MGS MOLA DEM 463 m** (NASA / USGS Astrogeology). https://astrogeology.usgs.gov/search/map/mars_mgs_mola_dem_463m
+  Smith, D.E. et al. (2001). *J. Geophys. Res.* 106(E10), 23689–23722. https://doi.org/10.1029/2000JE001364
+- **Mars Climate Database v6.1** (LMD / ESA / CNES), web interface. https://www-mars.lmd.jussieu.fr/mars/access.html
+  Forget, F. et al. (1999). *J. Geophys. Res.* 104(E10), 24155–24175. https://doi.org/10.1029/1999JE001025
+- **Subsurface Water Ice Mapping (SWIM)**. https://swim.psi.edu ; Morgan, G.A. et al. (2021), see References.
+
+**Platform**
+- **Google Earth Engine**. Gorelick, N. et al. (2017). *Remote Sensing of Environment* 202, 18–27. https://doi.org/10.1016/j.rse.2017.06.031
 
 Software: Python, NumPy, pandas, SciPy, rasterio, Matplotlib, folium / Leaflet, Google Earth Engine.
 
