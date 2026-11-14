@@ -22,8 +22,8 @@ targets:
     lon: 77.4508
     radius_km: 10
     manual:
-      temp_swing_K: null   # TODO: day-night surface temp difference (Mars Climate Database or MEDA papers)
-      temp_min_K: null     # TODO: coldest night surface temp
+      temp_swing_K: 55.1   # TODO: day-night surface temp difference (Mars Climate Database or MEDA papers)
+      temp_min_K: 196.1     # TODO: coldest night surface temp
       ground_ice: 0
     sources:
       ground_ice: "No near-surface ice at equatorial latitudes; SWIM maps (verify)"
@@ -36,8 +36,8 @@ targets:
     lon: 137.4417
     radius_km: 10
     manual:
-      temp_swing_K: null   # TODO: REMS ground temperature papers / MCD
-      temp_min_K: null
+      temp_swing_K: 62.8   # TODO: REMS ground temperature papers / MCD
+      temp_min_K: 189.4
       ground_ice: 0
     sources:
       ground_ice: "Equatorial site, no shallow ice (verify)"
@@ -50,8 +50,8 @@ targets:
     lon: -5.5266
     radius_km: 10
     manual:
-      temp_swing_K: null
-      temp_min_K: null
+      temp_swing_K: 66.5
+      temp_min_K: 193
       ground_ice: 0
     sources:
       ground_ice: "Equatorial site, no shallow ice (verify)"
@@ -64,8 +64,8 @@ targets:
     lon: 135.6234
     radius_km: 10
     manual:
-      temp_swing_K: null   # TODO: InSight HP3 / TWINS papers or MCD
-      temp_min_K: null
+      temp_swing_K: 59   # TODO: InSight HP3 / TWINS papers or MCD
+      temp_min_K: 193.3
       ground_ice: 0
     sources:
       ground_ice: "No shallow ice at the InSight site (verify)"
@@ -78,8 +78,8 @@ targets:
     lon: -175.7123   
     radius_km: 10
     manual:
-      temp_swing_K: null
-      temp_min_K: null
+      temp_swing_K: 41.2
+      temp_min_K: 154.4
       ground_ice: 1
     sources:
       ground_ice: "SWIM ice consistency maps; Morgan et al. (2021) Nature Astronomy 5, 230-236"
@@ -92,8 +92,8 @@ targets:
     lon: 23.91839
     radius_km: 10
     manual:
-      temp_swing_K: null
-      temp_min_K: null
+      temp_swing_K: 49.1
+      temp_min_K: 158.4
       ground_ice: 1
     sources:
       ground_ice: "Debris-covered glaciers / SWIM maps (verify)"
