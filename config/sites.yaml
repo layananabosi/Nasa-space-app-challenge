@@ -18,8 +18,8 @@ targets:
   - id: jezero
     name: Jezero Crater
     mission: Perseverance
-    lat: 18.45764
-    lon: 77.67636
+    lat: 18.4447
+    lon: 77.4508
     radius_km: 10
     manual:
       temp_swing_K: null   # TODO: day-night surface temp difference (Mars Climate Database or MEDA papers)
@@ -32,8 +32,8 @@ targets:
   - id: gale
     name: Gale Crater
     mission: Curiosity
-    lat: -5.33875
-    lon: 137.81552
+    lat: -4.5895
+    lon: 137.4417
     radius_km: 10
     manual:
       temp_swing_K: null   # TODO: REMS ground temperature papers / MCD
@@ -46,8 +46,8 @@ targets:
   - id: meridiani
     name: Meridiani Planum
     mission: Opportunity
-    lat: -0.04362
-    lon: -3.1372
+    lat: -1.9462
+    lon: -5.5266
     radius_km: 10
     manual:
       temp_swing_K: null
@@ -60,8 +60,8 @@ targets:
   - id: elysium_insight
     name: Elysium Planitia
     mission: InSight
-    lat: 2.99988
-    lon: 154.71249
+    lat: 4.5024
+    lon: 135.6234
     radius_km: 10
     manual:
       temp_swing_K: null   # TODO: InSight HP3 / TWINS papers or MCD
