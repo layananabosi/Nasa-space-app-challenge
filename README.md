@@ -94,8 +94,7 @@ analograph/
 ├── figures/         charts for the slides
 ├── docs/            generated website (GitHub Pages)
 ├── run_all.py
-├── CHALLENGE.md     the challenge and how we answer it
-└── CONTRIBUTING.md  how we work (branches, pull requests)
+└── CHALLENGE.md     the challenge and how we answer it
 ```
 
 ## Limitations
