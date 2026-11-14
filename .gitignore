@@ -1,6 +1,7 @@
-# big downloads stay out of git
+# big downloads stay out of git; the small ingest CSVs are shared
 data/raw/*
 !data/raw/.gitkeep
+!data/raw/*.csv
 *.tif
 *.img
 *.IMG
