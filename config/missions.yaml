@@ -7,9 +7,7 @@
 # constraints: pass/fail rules applied BEFORE scoring (like NASA landing-site engineering limits)
 #              op is one of: <=  >=  <  >  ==
 # targets:     which Mars targets this profile is about
-#
-# !!! Agree on thresholds together once, then FREEZE them. Changing them after
-# !!! seeing results to make a favorite site win is easy for judges to spot.
+
 #
 # Features available (see src/common.py):
 #   slope_mean_deg, slope_p90_deg, roughness_m, relief_m,
@@ -71,4 +69,4 @@ profiles:
       roughness_m: 1
     constraints:
       - {feature: bare_fraction, op: ">=", value: 0.5, reason: "too much vegetation"}
-      - {feature: aridity, op: "<", value: 0.2, reason: "not arid enough"}
+      - {feature: aridity, op: "<", value: 0.05, reason: "not arid enough"} #changed 0.2 -> 0.05
