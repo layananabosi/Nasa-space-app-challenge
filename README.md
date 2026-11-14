@@ -146,7 +146,7 @@ Software: Python, NumPy, pandas, SciPy, rasterio, Matplotlib, folium / Leaflet, 
 
 **ML Mappers**: Mia Anabosi , Layan Anabosi
 
-Tasks are tracked in [Issues](../../issues). Workflow: [CONTRIBUTING.md](CONTRIBUTING.md).
+Tasks are tracked in [Issues](../../issues).
 
 ## Use of AI tools
 
