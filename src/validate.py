@@ -11,7 +11,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-from .common import FIGURES, PROCESSED, load_missions
+from .common import FEATURES, FIGURES, PROCESSED, load_missions, read_features
+from .score import subscores, weighted
 
 COLORS = {"positive": "#2a6fdb", "candidate": "#e8890c", "negative": "#9a9a9a"}
 LABELS = {"positive": "Known analog", "candidate": "Our candidate", "negative": "Negative control"}
@@ -48,10 +49,28 @@ def plot(group, profile_label, target):
     return path
 
 
+def overall(features=None):
+    """Headline check: ALL features, equal weights, no mission rules, every Mars target.
+
+    The mission profiles deliberately use only some features (landing looks at terrain),
+    so the general Mars-like vs not-Mars-like controls are a fair test only for this one.
+    """
+    df = features if features is not None else read_features()
+    earth = df[df["world"] == "earth"].set_index("id")
+    mars = df[df["world"] == "mars"].set_index("id")
+    w = pd.Series(1.0, index=FEATURES)
+    rows = []
+    for tid, t in mars.iterrows():
+        g = earth[["type"]].copy()
+        g["afs"] = weighted(subscores(earth, t, FEATURES), w)
+        rows.append({"profile": "overall", "target": tid, "separation": separation(g)})
+    return rows
+
+
 def run(scores=None):
     scores = scores if scores is not None else pd.read_csv(PROCESSED / "scores.csv")
     profiles = load_missions()
-    rows = []
+    rows = overall()
     for (pid, tid), g in scores.groupby(["profile", "target"]):
         rows.append({"profile": pid, "target": tid, "separation": separation(g)})
     res = pd.DataFrame(rows)

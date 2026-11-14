@@ -42,6 +42,9 @@ profiles:
       aridity: 1
     constraints:
       - {feature: slope_mean_deg, op: "<=", value: 15, reason: "too steep for landing and driving tests"}
+      # added after the first real run showed farmland and rainforest passing: hazard-detection cameras
+      # and rover wheels must be tested on bare rock and soil, not crops or forest
+      - {feature: bare_fraction, op: ">=", value: 0.5, reason: "too much vegetation for hazard-detection and traction tests"}
 
   habitat:
     label: "Habitat and crew operations"

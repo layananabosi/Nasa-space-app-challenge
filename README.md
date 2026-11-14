@@ -23,7 +23,7 @@ For each **mission profile** (ice drilling, landing and rover traverse, habitat,
    ```
 3. **Gap Index (0–100).** The absolute distance that remains, plus a fixed list of environmental gaps no Earth site closes (gravity, pressure, radiation, magnetic field).
 4. **Confidence range.** AFS recomputed 500 times with perturbed weights; we report the 5th–95th percentile.
-5. **Validation.** Known analogs (positive controls) must outrank clearly non-Mars-like sites (negative controls). We report the share of correctly ordered pairs.
+5. **Validation.** Known analogs (positive controls) must outrank clearly non-Mars-like sites (negative controls). We report the share of correctly ordered pairs (AUC), per mission and target, and compare it with a naive baseline that weights every feature equally.
 6. **Mission brief.** A web page per profile and target: top 3 sites, why, weakest match, rejected sites with the failed rule, gaps, sources.
 
 ### Features (same unit on Earth and Mars)
@@ -45,6 +45,7 @@ Rules and weights were set before the real data run and not changed after seeing
 | Profile | Rule | Why |
 | --- | --- | --- |
 | Landing and rover traverse | mean slope ≤ 15° | NASA's InSight landing site required slopes under 15° at 84 m and 2 m scales ([Golombek et al., 2017](https://pubs.usgs.gov/publication/70190673)). Our slopes are averaged over 463 m, which makes them gentler, so we never reject a site NASA's limit would accept. |
+| Landing and rover traverse | bare ground ≥ 50% | Hazard-detection cameras and rover wheels must be tested on bare rock and soil, not crops or forest. *Added after the first real run showed farmland and rainforest passing the slope rule.* It does not change the AUC, which is computed over all sites. |
 | Habitat and crew operations | precipitation < 250 mm/year | The standard desert threshold in Meigs's classification of arid lands (1953); 250–500 mm is semi-arid steppe. |
 | Astrobiology and life detection | precipitation < 250 mm/year, bare ground ≥ 50% | Same desert threshold; dryness carries the highest weight (3) in this profile, so the driest sites rank first. Most of the area must be free of vegetation. |
 | Ice drilling | ground ice present | No ice, no drilling practice. |

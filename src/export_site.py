@@ -159,14 +159,32 @@ def run(sample=False):
                          f"<td>{sep}</td></tr>")
         links.append(f"<div class='card'><h3>{escape(prof['label'])}</h3><p class='muted'>"
                      f"{escape(prof['question'])}</p><table><tr><th>Mars target</th>"
-                     f"<th>Validation</th></tr>{''.join(items)}</table></div>")
+                     f"<th>AUC</th></tr>{''.join(items)}</table></div>")
+
+    ov = validation[validation["profile"] == "overall"]
+    ms = validation[validation["profile"] != "overall"]
+    headline = (
+        f"<div class='cards'><div class='card'><h3>Naive baseline</h3>"
+        f"<div class='score'>{fmt(ov['separation'].mean(), 2)}</div>"
+        f"<p class='muted'>Mean AUC when every feature counts equally, no mission rules.</p></div>"
+        f"<div class='card'><h3>Mission-specific scoring</h3>"
+        f"<div class='score'>{fmt(ms['separation'].mean(), 2)}</div>"
+        f"<p class='muted'>Mean AUC over all missions and targets, with weights set before seeing results. "
+        f"{int((ms['separation'] >= 0.95).sum())} of {len(ms)} at 0.95 or above.</p></div></div>"
+        f"<p class='muted'>AUC = share of (known analog, negative control) pairs where the known analog scores "
+        f"higher. 1.00 is perfect, 0.50 is chance. Matching only what matters for each test separates Mars-like "
+        f"from non-Mars-like sites better than matching everything.</p>") if len(ov) else ""
 
     body = f"""
 <h1>AnaloGraph</h1>
 <p class='muted'>Decision support for Mars analog missions · NASA Space Apps 2026</p>
 <p>Pick a mission and a Mars target. Each brief recommends where on Earth to practice, explains why,
 shows which known analogs were rejected, and states what Earth cannot simulate.</p>
-<p class='muted'>Validation = share of (known analog, negative control) pairs ranked correctly. 1.00 is perfect, 0.50 is chance.</p>
+<h2>Validation</h2>{headline}
+<h2>Mission briefs</h2>
+<p class='muted'>The AUC per mission shows how well that mission's scoring separates known analogs from
+non-Mars-like controls. Missions that use only some features (landing looks at terrain) can score lower
+by design: on terrain alone, flat farmland resembles flat Mars plains.</p>
 <div class='cards'>{''.join(links)}</div>"""
     (SITE / "index.html").write_text(page("AnaloGraph", body, sample), encoding="utf-8")
     print(f"Site written to {SITE}/index.html")
