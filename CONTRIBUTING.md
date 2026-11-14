@@ -14,7 +14,7 @@ Two people, 36 hours, one branch (`main`). Tasks live in [Issues](../../issues),
 | Area | Owner |
 | --- | --- |
 | `src/ingest_mars.py`, Mars targets in `config/sites.yaml`, `config/gaps.yaml` | Mia |
-| `src/ingest_earth.py`, `src/export_site.py`, Earth candidates in `config/sites.yaml` | [your name] |
+| `src/ingest_earth.py`, `src/export_site.py`, Earth candidates in `config/sites.yaml` | Layan |
 | `config/missions.yaml`, `src/score.py`, `src/constraints.py`, `src/validate.py` | together, one person types |
 
 ## Generated files
