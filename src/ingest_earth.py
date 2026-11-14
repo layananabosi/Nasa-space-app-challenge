@@ -21,6 +21,7 @@ Changes (14 Nov):
     with polar winter nights.
   - "aridity" is now annual precipitation in mm (Mars = 0). P/PET calls cold
     polar deserts "humid" because PET is near zero there.
+  - bare_fraction is computed over land only (WorldCover water, class 80, masked).
 """
 import argparse
 import os
@@ -72,8 +73,9 @@ def site_features(ee, site):
         reducer=ee.Reducer.mean(), geometry=region, scale=4000, maxPixels=1e9)
 
     # --- bare ground (WorldCover class 60 = bare/sparse vegetation, 70 = snow and ice) ---
+    # computed over LAND only: water (class 80: sea, lakes, ponds) is masked out, since water is not vegetation
     lc = ee.ImageCollection("ESA/WorldCover/v200").first().select("Map")
-    bare = lc.eq(60).Or(lc.eq(70)).rename("bare").reduceRegion(
+    bare = lc.eq(60).Or(lc.eq(70)).updateMask(lc.neq(80)).rename("bare").reduceRegion(
         reducer=ee.Reducer.mean(), geometry=region, scale=100, maxPixels=1e9)
 
     t, c, p, b = (x.getInfo() for x in (topo, temp, precip, bare))
