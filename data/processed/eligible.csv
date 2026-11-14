@@ -23,16 +23,16 @@ ice_drilling,congo,False,no ground ice or permafrost
 ice_drilling,black_forest,False,no ground ice or permafrost
 ice_drilling,sundarbans,False,no ground ice or permafrost
 landing_rover,atacama_yungay,True,
-landing_rover,haughton,True,
+landing_rover,haughton,False,too much vegetation for hazard-detection and traction tests
 landing_rover,death_valley,True,
 landing_rover,wright_valley,True,
 landing_rover,mdrs_utah,True,
-landing_rover,rio_tinto,True,
+landing_rover,rio_tinto,False,too much vegetation for hazard-detection and traction tests
 landing_rover,svalbard,True,
 landing_rover,lanzarote,True,
-landing_rover,pilbara,True,
+landing_rover,pilbara,False,too much vegetation for hazard-detection and traction tests
 landing_rover,holuhraun,True,
-landing_rover,mauna_kea,True,
+landing_rover,mauna_kea,False,too much vegetation for hazard-detection and traction tests
 landing_rover,makhtesh_ramon,True,
 landing_rover,makhtesh_gadol,True,
 landing_rover,mount_sodom,True,
@@ -40,11 +40,11 @@ landing_rover,timna,True,
 landing_rover,wadi_rum,True,
 landing_rover,namib,True,
 landing_rover,uyuni,True,
-landing_rover,amazon,True,
-landing_rover,netherlands,True,
-landing_rover,congo,True,
-landing_rover,black_forest,True,
-landing_rover,sundarbans,True,
+landing_rover,amazon,False,too much vegetation for hazard-detection and traction tests
+landing_rover,netherlands,False,too much vegetation for hazard-detection and traction tests
+landing_rover,congo,False,too much vegetation for hazard-detection and traction tests
+landing_rover,black_forest,False,too much vegetation for hazard-detection and traction tests
+landing_rover,sundarbans,False,too much vegetation for hazard-detection and traction tests
 habitat,atacama_yungay,True,
 habitat,haughton,True,
 habitat,death_valley,True,
