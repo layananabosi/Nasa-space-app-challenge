@@ -109,6 +109,17 @@ td.num{white-space:nowrap}
 .note p{font-size:17px}
 .note .sign{font-stretch:var(--w-ex);font-weight:700;color:var(--butter);margin-bottom:0}
 
+.callout{border-left:3px solid var(--butter);background:var(--panel);padding:14px 18px;border-radius:4px 12px 12px 4px;
+  font-size:15px;color:var(--regolith);max-width:none}
+.finds{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:22px}
+.finds a{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;
+  color:var(--regolith);text-decoration:none}
+.finds a:hover{border-color:var(--butter)}
+.finds .fn{font-stretch:var(--w-ex);font-weight:760;font-size:30px;color:var(--butter);line-height:1.1}
+.finds .ft{font-size:15px;margin-top:6px;color:var(--regolith)}
+.eqn{font-family:ui-monospace,Menlo,Consolas,monospace;background:var(--panel);border:1px solid var(--line);
+  border-radius:10px;padding:14px 18px;font-size:15px;overflow-x:auto;white-space:pre;max-width:none}
+
 /* figure + footer */
 figure{margin:18px 0 0}
 figure img{display:block;max-width:100%;border-radius:12px;background:#fff}
@@ -126,7 +137,7 @@ footer p{max-width:none}
   iframe{height:360px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
-</style></head><body><main><header class='mast'><a class='wordmark' href='../index.html'>Analo<span>Graph</span></a><span class='who'>Layan Anabosi and Mia Anabosi</span></header>
+</style></head><body><main><header class='mast'><a class='wordmark' href='../index.html'>Analo<span>Graph</span></a><span class='who'><a href='../method.html'>How it works</a> &nbsp; Layan Anabosi and Mia Anabosi</span></header>
 <div class='brief'>
 <a class='crumb' href='../index.html'>All missions</a>
 <p class='kicker'>Astrobiology and life detection for Gale Crater, the Curiosity site</p>
@@ -134,8 +145,11 @@ footer p{max-width:none}
 <p class='lede'>Where can we test life-detection instruments in the most Mars-like dry, barren ground?</p>
 
 <h2>Recommended Earth sites</h2>
-<p class='muted small'>Ranked among sites that pass this mission's rules. Scores compare Earth sites with
-each other for this target, from 0 to 100.</p>
+<p class='callout'><b>What the score means:</b> it ranks Earth sites against each other for this mission and
+Mars site, and it is not a percentage of similarity to Mars. On each feature, the Earth place closest to the
+Mars value gets 100 and the farthest gets 0; the score is the mission's weighted average of those. How far even
+the best place still is from Mars is the Gap Index.
+<a href='../method.html#score'>How every score is calculated</a></p>
 <ol class='ranked'><li><div class='no'>1</div><div><h3>Atacama (Yungay)<span class='tag positive'>Known analog</span></h3><dl><dt>Matches best on</dt><dd>dryness, bare ground</dd><dt>Weakest match</dt><dd>cold nights, day-night temperature swing</dd><dt>Gap Index</dt><dd>24 of 100, lower is closer to Mars</dd></dl></div><div class='score'><div class='big'>82</div><div class='unit'>score, range 76 to 86</div><div class='range' aria-hidden='true'><i style='left:76.34474655194602%;width:9.92142340943785%'></i><b style='left:81.9355009727001%'></b></div></div></li><li><div class='no'>2</div><div><h3>Namib (Sossusvlei)<span class='tag candidate'>Our candidate</span></h3><dl><dt>Matches best on</dt><dd>dryness, roughness</dd><dt>Weakest match</dt><dd>cold nights, day-night temperature swing</dd><dt>Gap Index</dt><dd>25 of 100, lower is closer to Mars</dd></dl></div><div class='score'><div class='big'>81</div><div class='unit'>score, range 75 to 85</div><div class='range' aria-hidden='true'><i style='left:74.86096931580633%;width:10.18516468883891%'></i><b style='left:80.5263431450078%'></b></div></div></li><li><div class='no'>3</div><div><h3>MDRS, Utah<span class='tag positive'>Known analog</span></h3><dl><dt>Matches best on</dt><dd>bare ground, dryness</dd><dt>Weakest match</dt><dd>cold nights, day-night temperature swing</dd><dt>Gap Index</dt><dd>27 of 100, lower is closer to Mars</dd></dl></div><div class='score'><div class='big'>78</div><div class='unit'>score, range 73 to 81</div><div class='range' aria-hidden='true'><i style='left:72.87576253304353%;width:8.561093058931462%'></i><b style='left:77.66829009712724%'></b></div></div></li></ol>
 
 <h2>Map</h2>

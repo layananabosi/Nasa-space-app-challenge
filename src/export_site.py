@@ -148,6 +148,17 @@ td.num{white-space:nowrap}
 .note p{font-size:17px}
 .note .sign{font-stretch:var(--w-ex);font-weight:700;color:var(--butter);margin-bottom:0}
 
+.callout{border-left:3px solid var(--butter);background:var(--panel);padding:14px 18px;border-radius:4px 12px 12px 4px;
+  font-size:15px;color:var(--regolith);max-width:none}
+.finds{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:22px}
+.finds a{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;
+  color:var(--regolith);text-decoration:none}
+.finds a:hover{border-color:var(--butter)}
+.finds .fn{font-stretch:var(--w-ex);font-weight:760;font-size:30px;color:var(--butter);line-height:1.1}
+.finds .ft{font-size:15px;margin-top:6px;color:var(--regolith)}
+.eqn{font-family:ui-monospace,Menlo,Consolas,monospace;background:var(--panel);border:1px solid var(--line);
+  border-radius:10px;padding:14px 18px;font-size:15px;overflow-x:auto;white-space:pre;max-width:none}
+
 /* figure + footer */
 figure{margin:18px 0 0}
 figure img{display:block;max-width:100%;border-radius:12px;background:#fff}
@@ -187,7 +198,7 @@ def page(title, body, sample):
 
 def mast(root):
     return (f"<header class='mast'><a class='wordmark' href='{root}index.html'>Analo<span>Graph</span></a>"
-            f"<span class='who'>{escape(TEAM)}</span></header>")
+            f"<span class='who'><a href='{root}method.html'>How it works</a> &nbsp; {escape(TEAM)}</span></header>")
 
 
 def fmt(x, nd=0):
@@ -284,8 +295,11 @@ def brief(pid, prof, tid, target, g, gaps, sample, fig_name):
 <p class='lede'>{escape(prof['question'])}</p>
 
 <h2>Recommended Earth sites</h2>
-<p class='muted small'>Ranked among sites that pass this mission's rules. Scores compare Earth sites with
-each other for this target, from 0 to 100.</p>
+<p class='callout'><b>What the score means:</b> it ranks Earth sites against each other for this mission and
+Mars site, and it is not a percentage of similarity to Mars. On each feature, the Earth place closest to the
+Mars value gets 100 and the farthest gets 0; the score is the mission's weighted average of those. How far even
+the best place still is from Mars is the Gap Index.
+<a href='../method.html#score'>How every score is calculated</a></p>
 <ol class='ranked'>{top}</ol>
 
 <h2>Map</h2>
@@ -370,6 +384,8 @@ of those pairs ranked correctly: 1.00 is perfect, 0.50 is a coin flip.</p>
 <p class='muted small'>The thin line on each bar marks a coin flip. Weights were set before seeing any results.
 Landing tests score lowest, by design: on terrain alone, flat farmland resembles flat Mars plains.</p>"""
 
+    method_page(scores, validation, profiles, sites, targets, sample)
+
     scan_path = PROCESSED / "scan_scores.csv"
     scan = pd.read_csv(scan_path) if scan_path.exists() else None
     if scan is not None and not scan.empty:
@@ -381,6 +397,7 @@ Landing tests score lowest, by design: on terrain alone, flat farmland resembles
 <p class='lede'>Rovers and crews rehearse in deserts, craters and polar valleys long before they fly, and most of
 those places were chosen by experience. We compared {n_earth} of them with {n_mars} sites on Mars, using open NASA
 and ESA data, to find out which place fits which mission, and why.</p>
+{key_findings(scores, scan)}
 {validation_block}
 {scan_teaser(scan)}
 <h2>Mission briefs</h2>
@@ -393,14 +410,172 @@ fail the mission's rules, and shows what no Earth site can simulate.</p>
 <p>We're happy we got to explore this idea, and even happier to share it with you.</p>
 <p class='closing'>See you on Mars,</p>
 <p class='sign'>Layan and Mia</p>
-</section>
-
 </section>"""
     (SITE / "index.html").write_text(page("AnaloGraph: Mars analog sites on Earth", body, sample), encoding="utf-8")
     print(f"Site written to {SITE}/index.html")
 
 
-SCAN_REGION = "the Negev, Sinai and southern Jordan"
+SCAN_REGION = "the Negev, Sinai, southern Jordan and the edges of Egypt and Saudi Arabia"
+
+# Where every feature comes from (shown on the method page)
+DATASETS = [
+    ("Mean slope, steep slopes (90th percentile)", "degrees",
+     "ESA Copernicus DEM GLO-30, 30 m, averaged to 463 m", "NASA MGS MOLA global DEM, 463 m",
+     "Slope from the elevation grid in a local metric projection, inside a 20 x 20 km box"),
+    ("Roughness", "m", "Copernicus DEM, 463 m", "MOLA, 463 m",
+     "Standard deviation of elevation in a 3 x 3 pixel window (about 1.4 km), averaged over the box"),
+    ("Relief", "m", "Copernicus DEM, 463 m", "MOLA, 463 m", "Elevation 95th minus 5th percentile in the box"),
+    ("Day-night temperature swing", "K", "NASA MODIS Terra MOD11A2 v6.1, 1 km, 8-day, year 2023",
+     "Mars Climate Database (model)", "Day (about 10:30) minus night (about 22:30) surface temperature, averaged"),
+    ("Coldest night", "K", "MODIS MOD11A2, 2023", "Mars Climate Database (model)",
+     "Coldest 8-day mean night surface temperature of the year"),
+    ("Dryness (yearly rain)", "mm", "TerraClimate, about 4 km, 2023 (not a space-agency dataset)", "0, no rain",
+     "Sum of monthly precipitation"),
+    ("Bare ground", "share 0 to 1", "ESA WorldCover v200, 10 m", "1, no vegetation",
+     "Share of land that is bare, sparse or snow and ice; water left out"),
+    ("Ground ice", "yes or no", "Published permafrost studies", "NASA SWIM ice maps and papers",
+     "Literature value, not measured by us"),
+]
+
+
+def key_findings(scores, scan):
+    """Four links at the top of the home page that go straight to a result."""
+    def top(pid, tid):
+        g = scores[(scores["profile"] == pid) & (scores["target"] == tid) & scores["eligible"]]
+        g = g.sort_values("afs", ascending=False)
+        return (g.iloc[0]["name"], g.iloc[0]["afs"]) if len(g) else (None, None)
+    cards = []
+    name, val = top("landing_rover", "jezero")
+    if name:
+        cards.append(f"<a href='briefs/landing_rover__jezero.html'><div class='fn'>{fmt(val)}</div>"
+                     f"<div class='ft'>{escape(name)} is the best place to rehearse rover driving for Jezero</div></a>")
+    name, val = top("astrobiology", "jezero")
+    if name:
+        cards.append(f"<a href='briefs/astrobiology__jezero.html'><div class='fn'>#1</div>"
+                     f"<div class='ft'>{escape(name)} for life detection, found without being told it is famous</div></a>")
+    if scan is not None and not scan.empty:
+        n_new = scan[scan["eligible"] & scan["new"] & (scan["afs"] > scan["best_site_afs"])]["id"].nunique()
+        cards.append(f"<a href='scan.html'><div class='fn'>{n_new}</div>"
+                     f"<div class='ft'>squares new to our list beat our best sites for at least one mission</div></a>")
+    cards.append("<a href='method.html'><div class='fn'>How</div>"
+                 "<div class='ft'>every score is calculated, with a worked example</div></a>")
+    return f"<div class='finds'>{''.join(cards)}</div>"
+
+
+def method_page(scores, validation, profiles, sites, targets, sample,
+                example=("landing_rover", "jezero", "timna"), compare="atacama_yungay"):
+    from .common import FEATURES, read_features
+    feats_all = read_features()
+    for c in FEATURES:
+        feats_all[c] = pd.to_numeric(feats_all[c], errors="coerce")
+    earth = feats_all[feats_all["world"] == "earth"].set_index("id")
+    mars = feats_all[feats_all["world"] == "mars"].set_index("id")
+
+    data_rows = "".join(f"<tr><td>{escape(a)}</td><td>{escape(b)}</td><td>{escape(c)}</td><td>{escape(d)}</td>"
+                        f"<td class='muted'>{escape(e)}</td></tr>" for a, b, c, d, e in DATASETS)
+
+    weight_rows = ""
+    for p in profiles.values():
+        wts = ", ".join(f"{PRETTY.get(k, k)} {v}" for k, v in p["weights"].items())
+        rules = "; ".join(f"{PRETTY.get(c['feature'], c['feature'])} {c['op']} {c['value']}"
+                          for c in p.get("constraints") or []) or "none"
+        tnames = ", ".join(targets[t]["name"] for t in p["targets"] if t in targets)
+        weight_rows += (f"<tr><td>{escape(p['label'])}</td><td>{escape(wts)}</td><td>{escape(rules)}</td>"
+                        f"<td>{escape(tnames)}</td></tr>")
+
+    # worked example, recomputed from the same formula as src/score.py
+    pid, tid, sid = example
+    prof = profiles[pid]
+    feats = list(prof["weights"])
+    w = pd.Series(prof["weights"], dtype=float)
+    t = mars.loc[tid, feats].astype(float)
+    diff = (earth[feats].astype(float) - t).abs()
+    worst = diff.max()
+    sub = 1 - diff / worst
+    afs = 100 * (sub * w).sum(axis=1) / w.sum()
+    ex_rows = "".join(
+        f"<tr><td>{PRETTY.get(f, f)}</td><td class='num'>{earth.at[sid, f]:.2f}</td><td class='num'>{t[f]:.2f}</td>"
+        f"<td class='num'>{diff.at[sid, f]:.2f}</td><td class='num'>{worst[f]:.2f} ({escape(earth.at[diff[f].idxmax(), 'name'])})</td>"
+        f"<td class='num'>{sub.at[sid, f]:.3f}</td><td class='num'>{w[f]:.0f}</td>"
+        f"<td class='num'>{sub.at[compare, f]:.3f}</td></tr>" for f in feats)
+    site_name, cmp_name = earth.at[sid, "name"], earth.at[compare, "name"]
+    gain = ((sub.loc[sid] - sub.loc[compare]) * w / w.sum() * 100).sort_values()
+    wins = [PRETTY.get(f, f) for f, v in gain[::-1].items() if v > 0.1]
+    loses = [PRETTY.get(f, f) for f, v in gain.items() if v < -0.1]
+    biggest = PRETTY.get(gain.abs().idxmax(), gain.abs().idxmax())
+    why = (f"{site_name} is closer on {', '.join(wins) or 'nothing'}; {cmp_name} is closer on "
+           f"{', '.join(loses) or 'nothing'}. The biggest single difference is {biggest}.")
+
+    pos = [s["name"] for s in sites["candidates"] if s["type"] == "positive"]
+    neg = [s["name"] for s in sites["candidates"] if s["type"] == "negative"]
+    ov = validation[validation["profile"] == "overall"]["separation"].mean()
+    ms = validation[validation["profile"] != "overall"]
+    auc_rows = "".join(f"<tr><td>{escape(profiles[r.profile]['label'])}</td><td>{escape(targets[r.target]['name'])}</td>"
+                       f"<td class='num'>{r.separation:.2f}</td></tr>" for r in ms.itertuples())
+
+    body = f"""{mast('')}
+<a class='crumb' href='index.html'>All missions</a>
+<p class='kicker'>Method, data and validation</p>
+<h1 class='question'>How every number on this site is made</h1>
+<p class='lede'>Everything here can be rebuilt from our open code and public data. Nothing is trained: the
+scores come from a fixed formula with weights we set before seeing any results.</p>
+
+<h2 id='score'>What a score means</h2>
+<p class='callout'>A score ranks Earth places against each other for one mission and one Mars site. It is not a
+percentage of similarity to Mars. A 93 does not mean "93% Mars". It means the place is close to the best Earth
+match on the features that mission cares about. The distance that remains is the Gap Index.</p>
+<p class='eqn'>s_j(e,t)   = 1 - |x_ej - x_tj| / max over Earth sites e' of |x_e'j - x_tj|
+score(e,t) = 100 * sum_j w_mj * s_j(e,t) / sum_j w_mj
+
+gap_j(e,t) = |x_ej - x_tj| / (max - min of feature j over all Earth and Mars places)
+Gap(e,t)   = 100 * mean_j gap_j(e,t)</p>
+<p class='muted'>x is a feature value, e an Earth place, t a Mars site, j a feature and w the mission's weight.
+The score is relative (Earth places compared with each other); the Gap Index is absolute (0 means identical to
+Mars, 100 means as far apart as anything we measured). The score range on each brief comes from recomputing the
+score 500 times with weights drawn around the chosen ones (a Dirichlet distribution) and keeping the 5th to 95th
+percentile.</p>
+
+<h2>Worked example: {escape(site_name)} for {escape(prof['label'].lower())} at {escape(targets[tid]['name'])}</h2>
+<div class='scroll'><table><tr><th>Feature</th><th>{escape(site_name)}</th><th>{escape(targets[tid]['name'])}</th>
+<th>Difference</th><th>Largest difference among Earth sites</th><th>Feature score s</th><th>Weight</th>
+<th>{escape(cmp_name)} s</th></tr>{ex_rows}</table></div>
+<p class='muted'>Weighted average: {escape(site_name)} scores <b>{afs[sid]:.1f}</b>, {escape(cmp_name)} scores
+<b>{afs[compare]:.1f}</b>. {escape(why)}</p>
+
+<h2>Data</h2>
+<div class='scroll'><table><tr><th>Feature</th><th>Unit</th><th>Earth</th><th>Mars</th><th>How</th></tr>{data_rows}</table></div>
+<p class='muted small'>Earth data was read through Google Earth Engine (noncommercial use). The Mars elevation is
+the USGS global mosaic of NASA MOLA data from the Planetary Data System. Coordinates were checked in NASA
+Worldview and NASA Mars Trek.</p>
+
+<h2>Missions, weights and rules</h2>
+<div class='scroll'><table><tr><th>Mission</th><th>Weights (3 = the test fails without it)</th><th>Pass or fail rules</th><th>Mars sites</th></tr>{weight_rows}</table></div>
+<p class='muted small'>Weights and rules were set on Saturday before the first real run and not tuned to the results.
+One rule was added after the first run (landing needs at least half bare ground) because farmland was passing;
+it does not change any validation number, which uses every site, rules or not.</p>
+
+<h2>Validation</h2>
+<p>The method is never told which places are known analogs. We check afterwards whether the {len(pos)} known
+analogs score above the {len(neg)} negative controls. AUC is the share of the {len(pos) * len(neg)} pairs ranked
+correctly: 1.00 is perfect, 0.50 a coin flip. Equal weights give {ov:.2f}; mission weights give
+{ms['separation'].mean():.2f} on average.</p>
+<p class='muted'><b>Known analogs:</b> {escape(', '.join(pos))}.<br><b>Negative controls:</b> {escape(', '.join(neg))},
+chosen because they are wet, green or farmed, the opposite of Mars.</p>
+<div class='scroll'><table><tr><th>Mission</th><th>Mars site</th><th>AUC</th></tr>{auc_rows}</table></div>
+<p class='callout'><b>What this does and does not show:</b> nothing is trained, so the test sites cannot leak into a
+model. But the controls are deliberately clear-cut, so a high AUC shows the method tells Mars-like from
+non-Mars-like places. It does not prove the fine order among similar deserts. A harder test, with deserts that
+experts do not use as analogs, is our next step.</p>
+
+<h2>Limits</h2>
+<ul class='muted'>
+<li>Earth cannot reproduce Mars's gravity, thin air, radiation or magnetic field; every brief lists these gaps.</li>
+<li>Pixels are 463 m to 4 km and each place is a 20 x 20 km box; small features inside a box are averaged away.</li>
+<li>Mars temperatures come from a climate model, ground ice from published maps, rain from a non-agency dataset.</li>
+<li>No geology, minerals, dust or caves yet. Moon sites are not included yet.</li>
+</ul>"""
+    (SITE / "method.html").write_text(page("Method: AnaloGraph", body, sample), encoding="utf-8")
+    print(f"Method page written to {SITE}/method.html")
 
 
 def scan_teaser(sc):
@@ -484,6 +659,9 @@ marked "new to our list". Some may already be known to geologists; they are plac
 <p class='muted small'>Use the layer menu on the map to switch missions and Mars sites. Ice drilling is left out:
 there is no ground ice in this region.</p>
 <h2>Best squares for each mission</h2>
+<p class='callout'><b>Read this before the numbers:</b> a square is an average over 400 square kilometres, which
+can hold roads, towns and very different rock. A high score, even 100, marks an area worth a closer look on the
+ground. It is not proof that a place is suitable or safe for a real mission test.</p>
 <p class='muted'>Scores use the same 0 to 100 scale as the briefs, so a square scoring above the best of our 23
 sites is a better match than any place we started with.</p>
 {''.join(sections)}
