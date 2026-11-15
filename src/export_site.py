@@ -388,24 +388,13 @@ and ESA data, to find out which place fits which mission, and why.</p>
 fail the mission's rules, and shows what no Earth site can simulate.</p>
 {''.join(missions)}
 <section class='note'>
-<h2>How our weekend went</h2>
-<p>We started on Saturday morning with a list of famous Mars analogs and one question: are they really the best
-places to practice?</p>
-<p>By the afternoon, we had accidentally parked Curiosity on top of a 5 km mountain. We had typed in the middle of
-Gale Crater instead of the spot where the rover actually landed, and the middle of Gale Crater is Mount Sharp.
-We had also moved InSight about 1,100 km across Mars. Both are now back where they landed.</p>
-<p>Then our first results told us that a Dutch farm field is a lot like Mars. On terrain alone, it is: both are
-extremely flat. So the landing briefs now check for bare ground too, and landing still has the lowest score in our
-validation. We kept it that way, because it is true.</p>
-<p>Along the way, a Google form asked whether our project fights climate change. It does not. It looks for Mars on
-Earth.</p>
-<p>Some answers we did not see coming. The best match for the plains where Opportunity and InSight landed is
-Salar de Uyuni in Bolivia, one of the flattest places on Earth. For practice drives near Jezero and Gale, the top
-matches were all in the Negev. And without being told it was famous, our method put the Atacama Desert first for
-life detection at every Mars target. We are taking that as a good sign.</p>
-<p>No place on Earth has Mars's thin air, its cold nights or its radiation. We wrote those limits on every brief
-instead of leaving them out.</p>
+<h2>A little update from Earth</h2>
+<p>Not every result was perfect, and that's part of the process. We kept our limitations visible, especially when it came to landing conditions. Earth can only take us so far: it doesn't have Mars's thin atmosphere, freezing nights, or radiation environment.</p>
+<p>We're happy we got to explore this idea, and even happier to share it with you.</p>
+<p class='closing'>See you on Mars,</p>
 <p class='sign'>Layan and Mia</p>
+</section>
+
 </section>"""
     (SITE / "index.html").write_text(page("AnaloGraph: Mars analog sites on Earth", body, sample), encoding="utf-8")
     print(f"Site written to {SITE}/index.html")
