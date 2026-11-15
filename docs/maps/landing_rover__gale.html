@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_3c63b129c50bd17a4c9dbd293fc9cdcd {
+                #map_b46ee3655e405e2f41a2857f28997e72 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -54,14 +54,14 @@
 <body>
     
     
-            <div class="folium-map" id="map_3c63b129c50bd17a4c9dbd293fc9cdcd" ></div>
+            <div class="folium-map" id="map_b46ee3655e405e2f41a2857f28997e72" ></div>
         
 </body>
 <script>
     
     
-            var map_3c63b129c50bd17a4c9dbd293fc9cdcd = L.map(
-                "map_3c63b129c50bd17a4c9dbd293fc9cdcd",
+            var map_b46ee3655e405e2f41a2857f28997e72 = L.map(
+                "map_b46ee3655e405e2f41a2857f28997e72",
                 {
                     center: [20.0, 10.0],
                     crs: L.CRS.EPSG3857,
@@ -78,15 +78,15 @@
 
         
     
-            var tile_layer_4d86dd830ab94c933876a1991299dcc1 = L.tileLayer(
-                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+            var tile_layer_e6ebf57e29759b3ea37f0504ad88ef8b = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}",
                 {
   "minZoom": 0,
-  "maxZoom": 20,
-  "maxNativeZoom": 20,
+  "maxZoom": 16,
+  "maxNativeZoom": 16,
   "noWrap": false,
-  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
-  "subdomains": "abcd",
+  "attribution": "Esri, HERE, Garmin, OpenStreetMap contributors",
+  "subdomains": "abc",
   "detectRetina": false,
   "tms": false,
   "opacity": 1,
@@ -95,10 +95,10 @@
             );
         
     
-            tile_layer_4d86dd830ab94c933876a1991299dcc1.addTo(map_3c63b129c50bd17a4c9dbd293fc9cdcd);
+            tile_layer_e6ebf57e29759b3ea37f0504ad88ef8b.addTo(map_b46ee3655e405e2f41a2857f28997e72);
         
     
-            var tile_layer_5816e79a70379b0a4cd6266a58eff215 = L.tileLayer(
+            var tile_layer_05dadab3ecfd6af5aab31084f92bcec0 = L.tileLayer(
                 "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
                 {
   "minZoom": 0,
@@ -115,33 +115,33 @@
             );
         
     
-            tile_layer_5816e79a70379b0a4cd6266a58eff215.addTo(map_3c63b129c50bd17a4c9dbd293fc9cdcd);
+            tile_layer_05dadab3ecfd6af5aab31084f92bcec0.addTo(map_b46ee3655e405e2f41a2857f28997e72);
         
     
-            var circle_marker_50fc62cc24c09d7735a664ade9576ce3 = L.circleMarker(
+            var circle_marker_9d0d83ab99e89aa39380f7547106a914 = L.circleMarker(
                 [-77.52, 161.85],
                 {"bubblingMouseEvents": true, "color": "#6e5536", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6e5536", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
-            ).addTo(map_3c63b129c50bd17a4c9dbd293fc9cdcd);
+            ).addTo(map_b46ee3655e405e2f41a2857f28997e72);
         
     
-        var popup_183404de47a17c0333353298c80341ff = L.popup({
+        var popup_16172575a076bfebb016190d458fa32a = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_7961938e542093bba2750716f8c45140 = $(`<div id="html_7961938e542093bba2750716f8c45140" style="width: 100.0%; height: 100.0%;"><b>McMurdo Dry Valleys (Wright)</b><br>Score 27 (range 22 to 33)<br>Gap Index 40<br>Known analog</div>`)[0];
-                popup_183404de47a17c0333353298c80341ff.setContent(html_7961938e542093bba2750716f8c45140);
+                var html_4a0d3a4cc6054109db60807a1eb19199 = $(`<div id="html_4a0d3a4cc6054109db60807a1eb19199" style="width: 100.0%; height: 100.0%;"><b>McMurdo Dry Valleys (Wright)</b><br>Score 27 (range 22 to 33)<br>Gap Index 40<br>Known analog</div>`)[0];
+                popup_16172575a076bfebb016190d458fa32a.setContent(html_4a0d3a4cc6054109db60807a1eb19199);
             
         
 
-        circle_marker_50fc62cc24c09d7735a664ade9576ce3.bindPopup(popup_183404de47a17c0333353298c80341ff)
+        circle_marker_9d0d83ab99e89aa39380f7547106a914.bindPopup(popup_16172575a076bfebb016190d458fa32a)
         ;
 
         
     
     
-            circle_marker_50fc62cc24c09d7735a664ade9576ce3.bindTooltip(
+            circle_marker_9d0d83ab99e89aa39380f7547106a914.bindTooltip(
                 `<div>
                      McMurdo Dry Valleys (Wright)
                  </div>`,
@@ -151,30 +151,30 @@
             );
         
     
-            var circle_marker_0bf9c5e1a0b8c52f6e6efaf2a4141c9c = L.circleMarker(
+            var circle_marker_c5c02976fcc61e6cbe4964160d39cfa0 = L.circleMarker(
                 [19.82, -155.47],
                 {"bubblingMouseEvents": true, "color": "#5c6475", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5c6475", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
-            ).addTo(map_3c63b129c50bd17a4c9dbd293fc9cdcd);
+            ).addTo(map_b46ee3655e405e2f41a2857f28997e72);
         
     
-        var popup_9a2a8e1fb5c41dbb9e367add3dc7058b = L.popup({
+        var popup_a6a0c8bdbebcca92bed863ec3fcf1d11 = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_bfe916cdfcbf9e2e77fd1f07c5096841 = $(`<div id="html_bfe916cdfcbf9e2e77fd1f07c5096841" style="width: 100.0%; height: 100.0%;"><b>Mauna Kea, Hawaii</b><br>Score 37 (range 34 to 39)<br>Gap Index 47<br>Known analog<br><i>Rejected: too much vegetation for hazard-detection and traction tests</i></div>`)[0];
-                popup_9a2a8e1fb5c41dbb9e367add3dc7058b.setContent(html_bfe916cdfcbf9e2e77fd1f07c5096841);
+                var html_75c0dac10af0f0e2adceff5203a4faa8 = $(`<div id="html_75c0dac10af0f0e2adceff5203a4faa8" style="width: 100.0%; height: 100.0%;"><b>Mauna Kea, Hawaii</b><br>Score 37 (range 34 to 39)<br>Gap Index 47<br>Known analog<br><i>Rejected: too much vegetation for hazard-detection and traction tests</i></div>`)[0];
+                popup_a6a0c8bdbebcca92bed863ec3fcf1d11.setContent(html_75c0dac10af0f0e2adceff5203a4faa8);
             
         
 
-        circle_marker_0bf9c5e1a0b8c52f6e6efaf2a4141c9c.bindPopup(popup_9a2a8e1fb5c41dbb9e367add3dc7058b)
+        circle_marker_c5c02976fcc61e6cbe4964160d39cfa0.bindPopup(popup_a6a0c8bdbebcca92bed863ec3fcf1d11)
         ;
 
         
     
     
-            circle_marker_0bf9c5e1a0b8c52f6e6efaf2a4141c9c.bindTooltip(
+            circle_marker_c5c02976fcc61e6cbe4964160d39cfa0.bindTooltip(
                 `<div>
                      Mauna Kea, Hawaii
                  </div>`,
@@ -184,30 +184,30 @@
             );
         
     
-            var circle_marker_48ab7fdbe50a82817b1defd7e547e835 = L.circleMarker(
+            var circle_marker_0d83764602f364217042117cd7c67578 = L.circleMarker(
                 [-3.4, -62.2],
                 {"bubblingMouseEvents": true, "color": "#5c6475", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5c6475", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
-            ).addTo(map_3c63b129c50bd17a4c9dbd293fc9cdcd);
+            ).addTo(map_b46ee3655e405e2f41a2857f28997e72);
         
     
-        var popup_c492d56725b035b6def09755a6e98798 = L.popup({
+        var popup_b55e9213a492c609ab502790879f2f13 = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_77f839aa82673a134c086a3b20dc079d = $(`<div id="html_77f839aa82673a134c086a3b20dc079d" style="width: 100.0%; height: 100.0%;"><b>Amazon rainforest</b><br>Score 38 (range 33 to 42)<br>Gap Index 56<br>Negative control<br><i>Rejected: too much vegetation for hazard-detection and traction tests</i></div>`)[0];
-                popup_c492d56725b035b6def09755a6e98798.setContent(html_77f839aa82673a134c086a3b20dc079d);
+                var html_5db47194e401e634e204067d8ab71c75 = $(`<div id="html_5db47194e401e634e204067d8ab71c75" style="width: 100.0%; height: 100.0%;"><b>Amazon rainforest</b><br>Score 38 (range 33 to 42)<br>Gap Index 56<br>Negative control<br><i>Rejected: too much vegetation for hazard-detection and traction tests</i></div>`)[0];
+                popup_b55e9213a492c609ab502790879f2f13.setContent(html_5db47194e401e634e204067d8ab71c75);
             
         
 
-        circle_marker_48ab7fdbe50a82817b1defd7e547e835.bindPopup(popup_c492d56725b035b6def09755a6e98798)
+        circle_marker_0d83764602f364217042117cd7c67578.bindPopup(popup_b55e9213a492c609ab502790879f2f13)
         ;
 
         
     
     
-            circle_marker_48ab7fdbe50a82817b1defd7e547e835.bindTooltip(
+            circle_marker_0d83764602f364217042117cd7c67578.bindTooltip(
                 `<div>
                      Amazon rainforest
                  </div>`,
@@ -217,30 +217,30 @@
             );
         
     
-            var circle_marker_a99991e745ca726a6af7aac5b685be81 = L.circleMarker(
+            var circle_marker_faf43b5af44794dcfc985057c9a38a94 = L.circleMarker(
                 [21.95, 89.18],
                 {"bubblingMouseEvents": true, "color": "#5c6475", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5c6475", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
-            ).addTo(map_3c63b129c50bd17a4c9dbd293fc9cdcd);
+            ).addTo(map_b46ee3655e405e2f41a2857f28997e72);
         
     
-        var popup_4d62d4d45a1c1623e35e4422239e2fe6 = L.popup({
+        var popup_bf27afe26c6ef2d3cd7aafc2dba213cf = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_ccb3ca31f17e53a6308c03766d503325 = $(`<div id="html_ccb3ca31f17e53a6308c03766d503325" style="width: 100.0%; height: 100.0%;"><b>Sundarbans</b><br>Score 39 (range 35 to 43)<br>Gap Index 54<br>Negative control<br><i>Rejected: too much vegetation for hazard-detection and traction tests</i></div>`)[0];
-                popup_4d62d4d45a1c1623e35e4422239e2fe6.setContent(html_ccb3ca31f17e53a6308c03766d503325);
+                var html_90aa652f806146f14d7dedd89e931a39 = $(`<div id="html_90aa652f806146f14d7dedd89e931a39" style="width: 100.0%; height: 100.0%;"><b>Sundarbans</b><br>Score 39 (range 35 to 43)<br>Gap Index 54<br>Negative control<br><i>Rejected: too much vegetation for hazard-detection and traction tests</i></div>`)[0];
+                popup_bf27afe26c6ef2d3cd7aafc2dba213cf.setContent(html_90aa652f806146f14d7dedd89e931a39);
             
         
 
-        circle_marker_a99991e745ca726a6af7aac5b685be81.bindPopup(popup_4d62d4d45a1c1623e35e4422239e2fe6)
+        circle_marker_faf43b5af44794dcfc985057c9a38a94.bindPopup(popup_bf27afe26c6ef2d3cd7aafc2dba213cf)
         ;
 
         
     
     
-            circle_marker_a99991e745ca726a6af7aac5b685be81.bindTooltip(
+            circle_marker_faf43b5af44794dcfc985057c9a38a94.bindTooltip(
                 `<div>
                      Sundarbans
                  </div>`,
@@ -250,30 +250,30 @@
             );
         
     
-            var circle_marker_429367f9bece9309f8be9f018b5f4a87 = L.circleMarker(
+            var circle_marker_70c2dcc7455032dada5ff8bdcae2586b = L.circleMarker(
                 [52.55, 5.62],
                 {"bubblingMouseEvents": true, "color": "#5c6475", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5c6475", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
-            ).addTo(map_3c63b129c50bd17a4c9dbd293fc9cdcd);
+            ).addTo(map_b46ee3655e405e2f41a2857f28997e72);
         
     
-        var popup_76494eabba3cb88cc1027283722e61b6 = L.popup({
+        var popup_155c45f8a36c7a57509f17d489546810 = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_cac71511c016a145e716a8855bd22a67 = $(`<div id="html_cac71511c016a145e716a8855bd22a67" style="width: 100.0%; height: 100.0%;"><b>Flevoland farmland</b><br>Score 42 (range 38 to 46)<br>Gap Index 49<br>Negative control<br><i>Rejected: too much vegetation for hazard-detection and traction tests</i></div>`)[0];
-                popup_76494eabba3cb88cc1027283722e61b6.setContent(html_cac71511c016a145e716a8855bd22a67);
+                var html_97fabb3acfe7549539d8daad3ce95a9c = $(`<div id="html_97fabb3acfe7549539d8daad3ce95a9c" style="width: 100.0%; height: 100.0%;"><b>Flevoland farmland</b><br>Score 42 (range 38 to 46)<br>Gap Index 49<br>Negative control<br><i>Rejected: too much vegetation for hazard-detection and traction tests</i></div>`)[0];
+                popup_155c45f8a36c7a57509f17d489546810.setContent(html_97fabb3acfe7549539d8daad3ce95a9c);
             
         
 
-        circle_marker_429367f9bece9309f8be9f018b5f4a87.bindPopup(popup_76494eabba3cb88cc1027283722e61b6)
+        circle_marker_70c2dcc7455032dada5ff8bdcae2586b.bindPopup(popup_155c45f8a36c7a57509f17d489546810)
         ;
 
         
     
     
-            circle_marker_429367f9bece9309f8be9f018b5f4a87.bindTooltip(
+            circle_marker_70c2dcc7455032dada5ff8bdcae2586b.bindTooltip(
                 `<div>
                      Flevoland farmland
                  </div>`,
@@ -283,30 +283,30 @@
             );
         
     
-            var circle_marker_f797c7a7e87079598795bc3fc41df889 = L.circleMarker(
+            var circle_marker_7eea8f802b9ee1fe0979b155c806d976 = L.circleMarker(
                 [79.43, 13.3],
                 {"bubblingMouseEvents": true, "color": "#6e5536", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6e5536", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
-            ).addTo(map_3c63b129c50bd17a4c9dbd293fc9cdcd);
+            ).addTo(map_b46ee3655e405e2f41a2857f28997e72);
         
     
-        var popup_97639453bd96419ed1a521141b17546a = L.popup({
+        var popup_0e3428023c207c45a92189317d5b408d = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_29ad322eef03840124a2ca0a6e08e5bb = $(`<div id="html_29ad322eef03840124a2ca0a6e08e5bb" style="width: 100.0%; height: 100.0%;"><b>Bockfjorden, Svalbard</b><br>Score 44 (range 40 to 48)<br>Gap Index 34<br>Known analog</div>`)[0];
-                popup_97639453bd96419ed1a521141b17546a.setContent(html_29ad322eef03840124a2ca0a6e08e5bb);
+                var html_b06cc297ba309938bea5706e103a8f06 = $(`<div id="html_b06cc297ba309938bea5706e103a8f06" style="width: 100.0%; height: 100.0%;"><b>Bockfjorden, Svalbard</b><br>Score 44 (range 40 to 48)<br>Gap Index 34<br>Known analog</div>`)[0];
+                popup_0e3428023c207c45a92189317d5b408d.setContent(html_b06cc297ba309938bea5706e103a8f06);
             
         
 
-        circle_marker_f797c7a7e87079598795bc3fc41df889.bindPopup(popup_97639453bd96419ed1a521141b17546a)
+        circle_marker_7eea8f802b9ee1fe0979b155c806d976.bindPopup(popup_0e3428023c207c45a92189317d5b408d)
         ;
 
         
     
     
-            circle_marker_f797c7a7e87079598795bc3fc41df889.bindTooltip(
+            circle_marker_7eea8f802b9ee1fe0979b155c806d976.bindTooltip(
                 `<div>
                      Bockfjorden, Svalbard
                  </div>`,
@@ -316,30 +316,30 @@
             );
         
     
-            var circle_marker_030b1c0bed5e7235edb27759be584991 = L.circleMarker(
+            var circle_marker_d37c7359af8b892c14b8b6608f79ba3a = L.circleMarker(
                 [-1.0, 21.0],
                 {"bubblingMouseEvents": true, "color": "#5c6475", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5c6475", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
-            ).addTo(map_3c63b129c50bd17a4c9dbd293fc9cdcd);
+            ).addTo(map_b46ee3655e405e2f41a2857f28997e72);
         
     
-        var popup_fda987c70cc92f2bce325bbc495fe4fa = L.popup({
+        var popup_e3665a6be7dd9b2ec9a984156b2d0963 = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_cb802a5955c82af312f15e12deafbfd9 = $(`<div id="html_cb802a5955c82af312f15e12deafbfd9" style="width: 100.0%; height: 100.0%;"><b>Congo rainforest</b><br>Score 45 (range 41 to 50)<br>Gap Index 49<br>Negative control<br><i>Rejected: too much vegetation for hazard-detection and traction tests</i></div>`)[0];
-                popup_fda987c70cc92f2bce325bbc495fe4fa.setContent(html_cb802a5955c82af312f15e12deafbfd9);
+                var html_9d98ff4d669e42e67a4a326e577de6d6 = $(`<div id="html_9d98ff4d669e42e67a4a326e577de6d6" style="width: 100.0%; height: 100.0%;"><b>Congo rainforest</b><br>Score 45 (range 41 to 50)<br>Gap Index 49<br>Negative control<br><i>Rejected: too much vegetation for hazard-detection and traction tests</i></div>`)[0];
+                popup_e3665a6be7dd9b2ec9a984156b2d0963.setContent(html_9d98ff4d669e42e67a4a326e577de6d6);
             
         
 
-        circle_marker_030b1c0bed5e7235edb27759be584991.bindPopup(popup_fda987c70cc92f2bce325bbc495fe4fa)
+        circle_marker_d37c7359af8b892c14b8b6608f79ba3a.bindPopup(popup_e3665a6be7dd9b2ec9a984156b2d0963)
         ;
 
         
     
     
-            circle_marker_030b1c0bed5e7235edb27759be584991.bindTooltip(
+            circle_marker_d37c7359af8b892c14b8b6608f79ba3a.bindTooltip(
                 `<div>
                      Congo rainforest
                  </div>`,
@@ -349,30 +349,30 @@
             );
         
     
-            var circle_marker_0478c0790dcd5d9837bb3b1e408027b7 = L.circleMarker(
+            var circle_marker_39e2df2a76d14a8583fc693970bbdb85 = L.circleMarker(
                 [-20.13, -67.49],
                 {"bubblingMouseEvents": true, "color": "#c08a3e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c08a3e", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
-            ).addTo(map_3c63b129c50bd17a4c9dbd293fc9cdcd);
+            ).addTo(map_b46ee3655e405e2f41a2857f28997e72);
         
     
-        var popup_8ad01c5a782fb2a1dd511681baf788db = L.popup({
+        var popup_aca40e12d4603072bde847911ffabe3d = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_f29fc0131539c961cfc943e98b2ccc14 = $(`<div id="html_f29fc0131539c961cfc943e98b2ccc14" style="width: 100.0%; height: 100.0%;"><b>Salar de Uyuni</b><br>Score 58 (range 53 to 62)<br>Gap Index 24<br>Our candidate</div>`)[0];
-                popup_8ad01c5a782fb2a1dd511681baf788db.setContent(html_f29fc0131539c961cfc943e98b2ccc14);
+                var html_5a78eeef6b5bf8bc6f00f06c0b888b26 = $(`<div id="html_5a78eeef6b5bf8bc6f00f06c0b888b26" style="width: 100.0%; height: 100.0%;"><b>Salar de Uyuni</b><br>Score 58 (range 53 to 62)<br>Gap Index 24<br>Our candidate</div>`)[0];
+                popup_aca40e12d4603072bde847911ffabe3d.setContent(html_5a78eeef6b5bf8bc6f00f06c0b888b26);
             
         
 
-        circle_marker_0478c0790dcd5d9837bb3b1e408027b7.bindPopup(popup_8ad01c5a782fb2a1dd511681baf788db)
+        circle_marker_39e2df2a76d14a8583fc693970bbdb85.bindPopup(popup_aca40e12d4603072bde847911ffabe3d)
         ;
 
         
     
     
-            circle_marker_0478c0790dcd5d9837bb3b1e408027b7.bindTooltip(
+            circle_marker_39e2df2a76d14a8583fc693970bbdb85.bindTooltip(
                 `<div>
                      Salar de Uyuni
                  </div>`,
@@ -382,30 +382,30 @@
             );
         
     
-            var circle_marker_0658903516cfb5895e5c78b7795f6c6b = L.circleMarker(
+            var circle_marker_6f9097757558153a7de42ed23aa6201f = L.circleMarker(
                 [-21.17, 119.43],
                 {"bubblingMouseEvents": true, "color": "#5c6475", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5c6475", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
-            ).addTo(map_3c63b129c50bd17a4c9dbd293fc9cdcd);
+            ).addTo(map_b46ee3655e405e2f41a2857f28997e72);
         
     
-        var popup_1d102b162cce4ab682164dd307afee7e = L.popup({
+        var popup_e277aae857180ebf1464acef9e7d8e12 = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_b12e0c0e40329d6234d11c5d05e208a9 = $(`<div id="html_b12e0c0e40329d6234d11c5d05e208a9" style="width: 100.0%; height: 100.0%;"><b>Pilbara, Australia</b><br>Score 58 (range 53 to 62)<br>Gap Index 35<br>Known analog<br><i>Rejected: too much vegetation for hazard-detection and traction tests</i></div>`)[0];
-                popup_1d102b162cce4ab682164dd307afee7e.setContent(html_b12e0c0e40329d6234d11c5d05e208a9);
+                var html_619fc2fb136e86c5ea8e718632a4b7c4 = $(`<div id="html_619fc2fb136e86c5ea8e718632a4b7c4" style="width: 100.0%; height: 100.0%;"><b>Pilbara, Australia</b><br>Score 58 (range 53 to 62)<br>Gap Index 35<br>Known analog<br><i>Rejected: too much vegetation for hazard-detection and traction tests</i></div>`)[0];
+                popup_e277aae857180ebf1464acef9e7d8e12.setContent(html_619fc2fb136e86c5ea8e718632a4b7c4);
             
         
 
-        circle_marker_0658903516cfb5895e5c78b7795f6c6b.bindPopup(popup_1d102b162cce4ab682164dd307afee7e)
+        circle_marker_6f9097757558153a7de42ed23aa6201f.bindPopup(popup_e277aae857180ebf1464acef9e7d8e12)
         ;
 
         
     
     
-            circle_marker_0658903516cfb5895e5c78b7795f6c6b.bindTooltip(
+            circle_marker_6f9097757558153a7de42ed23aa6201f.bindTooltip(
                 `<div>
                      Pilbara, Australia
                  </div>`,
@@ -415,30 +415,30 @@
             );
         
     
-            var circle_marker_a14138aaafc0bb92d28b244f099c0894 = L.circleMarker(
+            var circle_marker_e0e11fb0952ee88ff00d7e3951486c6b = L.circleMarker(
                 [48.0, 8.2],
                 {"bubblingMouseEvents": true, "color": "#5c6475", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5c6475", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
-            ).addTo(map_3c63b129c50bd17a4c9dbd293fc9cdcd);
+            ).addTo(map_b46ee3655e405e2f41a2857f28997e72);
         
     
-        var popup_d8bde75300ecb24dc56bbff26cefc57c = L.popup({
+        var popup_7b45989b4b3c85cb6faa6bebc9dbc6cc = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_16907cd2a0d4f3ab81c73af8d88beb33 = $(`<div id="html_16907cd2a0d4f3ab81c73af8d88beb33" style="width: 100.0%; height: 100.0%;"><b>Black Forest, Germany</b><br>Score 62 (range 58 to 67)<br>Gap Index 41<br>Negative control<br><i>Rejected: too much vegetation for hazard-detection and traction tests</i></div>`)[0];
-                popup_d8bde75300ecb24dc56bbff26cefc57c.setContent(html_16907cd2a0d4f3ab81c73af8d88beb33);
+                var html_66157421dd1454d637980a60dba19ddd = $(`<div id="html_66157421dd1454d637980a60dba19ddd" style="width: 100.0%; height: 100.0%;"><b>Black Forest, Germany</b><br>Score 62 (range 58 to 67)<br>Gap Index 41<br>Negative control<br><i>Rejected: too much vegetation for hazard-detection and traction tests</i></div>`)[0];
+                popup_7b45989b4b3c85cb6faa6bebc9dbc6cc.setContent(html_66157421dd1454d637980a60dba19ddd);
             
         
 
-        circle_marker_a14138aaafc0bb92d28b244f099c0894.bindPopup(popup_d8bde75300ecb24dc56bbff26cefc57c)
+        circle_marker_e0e11fb0952ee88ff00d7e3951486c6b.bindPopup(popup_7b45989b4b3c85cb6faa6bebc9dbc6cc)
         ;
 
         
     
     
-            circle_marker_a14138aaafc0bb92d28b244f099c0894.bindTooltip(
+            circle_marker_e0e11fb0952ee88ff00d7e3951486c6b.bindTooltip(
                 `<div>
                      Black Forest, Germany
                  </div>`,
@@ -448,30 +448,30 @@
             );
         
     
-            var circle_marker_1b718040a5a9ba4dfbae977adf652c8e = L.circleMarker(
+            var circle_marker_6aff3b2a6508900e6470901fd0f93381 = L.circleMarker(
                 [36.25, -116.82],
                 {"bubblingMouseEvents": true, "color": "#c08a3e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c08a3e", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
-            ).addTo(map_3c63b129c50bd17a4c9dbd293fc9cdcd);
+            ).addTo(map_b46ee3655e405e2f41a2857f28997e72);
         
     
-        var popup_53d0972dcd7be4b19c914090a05446ab = L.popup({
+        var popup_bbdcc22b18a5173f3e528c3e035c74c8 = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_26c8c3ee6b527c6cad2ca825ac897e9c = $(`<div id="html_26c8c3ee6b527c6cad2ca825ac897e9c" style="width: 100.0%; height: 100.0%;"><b>Death Valley</b><br>Score 66 (range 63 to 69)<br>Gap Index 19<br>Known analog</div>`)[0];
-                popup_53d0972dcd7be4b19c914090a05446ab.setContent(html_26c8c3ee6b527c6cad2ca825ac897e9c);
+                var html_cf057877a931a44befa4965d2ab5cfd7 = $(`<div id="html_cf057877a931a44befa4965d2ab5cfd7" style="width: 100.0%; height: 100.0%;"><b>Death Valley</b><br>Score 66 (range 63 to 69)<br>Gap Index 19<br>Known analog</div>`)[0];
+                popup_bbdcc22b18a5173f3e528c3e035c74c8.setContent(html_cf057877a931a44befa4965d2ab5cfd7);
             
         
 
-        circle_marker_1b718040a5a9ba4dfbae977adf652c8e.bindPopup(popup_53d0972dcd7be4b19c914090a05446ab)
+        circle_marker_6aff3b2a6508900e6470901fd0f93381.bindPopup(popup_bbdcc22b18a5173f3e528c3e035c74c8)
         ;
 
         
     
     
-            circle_marker_1b718040a5a9ba4dfbae977adf652c8e.bindTooltip(
+            circle_marker_6aff3b2a6508900e6470901fd0f93381.bindTooltip(
                 `<div>
                      Death Valley
                  </div>`,
@@ -481,30 +481,30 @@
             );
         
     
-            var circle_marker_b707bc5dc92a91ba8a6a243cb2639994 = L.circleMarker(
+            var circle_marker_8a9ec712c05c3139e1125bcfdbe26c08 = L.circleMarker(
                 [64.85, -16.83],
                 {"bubblingMouseEvents": true, "color": "#c08a3e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c08a3e", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
-            ).addTo(map_3c63b129c50bd17a4c9dbd293fc9cdcd);
+            ).addTo(map_b46ee3655e405e2f41a2857f28997e72);
         
     
-        var popup_90949e63ee982543d181af4888e6f869 = L.popup({
+        var popup_4b8857f642275c60e3d47e3f9cb79248 = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_8c3025b1a2bb161825b6c304d909d1ba = $(`<div id="html_8c3025b1a2bb161825b6c304d909d1ba" style="width: 100.0%; height: 100.0%;"><b>Holuhraun, Iceland</b><br>Score 66 (range 63 to 70)<br>Gap Index 24<br>Known analog</div>`)[0];
-                popup_90949e63ee982543d181af4888e6f869.setContent(html_8c3025b1a2bb161825b6c304d909d1ba);
+                var html_cc7095997a7d64297acdba3ed807fd02 = $(`<div id="html_cc7095997a7d64297acdba3ed807fd02" style="width: 100.0%; height: 100.0%;"><b>Holuhraun, Iceland</b><br>Score 66 (range 63 to 70)<br>Gap Index 24<br>Known analog</div>`)[0];
+                popup_4b8857f642275c60e3d47e3f9cb79248.setContent(html_cc7095997a7d64297acdba3ed807fd02);
             
         
 
-        circle_marker_b707bc5dc92a91ba8a6a243cb2639994.bindPopup(popup_90949e63ee982543d181af4888e6f869)
+        circle_marker_8a9ec712c05c3139e1125bcfdbe26c08.bindPopup(popup_4b8857f642275c60e3d47e3f9cb79248)
         ;
 
         
     
     
-            circle_marker_b707bc5dc92a91ba8a6a243cb2639994.bindTooltip(
+            circle_marker_8a9ec712c05c3139e1125bcfdbe26c08.bindTooltip(
                 `<div>
                      Holuhraun, Iceland
                  </div>`,
@@ -514,30 +514,30 @@
             );
         
     
-            var circle_marker_4d692b13bec891061f0b07d212d110b7 = L.circleMarker(
+            var circle_marker_2c84c8a15363fd0c7d3431a531442d00 = L.circleMarker(
                 [75.38, -89.68],
                 {"bubblingMouseEvents": true, "color": "#5c6475", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5c6475", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
-            ).addTo(map_3c63b129c50bd17a4c9dbd293fc9cdcd);
+            ).addTo(map_b46ee3655e405e2f41a2857f28997e72);
         
     
-        var popup_604dfeafec7ed4dbb019140027799ec3 = L.popup({
+        var popup_4be22cb54d02e5a1607fdf61df84d5b2 = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_3aba01dd17b42f2252b99aec32cb0ec1 = $(`<div id="html_3aba01dd17b42f2252b99aec32cb0ec1" style="width: 100.0%; height: 100.0%;"><b>Haughton Crater, Devon Is.</b><br>Score 71 (range 67 to 75)<br>Gap Index 24<br>Known analog<br><i>Rejected: too much vegetation for hazard-detection and traction tests</i></div>`)[0];
-                popup_604dfeafec7ed4dbb019140027799ec3.setContent(html_3aba01dd17b42f2252b99aec32cb0ec1);
+                var html_67403592c3504c07ef97675e217a7241 = $(`<div id="html_67403592c3504c07ef97675e217a7241" style="width: 100.0%; height: 100.0%;"><b>Haughton Crater, Devon Is.</b><br>Score 71 (range 67 to 75)<br>Gap Index 24<br>Known analog<br><i>Rejected: too much vegetation for hazard-detection and traction tests</i></div>`)[0];
+                popup_4be22cb54d02e5a1607fdf61df84d5b2.setContent(html_67403592c3504c07ef97675e217a7241);
             
         
 
-        circle_marker_4d692b13bec891061f0b07d212d110b7.bindPopup(popup_604dfeafec7ed4dbb019140027799ec3)
+        circle_marker_2c84c8a15363fd0c7d3431a531442d00.bindPopup(popup_4be22cb54d02e5a1607fdf61df84d5b2)
         ;
 
         
     
     
-            circle_marker_4d692b13bec891061f0b07d212d110b7.bindTooltip(
+            circle_marker_2c84c8a15363fd0c7d3431a531442d00.bindTooltip(
                 `<div>
                      Haughton Crater, Devon Is.
                  </div>`,
@@ -547,30 +547,30 @@
             );
         
     
-            var circle_marker_e30d9c258850931a7d8afc8e94da939a = L.circleMarker(
+            var circle_marker_97724554943e2bbc1fe1537ae6393a2e = L.circleMarker(
                 [37.726, -6.555],
                 {"bubblingMouseEvents": true, "color": "#5c6475", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5c6475", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
-            ).addTo(map_3c63b129c50bd17a4c9dbd293fc9cdcd);
+            ).addTo(map_b46ee3655e405e2f41a2857f28997e72);
         
     
-        var popup_713e354fa1772fd64a9da43e1c8c73ee = L.popup({
+        var popup_88ab92f14a8ffa7897480b567e961896 = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_8f125c52492addbca585525f9ca95469 = $(`<div id="html_8f125c52492addbca585525f9ca95469" style="width: 100.0%; height: 100.0%;"><b>Rio Tinto (Peña de Hierro)</b><br>Score 72 (range 67 to 76)<br>Gap Index 29<br>Known analog<br><i>Rejected: too much vegetation for hazard-detection and traction tests</i></div>`)[0];
-                popup_713e354fa1772fd64a9da43e1c8c73ee.setContent(html_8f125c52492addbca585525f9ca95469);
+                var html_5423eab4c8f453f28a58eedc5015224d = $(`<div id="html_5423eab4c8f453f28a58eedc5015224d" style="width: 100.0%; height: 100.0%;"><b>Rio Tinto (Peña de Hierro)</b><br>Score 72 (range 67 to 76)<br>Gap Index 29<br>Known analog<br><i>Rejected: too much vegetation for hazard-detection and traction tests</i></div>`)[0];
+                popup_88ab92f14a8ffa7897480b567e961896.setContent(html_5423eab4c8f453f28a58eedc5015224d);
             
         
 
-        circle_marker_e30d9c258850931a7d8afc8e94da939a.bindPopup(popup_713e354fa1772fd64a9da43e1c8c73ee)
+        circle_marker_97724554943e2bbc1fe1537ae6393a2e.bindPopup(popup_88ab92f14a8ffa7897480b567e961896)
         ;
 
         
     
     
-            circle_marker_e30d9c258850931a7d8afc8e94da939a.bindTooltip(
+            circle_marker_97724554943e2bbc1fe1537ae6393a2e.bindTooltip(
                 `<div>
                      Rio Tinto (Peña de Hierro)
                  </div>`,
@@ -580,30 +580,30 @@
             );
         
     
-            var circle_marker_31942aae0a88cc7264160f2ffc1988ea = L.circleMarker(
+            var circle_marker_0dbf1de8a087e4cc99750f8cd02769ab = L.circleMarker(
                 [38.41, -110.79],
                 {"bubblingMouseEvents": true, "color": "#c08a3e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c08a3e", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
-            ).addTo(map_3c63b129c50bd17a4c9dbd293fc9cdcd);
+            ).addTo(map_b46ee3655e405e2f41a2857f28997e72);
         
     
-        var popup_ab93cf1d78ea7c887ab0cc2e2f18e261 = L.popup({
+        var popup_d93f96fe203f56a11ae19d7bee335e37 = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_7102cd1d9a0194ea0c187e00246e7864 = $(`<div id="html_7102cd1d9a0194ea0c187e00246e7864" style="width: 100.0%; height: 100.0%;"><b>MDRS, Utah</b><br>Score 72 (range 68 to 76)<br>Gap Index 17<br>Known analog</div>`)[0];
-                popup_ab93cf1d78ea7c887ab0cc2e2f18e261.setContent(html_7102cd1d9a0194ea0c187e00246e7864);
+                var html_acc3d83434ada49e653b31effe6a5675 = $(`<div id="html_acc3d83434ada49e653b31effe6a5675" style="width: 100.0%; height: 100.0%;"><b>MDRS, Utah</b><br>Score 72 (range 68 to 76)<br>Gap Index 17<br>Known analog</div>`)[0];
+                popup_d93f96fe203f56a11ae19d7bee335e37.setContent(html_acc3d83434ada49e653b31effe6a5675);
             
         
 
-        circle_marker_31942aae0a88cc7264160f2ffc1988ea.bindPopup(popup_ab93cf1d78ea7c887ab0cc2e2f18e261)
+        circle_marker_0dbf1de8a087e4cc99750f8cd02769ab.bindPopup(popup_d93f96fe203f56a11ae19d7bee335e37)
         ;
 
         
     
     
-            circle_marker_31942aae0a88cc7264160f2ffc1988ea.bindTooltip(
+            circle_marker_0dbf1de8a087e4cc99750f8cd02769ab.bindTooltip(
                 `<div>
                      MDRS, Utah
                  </div>`,
@@ -613,30 +613,30 @@
             );
         
     
-            var circle_marker_9fdb4ee6a7d3d1a583254c7e554571e4 = L.circleMarker(
+            var circle_marker_c26ffc6dcfb26376c97df1f8c30f15a9 = L.circleMarker(
                 [29.48, 35.46],
                 {"bubblingMouseEvents": true, "color": "#c08a3e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c08a3e", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
-            ).addTo(map_3c63b129c50bd17a4c9dbd293fc9cdcd);
+            ).addTo(map_b46ee3655e405e2f41a2857f28997e72);
         
     
-        var popup_1c8e8cb6434475f0ef077051596dbdd4 = L.popup({
+        var popup_88f1530c0ff380a4a91f4069234bf28e = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_f741147e691b2486bb7989cbbaada805 = $(`<div id="html_f741147e691b2486bb7989cbbaada805" style="width: 100.0%; height: 100.0%;"><b>Wadi Rum Protected Area</b><br>Score 73 (range 70 to 75)<br>Gap Index 16<br>Our candidate</div>`)[0];
-                popup_1c8e8cb6434475f0ef077051596dbdd4.setContent(html_f741147e691b2486bb7989cbbaada805);
+                var html_b4cea51d0b37c6e5cb4de75674d1f477 = $(`<div id="html_b4cea51d0b37c6e5cb4de75674d1f477" style="width: 100.0%; height: 100.0%;"><b>Wadi Rum Protected Area</b><br>Score 73 (range 70 to 75)<br>Gap Index 16<br>Our candidate</div>`)[0];
+                popup_88f1530c0ff380a4a91f4069234bf28e.setContent(html_b4cea51d0b37c6e5cb4de75674d1f477);
             
         
 
-        circle_marker_9fdb4ee6a7d3d1a583254c7e554571e4.bindPopup(popup_1c8e8cb6434475f0ef077051596dbdd4)
+        circle_marker_c26ffc6dcfb26376c97df1f8c30f15a9.bindPopup(popup_88f1530c0ff380a4a91f4069234bf28e)
         ;
 
         
     
     
-            circle_marker_9fdb4ee6a7d3d1a583254c7e554571e4.bindTooltip(
+            circle_marker_c26ffc6dcfb26376c97df1f8c30f15a9.bindTooltip(
                 `<div>
                      Wadi Rum Protected Area
                  </div>`,
@@ -646,30 +646,30 @@
             );
         
     
-            var circle_marker_9fc8b2d1d4d8112ee21c2185ba676ec7 = L.circleMarker(
+            var circle_marker_895f1657391f73c6086ee6fbdee7b004 = L.circleMarker(
                 [29.03, -13.73],
                 {"bubblingMouseEvents": true, "color": "#f2c46d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2c46d", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
-            ).addTo(map_3c63b129c50bd17a4c9dbd293fc9cdcd);
+            ).addTo(map_b46ee3655e405e2f41a2857f28997e72);
         
     
-        var popup_ed1a0a93d2b9ad470ee9cdd939a6bb7e = L.popup({
+        var popup_e8eb71f7acd1c8ae71646d322c5dfa68 = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_ccca98262bd18bb018d24698842b00a7 = $(`<div id="html_ccca98262bd18bb018d24698842b00a7" style="width: 100.0%; height: 100.0%;"><b>Lanzarote</b><br>Score 77 (range 74 to 80)<br>Gap Index 16<br>Known analog</div>`)[0];
-                popup_ed1a0a93d2b9ad470ee9cdd939a6bb7e.setContent(html_ccca98262bd18bb018d24698842b00a7);
+                var html_53ed62f53c77ff3dd00d2c668880a2d0 = $(`<div id="html_53ed62f53c77ff3dd00d2c668880a2d0" style="width: 100.0%; height: 100.0%;"><b>Lanzarote</b><br>Score 77 (range 74 to 80)<br>Gap Index 16<br>Known analog</div>`)[0];
+                popup_e8eb71f7acd1c8ae71646d322c5dfa68.setContent(html_53ed62f53c77ff3dd00d2c668880a2d0);
             
         
 
-        circle_marker_9fc8b2d1d4d8112ee21c2185ba676ec7.bindPopup(popup_ed1a0a93d2b9ad470ee9cdd939a6bb7e)
+        circle_marker_895f1657391f73c6086ee6fbdee7b004.bindPopup(popup_e8eb71f7acd1c8ae71646d322c5dfa68)
         ;
 
         
     
     
-            circle_marker_9fc8b2d1d4d8112ee21c2185ba676ec7.bindTooltip(
+            circle_marker_895f1657391f73c6086ee6fbdee7b004.bindTooltip(
                 `<div>
                      Lanzarote
                  </div>`,
@@ -679,30 +679,30 @@
             );
         
     
-            var circle_marker_0787d725b93cf8fe24cbeafc60eec65a = L.circleMarker(
+            var circle_marker_f8ca3cd701d20553bd368521cf15ed5b = L.circleMarker(
                 [30.58, 34.83],
                 {"bubblingMouseEvents": true, "color": "#f2c46d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2c46d", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
-            ).addTo(map_3c63b129c50bd17a4c9dbd293fc9cdcd);
+            ).addTo(map_b46ee3655e405e2f41a2857f28997e72);
         
     
-        var popup_652e444ebe44af275d21558d75f9a515 = L.popup({
+        var popup_38aa26cee9b70c3c05f4266407aafe6e = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_e5c36f9e599178e9b05c9dc428509989 = $(`<div id="html_e5c36f9e599178e9b05c9dc428509989" style="width: 100.0%; height: 100.0%;"><b>Makhtesh Ramon (D-MARS)</b><br>Score 83 (range 80 to 85)<br>Gap Index 11<br>Our candidate</div>`)[0];
-                popup_652e444ebe44af275d21558d75f9a515.setContent(html_e5c36f9e599178e9b05c9dc428509989);
+                var html_2e6b6395b68e40c3ff27d3da99d6e6fb = $(`<div id="html_2e6b6395b68e40c3ff27d3da99d6e6fb" style="width: 100.0%; height: 100.0%;"><b>Makhtesh Ramon (D-MARS)</b><br>Score 83 (range 80 to 85)<br>Gap Index 11<br>Our candidate</div>`)[0];
+                popup_38aa26cee9b70c3c05f4266407aafe6e.setContent(html_2e6b6395b68e40c3ff27d3da99d6e6fb);
             
         
 
-        circle_marker_0787d725b93cf8fe24cbeafc60eec65a.bindPopup(popup_652e444ebe44af275d21558d75f9a515)
+        circle_marker_f8ca3cd701d20553bd368521cf15ed5b.bindPopup(popup_38aa26cee9b70c3c05f4266407aafe6e)
         ;
 
         
     
     
-            circle_marker_0787d725b93cf8fe24cbeafc60eec65a.bindTooltip(
+            circle_marker_f8ca3cd701d20553bd368521cf15ed5b.bindTooltip(
                 `<div>
                      Makhtesh Ramon (D-MARS)
                  </div>`,
@@ -712,30 +712,30 @@
             );
         
     
-            var circle_marker_a56ce67e55a10d776b55a58115db2eb9 = L.circleMarker(
+            var circle_marker_c2304bf431dba1224fa12e97197ec98c = L.circleMarker(
                 [-24.73, 15.29],
                 {"bubblingMouseEvents": true, "color": "#f2c46d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2c46d", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
-            ).addTo(map_3c63b129c50bd17a4c9dbd293fc9cdcd);
+            ).addTo(map_b46ee3655e405e2f41a2857f28997e72);
         
     
-        var popup_68e7bad45f72dec3f52ed132c25edb76 = L.popup({
+        var popup_459a4fb15cacf2dcd6ab324068ed6249 = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_b98b24e24dd257522ed829e26ff6911f = $(`<div id="html_b98b24e24dd257522ed829e26ff6911f" style="width: 100.0%; height: 100.0%;"><b>Namib (Sossusvlei)</b><br>Score 84 (range 80 to 87)<br>Gap Index 10<br>Our candidate</div>`)[0];
-                popup_68e7bad45f72dec3f52ed132c25edb76.setContent(html_b98b24e24dd257522ed829e26ff6911f);
+                var html_04e449ae321daaa8a3d18c8f1ec8d110 = $(`<div id="html_04e449ae321daaa8a3d18c8f1ec8d110" style="width: 100.0%; height: 100.0%;"><b>Namib (Sossusvlei)</b><br>Score 84 (range 80 to 87)<br>Gap Index 10<br>Our candidate</div>`)[0];
+                popup_459a4fb15cacf2dcd6ab324068ed6249.setContent(html_04e449ae321daaa8a3d18c8f1ec8d110);
             
         
 
-        circle_marker_a56ce67e55a10d776b55a58115db2eb9.bindPopup(popup_68e7bad45f72dec3f52ed132c25edb76)
+        circle_marker_c2304bf431dba1224fa12e97197ec98c.bindPopup(popup_459a4fb15cacf2dcd6ab324068ed6249)
         ;
 
         
     
     
-            circle_marker_a56ce67e55a10d776b55a58115db2eb9.bindTooltip(
+            circle_marker_c2304bf431dba1224fa12e97197ec98c.bindTooltip(
                 `<div>
                      Namib (Sossusvlei)
                  </div>`,
@@ -745,30 +745,30 @@
             );
         
     
-            var circle_marker_5a0016d360244c472d0e993b77762a91 = L.circleMarker(
+            var circle_marker_bae53348f38e2d09a22eb704df5f3ee4 = L.circleMarker(
                 [-24.08, -70.01],
                 {"bubblingMouseEvents": true, "color": "#f2c46d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2c46d", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
-            ).addTo(map_3c63b129c50bd17a4c9dbd293fc9cdcd);
+            ).addTo(map_b46ee3655e405e2f41a2857f28997e72);
         
     
-        var popup_3214d7e0cb0b1ddad4d3c55ebdcfbf72 = L.popup({
+        var popup_6aa506db425dca1ba9d4135b21a4045a = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_1ecc78daeac86c833beff43b4bc0d3fe = $(`<div id="html_1ecc78daeac86c833beff43b4bc0d3fe" style="width: 100.0%; height: 100.0%;"><b>Atacama (Yungay)</b><br>Score 86 (range 83 to 89)<br>Gap Index 8<br>Known analog</div>`)[0];
-                popup_3214d7e0cb0b1ddad4d3c55ebdcfbf72.setContent(html_1ecc78daeac86c833beff43b4bc0d3fe);
+                var html_47d7e3871763b8f5e0714940f01ed066 = $(`<div id="html_47d7e3871763b8f5e0714940f01ed066" style="width: 100.0%; height: 100.0%;"><b>Atacama (Yungay)</b><br>Score 86 (range 83 to 89)<br>Gap Index 8<br>Known analog</div>`)[0];
+                popup_6aa506db425dca1ba9d4135b21a4045a.setContent(html_47d7e3871763b8f5e0714940f01ed066);
             
         
 
-        circle_marker_5a0016d360244c472d0e993b77762a91.bindPopup(popup_3214d7e0cb0b1ddad4d3c55ebdcfbf72)
+        circle_marker_bae53348f38e2d09a22eb704df5f3ee4.bindPopup(popup_6aa506db425dca1ba9d4135b21a4045a)
         ;
 
         
     
     
-            circle_marker_5a0016d360244c472d0e993b77762a91.bindTooltip(
+            circle_marker_bae53348f38e2d09a22eb704df5f3ee4.bindTooltip(
                 `<div>
                      Atacama (Yungay)
                  </div>`,
@@ -778,30 +778,30 @@
             );
         
     
-            var circle_marker_1a053f9d3ceb12c7ddbff7d5ac80740a = L.circleMarker(
+            var circle_marker_6ee81a4a58f0a4e2e2429f180b6102b6 = L.circleMarker(
                 [30.93, 34.98],
                 {"bubblingMouseEvents": true, "color": "#f2c46d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2c46d", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
-            ).addTo(map_3c63b129c50bd17a4c9dbd293fc9cdcd);
+            ).addTo(map_b46ee3655e405e2f41a2857f28997e72);
         
     
-        var popup_af563a6dee4f09dfcbf19e8b8874b5db = L.popup({
+        var popup_19faa6ce414bac4b458c6fc46f290c6b = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_67e0cbb8e323deedf73541f8c8c68fe8 = $(`<div id="html_67e0cbb8e323deedf73541f8c8c68fe8" style="width: 100.0%; height: 100.0%;"><b>HaMakhtesh HaGadol</b><br>Score 87 (range 84 to 90)<br>Gap Index 9<br>Our candidate</div>`)[0];
-                popup_af563a6dee4f09dfcbf19e8b8874b5db.setContent(html_67e0cbb8e323deedf73541f8c8c68fe8);
+                var html_bb9bcfba1950499af28750dcc6ea9160 = $(`<div id="html_bb9bcfba1950499af28750dcc6ea9160" style="width: 100.0%; height: 100.0%;"><b>HaMakhtesh HaGadol</b><br>Score 87 (range 84 to 90)<br>Gap Index 9<br>Our candidate</div>`)[0];
+                popup_19faa6ce414bac4b458c6fc46f290c6b.setContent(html_bb9bcfba1950499af28750dcc6ea9160);
             
         
 
-        circle_marker_1a053f9d3ceb12c7ddbff7d5ac80740a.bindPopup(popup_af563a6dee4f09dfcbf19e8b8874b5db)
+        circle_marker_6ee81a4a58f0a4e2e2429f180b6102b6.bindPopup(popup_19faa6ce414bac4b458c6fc46f290c6b)
         ;
 
         
     
     
-            circle_marker_1a053f9d3ceb12c7ddbff7d5ac80740a.bindTooltip(
+            circle_marker_6ee81a4a58f0a4e2e2429f180b6102b6.bindTooltip(
                 `<div>
                      HaMakhtesh HaGadol
                  </div>`,
@@ -811,30 +811,30 @@
             );
         
     
-            var circle_marker_70cbb8c62006c899d69e1477cfc7f8a9 = L.circleMarker(
+            var circle_marker_366976a8add56a824a5454ca36392ab1 = L.circleMarker(
                 [31.03, 35.26],
                 {"bubblingMouseEvents": true, "color": "#f2c46d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2c46d", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
-            ).addTo(map_3c63b129c50bd17a4c9dbd293fc9cdcd);
+            ).addTo(map_b46ee3655e405e2f41a2857f28997e72);
         
     
-        var popup_7f8ee8feedde05114a37063075a3803a = L.popup({
+        var popup_7eb46123305439508d4245510e2569ce = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_db49136fd55aa367557b2f81c921ecf5 = $(`<div id="html_db49136fd55aa367557b2f81c921ecf5" style="width: 100.0%; height: 100.0%;"><b>Rotem Plain (west of Mount Sodom)</b><br>Score 92 (range 91 to 92)<br>Gap Index 6<br>Our candidate</div>`)[0];
-                popup_7f8ee8feedde05114a37063075a3803a.setContent(html_db49136fd55aa367557b2f81c921ecf5);
+                var html_54a5ed7a2068922bffd91da5eaee1e13 = $(`<div id="html_54a5ed7a2068922bffd91da5eaee1e13" style="width: 100.0%; height: 100.0%;"><b>Rotem Plain (west of Mount Sodom)</b><br>Score 92 (range 91 to 92)<br>Gap Index 6<br>Our candidate</div>`)[0];
+                popup_7eb46123305439508d4245510e2569ce.setContent(html_54a5ed7a2068922bffd91da5eaee1e13);
             
         
 
-        circle_marker_70cbb8c62006c899d69e1477cfc7f8a9.bindPopup(popup_7f8ee8feedde05114a37063075a3803a)
+        circle_marker_366976a8add56a824a5454ca36392ab1.bindPopup(popup_7eb46123305439508d4245510e2569ce)
         ;
 
         
     
     
-            circle_marker_70cbb8c62006c899d69e1477cfc7f8a9.bindTooltip(
+            circle_marker_366976a8add56a824a5454ca36392ab1.bindTooltip(
                 `<div>
                      Rotem Plain (west of Mount Sodom)
                  </div>`,
@@ -844,30 +844,30 @@
             );
         
     
-            var circle_marker_3bf5d3df840c4fee4848892653f69fc9 = L.circleMarker(
+            var circle_marker_ee3d4d71e275af88658053426be3a51b = L.circleMarker(
                 [29.78, 34.96],
                 {"bubblingMouseEvents": true, "color": "#f2c46d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2c46d", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
-            ).addTo(map_3c63b129c50bd17a4c9dbd293fc9cdcd);
+            ).addTo(map_b46ee3655e405e2f41a2857f28997e72);
         
     
-        var popup_ff2a4cb4eec26002fae2380e611a95d8 = L.popup({
+        var popup_0d94a9b3b7d41df22f6085c027aa8ac8 = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_61d5729a09dcf38c4c2ebeafee068f7c = $(`<div id="html_61d5729a09dcf38c4c2ebeafee068f7c" style="width: 100.0%; height: 100.0%;"><b>Timna Valley</b><br>Score 92 (range 91 to 93)<br>Gap Index 5<br>Our candidate</div>`)[0];
-                popup_ff2a4cb4eec26002fae2380e611a95d8.setContent(html_61d5729a09dcf38c4c2ebeafee068f7c);
+                var html_9686f9f237e08cb649174441be3f15a5 = $(`<div id="html_9686f9f237e08cb649174441be3f15a5" style="width: 100.0%; height: 100.0%;"><b>Timna Valley</b><br>Score 92 (range 91 to 93)<br>Gap Index 5<br>Our candidate</div>`)[0];
+                popup_0d94a9b3b7d41df22f6085c027aa8ac8.setContent(html_9686f9f237e08cb649174441be3f15a5);
             
         
 
-        circle_marker_3bf5d3df840c4fee4848892653f69fc9.bindPopup(popup_ff2a4cb4eec26002fae2380e611a95d8)
+        circle_marker_ee3d4d71e275af88658053426be3a51b.bindPopup(popup_0d94a9b3b7d41df22f6085c027aa8ac8)
         ;
 
         
     
     
-            circle_marker_3bf5d3df840c4fee4848892653f69fc9.bindTooltip(
+            circle_marker_ee3d4d71e275af88658053426be3a51b.bindTooltip(
                 `<div>
                      Timna Valley
                  </div>`,
@@ -877,23 +877,23 @@
             );
         
     
-            var layer_control_8599f81bb7a4e78cb79bd966ceacc2d1_layers = {
+            var layer_control_1760d7333f4a72b92d695df7585db0d0_layers = {
                 base_layers : {
-                    "cartodbdarkmatter" : tile_layer_4d86dd830ab94c933876a1991299dcc1,
-                    "Satellite" : tile_layer_5816e79a70379b0a4cd6266a58eff215,
+                    "Dark map" : tile_layer_e6ebf57e29759b3ea37f0504ad88ef8b,
+                    "Satellite" : tile_layer_05dadab3ecfd6af5aab31084f92bcec0,
                 },
                 overlays :  {
                 },
             };
-            let layer_control_8599f81bb7a4e78cb79bd966ceacc2d1 = L.control.layers(
-                layer_control_8599f81bb7a4e78cb79bd966ceacc2d1_layers.base_layers,
-                layer_control_8599f81bb7a4e78cb79bd966ceacc2d1_layers.overlays,
+            let layer_control_1760d7333f4a72b92d695df7585db0d0 = L.control.layers(
+                layer_control_1760d7333f4a72b92d695df7585db0d0_layers.base_layers,
+                layer_control_1760d7333f4a72b92d695df7585db0d0_layers.overlays,
                 {
   "position": "topright",
   "collapsed": true,
   "autoZIndex": true,
 }
-            ).addTo(map_3c63b129c50bd17a4c9dbd293fc9cdcd);
+            ).addTo(map_b46ee3655e405e2f41a2857f28997e72);
 
         
 </script>

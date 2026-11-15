@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_3985eb95edbf807bf822d7f91ce3d210 {
+                #map_4327b23aa5d2e7a5178b94b1f70dd2ff {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -54,14 +54,14 @@
 <body>
     
     
-            <div class="folium-map" id="map_3985eb95edbf807bf822d7f91ce3d210" ></div>
+            <div class="folium-map" id="map_4327b23aa5d2e7a5178b94b1f70dd2ff" ></div>
         
 </body>
 <script>
     
     
-            var map_3985eb95edbf807bf822d7f91ce3d210 = L.map(
-                "map_3985eb95edbf807bf822d7f91ce3d210",
+            var map_4327b23aa5d2e7a5178b94b1f70dd2ff = L.map(
+                "map_4327b23aa5d2e7a5178b94b1f70dd2ff",
                 {
                     center: [20.0, 10.0],
                     crs: L.CRS.EPSG3857,
@@ -78,15 +78,15 @@
 
         
     
-            var tile_layer_3ddb94c73d4315a5e14a1fd8977699b6 = L.tileLayer(
-                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+            var tile_layer_a4119de66820917c4620e334ad7f2b2b = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}",
                 {
   "minZoom": 0,
-  "maxZoom": 20,
-  "maxNativeZoom": 20,
+  "maxZoom": 16,
+  "maxNativeZoom": 16,
   "noWrap": false,
-  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
-  "subdomains": "abcd",
+  "attribution": "Esri, HERE, Garmin, OpenStreetMap contributors",
+  "subdomains": "abc",
   "detectRetina": false,
   "tms": false,
   "opacity": 1,
@@ -95,10 +95,10 @@
             );
         
     
-            tile_layer_3ddb94c73d4315a5e14a1fd8977699b6.addTo(map_3985eb95edbf807bf822d7f91ce3d210);
+            tile_layer_a4119de66820917c4620e334ad7f2b2b.addTo(map_4327b23aa5d2e7a5178b94b1f70dd2ff);
         
     
-            var tile_layer_2b7925d25358c2e2d6417706e7fa62d1 = L.tileLayer(
+            var tile_layer_8052717a2877216160934a32e427cd3e = L.tileLayer(
                 "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
                 {
   "minZoom": 0,
@@ -115,33 +115,33 @@
             );
         
     
-            tile_layer_2b7925d25358c2e2d6417706e7fa62d1.addTo(map_3985eb95edbf807bf822d7f91ce3d210);
+            tile_layer_8052717a2877216160934a32e427cd3e.addTo(map_4327b23aa5d2e7a5178b94b1f70dd2ff);
         
     
-            var circle_marker_cc0ce689631d07267c669cb57d369be5 = L.circleMarker(
+            var circle_marker_2cd6a74e83b266bbf110be6f8b35c499 = L.circleMarker(
                 [-3.4, -62.2],
                 {"bubblingMouseEvents": true, "color": "#5c6475", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5c6475", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
-            ).addTo(map_3985eb95edbf807bf822d7f91ce3d210);
+            ).addTo(map_4327b23aa5d2e7a5178b94b1f70dd2ff);
         
     
-        var popup_4f4a0b0f92aa7fe0590e9d3f7b73e440 = L.popup({
+        var popup_e78d9141038c2e4382bda3c5c0ba0bd7 = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_55b4901a4a90be0a30503466a7c7e34f = $(`<div id="html_55b4901a4a90be0a30503466a7c7e34f" style="width: 100.0%; height: 100.0%;"><b>Amazon rainforest</b><br>Score 12 (range 8 to 17)<br>Gap Index 76<br>Negative control<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
-                popup_4f4a0b0f92aa7fe0590e9d3f7b73e440.setContent(html_55b4901a4a90be0a30503466a7c7e34f);
+                var html_2fd830f83a77e99d8ed6df72ccbeecf6 = $(`<div id="html_2fd830f83a77e99d8ed6df72ccbeecf6" style="width: 100.0%; height: 100.0%;"><b>Amazon rainforest</b><br>Score 12 (range 8 to 17)<br>Gap Index 76<br>Negative control<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_e78d9141038c2e4382bda3c5c0ba0bd7.setContent(html_2fd830f83a77e99d8ed6df72ccbeecf6);
             
         
 
-        circle_marker_cc0ce689631d07267c669cb57d369be5.bindPopup(popup_4f4a0b0f92aa7fe0590e9d3f7b73e440)
+        circle_marker_2cd6a74e83b266bbf110be6f8b35c499.bindPopup(popup_e78d9141038c2e4382bda3c5c0ba0bd7)
         ;
 
         
     
     
-            circle_marker_cc0ce689631d07267c669cb57d369be5.bindTooltip(
+            circle_marker_2cd6a74e83b266bbf110be6f8b35c499.bindTooltip(
                 `<div>
                      Amazon rainforest
                  </div>`,
@@ -151,30 +151,30 @@
             );
         
     
-            var circle_marker_4d7f021f80e02fb99f6d740dcc09be56 = L.circleMarker(
+            var circle_marker_5174c6d7a1ad2eb6a6312fd2df9b3406 = L.circleMarker(
                 [21.95, 89.18],
                 {"bubblingMouseEvents": true, "color": "#5c6475", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5c6475", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
-            ).addTo(map_3985eb95edbf807bf822d7f91ce3d210);
+            ).addTo(map_4327b23aa5d2e7a5178b94b1f70dd2ff);
         
     
-        var popup_ebb2aaa9b75093a87416a7ae1dd45371 = L.popup({
+        var popup_15c0ab45d672a79b3d997a67bc6aa595 = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_47e92cffcb7b4959b8b57fd83c634a02 = $(`<div id="html_47e92cffcb7b4959b8b57fd83c634a02" style="width: 100.0%; height: 100.0%;"><b>Sundarbans</b><br>Score 15 (range 11 to 20)<br>Gap Index 73<br>Negative control<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
-                popup_ebb2aaa9b75093a87416a7ae1dd45371.setContent(html_47e92cffcb7b4959b8b57fd83c634a02);
+                var html_83d7dc79bfbb87d68917b1688fe75251 = $(`<div id="html_83d7dc79bfbb87d68917b1688fe75251" style="width: 100.0%; height: 100.0%;"><b>Sundarbans</b><br>Score 15 (range 11 to 20)<br>Gap Index 73<br>Negative control<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_15c0ab45d672a79b3d997a67bc6aa595.setContent(html_83d7dc79bfbb87d68917b1688fe75251);
             
         
 
-        circle_marker_4d7f021f80e02fb99f6d740dcc09be56.bindPopup(popup_ebb2aaa9b75093a87416a7ae1dd45371)
+        circle_marker_5174c6d7a1ad2eb6a6312fd2df9b3406.bindPopup(popup_15c0ab45d672a79b3d997a67bc6aa595)
         ;
 
         
     
     
-            circle_marker_4d7f021f80e02fb99f6d740dcc09be56.bindTooltip(
+            circle_marker_5174c6d7a1ad2eb6a6312fd2df9b3406.bindTooltip(
                 `<div>
                      Sundarbans
                  </div>`,
@@ -184,30 +184,30 @@
             );
         
     
-            var circle_marker_b8e48b68ee9852648c2d7aecdba87a9c = L.circleMarker(
+            var circle_marker_34d4407c893b87596548b5df59fe59cf = L.circleMarker(
                 [-1.0, 21.0],
                 {"bubblingMouseEvents": true, "color": "#5c6475", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5c6475", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
-            ).addTo(map_3985eb95edbf807bf822d7f91ce3d210);
+            ).addTo(map_4327b23aa5d2e7a5178b94b1f70dd2ff);
         
     
-        var popup_5ba9f392a46a1305c82a3cb2627e16ea = L.popup({
+        var popup_e4f9d09dcc07b87f02c2f3137a223664 = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_68ee424dc749fa1a5f9a9cba42618129 = $(`<div id="html_68ee424dc749fa1a5f9a9cba42618129" style="width: 100.0%; height: 100.0%;"><b>Congo rainforest</b><br>Score 15 (range 11 to 20)<br>Gap Index 71<br>Negative control<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
-                popup_5ba9f392a46a1305c82a3cb2627e16ea.setContent(html_68ee424dc749fa1a5f9a9cba42618129);
+                var html_1e70930919c707d678d510649ee248b0 = $(`<div id="html_1e70930919c707d678d510649ee248b0" style="width: 100.0%; height: 100.0%;"><b>Congo rainforest</b><br>Score 15 (range 11 to 20)<br>Gap Index 71<br>Negative control<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_e4f9d09dcc07b87f02c2f3137a223664.setContent(html_1e70930919c707d678d510649ee248b0);
             
         
 
-        circle_marker_b8e48b68ee9852648c2d7aecdba87a9c.bindPopup(popup_5ba9f392a46a1305c82a3cb2627e16ea)
+        circle_marker_34d4407c893b87596548b5df59fe59cf.bindPopup(popup_e4f9d09dcc07b87f02c2f3137a223664)
         ;
 
         
     
     
-            circle_marker_b8e48b68ee9852648c2d7aecdba87a9c.bindTooltip(
+            circle_marker_34d4407c893b87596548b5df59fe59cf.bindTooltip(
                 `<div>
                      Congo rainforest
                  </div>`,
@@ -217,30 +217,30 @@
             );
         
     
-            var circle_marker_4e9fd7c6c767a30040178aef8cbd8e4b = L.circleMarker(
+            var circle_marker_a9e38037d9069fb818c50e2195019658 = L.circleMarker(
                 [48.0, 8.2],
                 {"bubblingMouseEvents": true, "color": "#5c6475", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5c6475", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
-            ).addTo(map_3985eb95edbf807bf822d7f91ce3d210);
+            ).addTo(map_4327b23aa5d2e7a5178b94b1f70dd2ff);
         
     
-        var popup_5795ea9518d2a64553349c038015cc78 = L.popup({
+        var popup_b2d7d697340ff09695e7995eabd74615 = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_0ed980d6a886150c41e5bf3b29096cd5 = $(`<div id="html_0ed980d6a886150c41e5bf3b29096cd5" style="width: 100.0%; height: 100.0%;"><b>Black Forest, Germany</b><br>Score 16 (range 13 to 19)<br>Gap Index 74<br>Negative control<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
-                popup_5795ea9518d2a64553349c038015cc78.setContent(html_0ed980d6a886150c41e5bf3b29096cd5);
+                var html_6b49509b00fe640b2508489d113815a4 = $(`<div id="html_6b49509b00fe640b2508489d113815a4" style="width: 100.0%; height: 100.0%;"><b>Black Forest, Germany</b><br>Score 16 (range 13 to 19)<br>Gap Index 74<br>Negative control<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_b2d7d697340ff09695e7995eabd74615.setContent(html_6b49509b00fe640b2508489d113815a4);
             
         
 
-        circle_marker_4e9fd7c6c767a30040178aef8cbd8e4b.bindPopup(popup_5795ea9518d2a64553349c038015cc78)
+        circle_marker_a9e38037d9069fb818c50e2195019658.bindPopup(popup_b2d7d697340ff09695e7995eabd74615)
         ;
 
         
     
     
-            circle_marker_4e9fd7c6c767a30040178aef8cbd8e4b.bindTooltip(
+            circle_marker_a9e38037d9069fb818c50e2195019658.bindTooltip(
                 `<div>
                      Black Forest, Germany
                  </div>`,
@@ -250,30 +250,30 @@
             );
         
     
-            var circle_marker_d5dec796828bfe83142c6d5f0cdb49ee = L.circleMarker(
+            var circle_marker_05d269442c33f4b904894bef7eb9cd0b = L.circleMarker(
                 [52.55, 5.62],
                 {"bubblingMouseEvents": true, "color": "#5c6475", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5c6475", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
-            ).addTo(map_3985eb95edbf807bf822d7f91ce3d210);
+            ).addTo(map_4327b23aa5d2e7a5178b94b1f70dd2ff);
         
     
-        var popup_b12b6f8ecaa617aa06637ef60ce27dc1 = L.popup({
+        var popup_f24da3afd096dddfd79ce56b592c2557 = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_4e096df55ad9dddf3473f8f941a861b3 = $(`<div id="html_4e096df55ad9dddf3473f8f941a861b3" style="width: 100.0%; height: 100.0%;"><b>Flevoland farmland</b><br>Score 22 (range 18 to 27)<br>Gap Index 65<br>Negative control<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
-                popup_b12b6f8ecaa617aa06637ef60ce27dc1.setContent(html_4e096df55ad9dddf3473f8f941a861b3);
+                var html_350da7771e1866b697ca937b08ebae47 = $(`<div id="html_350da7771e1866b697ca937b08ebae47" style="width: 100.0%; height: 100.0%;"><b>Flevoland farmland</b><br>Score 22 (range 18 to 27)<br>Gap Index 65<br>Negative control<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_f24da3afd096dddfd79ce56b592c2557.setContent(html_350da7771e1866b697ca937b08ebae47);
             
         
 
-        circle_marker_d5dec796828bfe83142c6d5f0cdb49ee.bindPopup(popup_b12b6f8ecaa617aa06637ef60ce27dc1)
+        circle_marker_05d269442c33f4b904894bef7eb9cd0b.bindPopup(popup_f24da3afd096dddfd79ce56b592c2557)
         ;
 
         
     
     
-            circle_marker_d5dec796828bfe83142c6d5f0cdb49ee.bindTooltip(
+            circle_marker_05d269442c33f4b904894bef7eb9cd0b.bindTooltip(
                 `<div>
                      Flevoland farmland
                  </div>`,
@@ -283,30 +283,30 @@
             );
         
     
-            var circle_marker_13fa14e1ca9b54e8a314a9282679098c = L.circleMarker(
+            var circle_marker_cf6c8284eea910bb8c4816e5b2f0f302 = L.circleMarker(
                 [19.82, -155.47],
                 {"bubblingMouseEvents": true, "color": "#5c6475", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5c6475", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
-            ).addTo(map_3985eb95edbf807bf822d7f91ce3d210);
+            ).addTo(map_4327b23aa5d2e7a5178b94b1f70dd2ff);
         
     
-        var popup_e1ae06190b40df2b48aa44750765d2dc = L.popup({
+        var popup_eb6a8816983b6510311f2f69ee17f32a = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_e4874be4b91da72792a99c3adfe6e7eb = $(`<div id="html_e4874be4b91da72792a99c3adfe6e7eb" style="width: 100.0%; height: 100.0%;"><b>Mauna Kea, Hawaii</b><br>Score 23 (range 20 to 26)<br>Gap Index 65<br>Known analog<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
-                popup_e1ae06190b40df2b48aa44750765d2dc.setContent(html_e4874be4b91da72792a99c3adfe6e7eb);
+                var html_ecf56cd5c9cabd0d78e3b20e9e7e4de8 = $(`<div id="html_ecf56cd5c9cabd0d78e3b20e9e7e4de8" style="width: 100.0%; height: 100.0%;"><b>Mauna Kea, Hawaii</b><br>Score 23 (range 20 to 26)<br>Gap Index 65<br>Known analog<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_eb6a8816983b6510311f2f69ee17f32a.setContent(html_ecf56cd5c9cabd0d78e3b20e9e7e4de8);
             
         
 
-        circle_marker_13fa14e1ca9b54e8a314a9282679098c.bindPopup(popup_e1ae06190b40df2b48aa44750765d2dc)
+        circle_marker_cf6c8284eea910bb8c4816e5b2f0f302.bindPopup(popup_eb6a8816983b6510311f2f69ee17f32a)
         ;
 
         
     
     
-            circle_marker_13fa14e1ca9b54e8a314a9282679098c.bindTooltip(
+            circle_marker_cf6c8284eea910bb8c4816e5b2f0f302.bindTooltip(
                 `<div>
                      Mauna Kea, Hawaii
                  </div>`,
@@ -316,30 +316,30 @@
             );
         
     
-            var circle_marker_7c591ecf0e9ddd68dc862f0a8cd8b781 = L.circleMarker(
+            var circle_marker_54f52fedb9cbdbb171e93ccede2022d9 = L.circleMarker(
                 [37.726, -6.555],
                 {"bubblingMouseEvents": true, "color": "#5c6475", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5c6475", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
-            ).addTo(map_3985eb95edbf807bf822d7f91ce3d210);
+            ).addTo(map_4327b23aa5d2e7a5178b94b1f70dd2ff);
         
     
-        var popup_f69fb785833bdada02c34090c51e5b20 = L.popup({
+        var popup_3311bf6136cc1f389798b6fb05d8b42c = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_ba471232a1983c689fedded04ab358f5 = $(`<div id="html_ba471232a1983c689fedded04ab358f5" style="width: 100.0%; height: 100.0%;"><b>Rio Tinto (Peña de Hierro)</b><br>Score 24 (range 20 to 29)<br>Gap Index 62<br>Known analog<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
-                popup_f69fb785833bdada02c34090c51e5b20.setContent(html_ba471232a1983c689fedded04ab358f5);
+                var html_63087f3a4da0b663c882f8fef4406b57 = $(`<div id="html_63087f3a4da0b663c882f8fef4406b57" style="width: 100.0%; height: 100.0%;"><b>Rio Tinto (Peña de Hierro)</b><br>Score 24 (range 20 to 29)<br>Gap Index 62<br>Known analog<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_3311bf6136cc1f389798b6fb05d8b42c.setContent(html_63087f3a4da0b663c882f8fef4406b57);
             
         
 
-        circle_marker_7c591ecf0e9ddd68dc862f0a8cd8b781.bindPopup(popup_f69fb785833bdada02c34090c51e5b20)
+        circle_marker_54f52fedb9cbdbb171e93ccede2022d9.bindPopup(popup_3311bf6136cc1f389798b6fb05d8b42c)
         ;
 
         
     
     
-            circle_marker_7c591ecf0e9ddd68dc862f0a8cd8b781.bindTooltip(
+            circle_marker_54f52fedb9cbdbb171e93ccede2022d9.bindTooltip(
                 `<div>
                      Rio Tinto (Peña de Hierro)
                  </div>`,
@@ -349,30 +349,30 @@
             );
         
     
-            var circle_marker_0427470886dda0d0e74cf048a5693605 = L.circleMarker(
+            var circle_marker_dd2c1d6ed39b23359653787558c88f0d = L.circleMarker(
                 [-21.17, 119.43],
                 {"bubblingMouseEvents": true, "color": "#5c6475", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5c6475", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
-            ).addTo(map_3985eb95edbf807bf822d7f91ce3d210);
+            ).addTo(map_4327b23aa5d2e7a5178b94b1f70dd2ff);
         
     
-        var popup_6014af51e989009d91b841de6c16eb59 = L.popup({
+        var popup_96e5e9b1469e770263389033a26d9ce0 = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_ee5624d333c71bf5ec78da11ccb1bf17 = $(`<div id="html_ee5624d333c71bf5ec78da11ccb1bf17" style="width: 100.0%; height: 100.0%;"><b>Pilbara, Australia</b><br>Score 25 (range 20 to 31)<br>Gap Index 59<br>Known analog<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
-                popup_6014af51e989009d91b841de6c16eb59.setContent(html_ee5624d333c71bf5ec78da11ccb1bf17);
+                var html_c69e6fd53ef6f9aaac88ffbcf9730a8b = $(`<div id="html_c69e6fd53ef6f9aaac88ffbcf9730a8b" style="width: 100.0%; height: 100.0%;"><b>Pilbara, Australia</b><br>Score 25 (range 20 to 31)<br>Gap Index 59<br>Known analog<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_96e5e9b1469e770263389033a26d9ce0.setContent(html_c69e6fd53ef6f9aaac88ffbcf9730a8b);
             
         
 
-        circle_marker_0427470886dda0d0e74cf048a5693605.bindPopup(popup_6014af51e989009d91b841de6c16eb59)
+        circle_marker_dd2c1d6ed39b23359653787558c88f0d.bindPopup(popup_96e5e9b1469e770263389033a26d9ce0)
         ;
 
         
     
     
-            circle_marker_0427470886dda0d0e74cf048a5693605.bindTooltip(
+            circle_marker_dd2c1d6ed39b23359653787558c88f0d.bindTooltip(
                 `<div>
                      Pilbara, Australia
                  </div>`,
@@ -382,30 +382,30 @@
             );
         
     
-            var circle_marker_9644dfef9851ad1f47afc3eb40c425e6 = L.circleMarker(
+            var circle_marker_3fd5fc12977a8232aa1afbdf39b66526 = L.circleMarker(
                 [36.25, -116.82],
                 {"bubblingMouseEvents": true, "color": "#5c6475", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5c6475", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
-            ).addTo(map_3985eb95edbf807bf822d7f91ce3d210);
+            ).addTo(map_4327b23aa5d2e7a5178b94b1f70dd2ff);
         
     
-        var popup_0f579ee0fbed2a75052b365fe2bb4ccf = L.popup({
+        var popup_484acc533a9ffef3b6d016d00611bd56 = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_a1f54c09aa16c48e8cd788998e1f249b = $(`<div id="html_a1f54c09aa16c48e8cd788998e1f249b" style="width: 100.0%; height: 100.0%;"><b>Death Valley</b><br>Score 33 (range 28 to 38)<br>Gap Index 48<br>Known analog<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
-                popup_0f579ee0fbed2a75052b365fe2bb4ccf.setContent(html_a1f54c09aa16c48e8cd788998e1f249b);
+                var html_9b30891f61bbc140a3dd7ce3b365facf = $(`<div id="html_9b30891f61bbc140a3dd7ce3b365facf" style="width: 100.0%; height: 100.0%;"><b>Death Valley</b><br>Score 33 (range 28 to 38)<br>Gap Index 48<br>Known analog<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_484acc533a9ffef3b6d016d00611bd56.setContent(html_9b30891f61bbc140a3dd7ce3b365facf);
             
         
 
-        circle_marker_9644dfef9851ad1f47afc3eb40c425e6.bindPopup(popup_0f579ee0fbed2a75052b365fe2bb4ccf)
+        circle_marker_3fd5fc12977a8232aa1afbdf39b66526.bindPopup(popup_484acc533a9ffef3b6d016d00611bd56)
         ;
 
         
     
     
-            circle_marker_9644dfef9851ad1f47afc3eb40c425e6.bindTooltip(
+            circle_marker_3fd5fc12977a8232aa1afbdf39b66526.bindTooltip(
                 `<div>
                      Death Valley
                  </div>`,
@@ -415,30 +415,30 @@
             );
         
     
-            var circle_marker_decbcb705fd2934941a8a3acb4104775 = L.circleMarker(
+            var circle_marker_0f3b3592952f8618732178335c916f75 = L.circleMarker(
                 [29.03, -13.73],
                 {"bubblingMouseEvents": true, "color": "#5c6475", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5c6475", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
-            ).addTo(map_3985eb95edbf807bf822d7f91ce3d210);
+            ).addTo(map_4327b23aa5d2e7a5178b94b1f70dd2ff);
         
     
-        var popup_bff23ca81f054f86a37c4a65be212bd8 = L.popup({
+        var popup_3cc88a4ed5effe5062bf962af34080aa = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_2a34b08bdae28e565a3a67ee0950515f = $(`<div id="html_2a34b08bdae28e565a3a67ee0950515f" style="width: 100.0%; height: 100.0%;"><b>Lanzarote</b><br>Score 34 (range 29 to 39)<br>Gap Index 46<br>Known analog<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
-                popup_bff23ca81f054f86a37c4a65be212bd8.setContent(html_2a34b08bdae28e565a3a67ee0950515f);
+                var html_a428350d9b60e678cf5b1e5eff2efc65 = $(`<div id="html_a428350d9b60e678cf5b1e5eff2efc65" style="width: 100.0%; height: 100.0%;"><b>Lanzarote</b><br>Score 34 (range 29 to 39)<br>Gap Index 46<br>Known analog<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_3cc88a4ed5effe5062bf962af34080aa.setContent(html_a428350d9b60e678cf5b1e5eff2efc65);
             
         
 
-        circle_marker_decbcb705fd2934941a8a3acb4104775.bindPopup(popup_bff23ca81f054f86a37c4a65be212bd8)
+        circle_marker_0f3b3592952f8618732178335c916f75.bindPopup(popup_3cc88a4ed5effe5062bf962af34080aa)
         ;
 
         
     
     
-            circle_marker_decbcb705fd2934941a8a3acb4104775.bindTooltip(
+            circle_marker_0f3b3592952f8618732178335c916f75.bindTooltip(
                 `<div>
                      Lanzarote
                  </div>`,
@@ -448,30 +448,30 @@
             );
         
     
-            var circle_marker_c1f981b95267ccbe0bc3dda17e0d0faf = L.circleMarker(
+            var circle_marker_e18050f68b6e4e3e43c7f12ed3aa671c = L.circleMarker(
                 [29.48, 35.46],
                 {"bubblingMouseEvents": true, "color": "#5c6475", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5c6475", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
-            ).addTo(map_3985eb95edbf807bf822d7f91ce3d210);
+            ).addTo(map_4327b23aa5d2e7a5178b94b1f70dd2ff);
         
     
-        var popup_f2967b9ce4eb62fd2d0ef9a302834b2d = L.popup({
+        var popup_6459357a5fbb4b792b8bf0ffe5ef9eb3 = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_e9fbe13639cb9cfddc81980b85013030 = $(`<div id="html_e9fbe13639cb9cfddc81980b85013030" style="width: 100.0%; height: 100.0%;"><b>Wadi Rum Protected Area</b><br>Score 34 (range 29 to 39)<br>Gap Index 46<br>Our candidate<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
-                popup_f2967b9ce4eb62fd2d0ef9a302834b2d.setContent(html_e9fbe13639cb9cfddc81980b85013030);
+                var html_4d76bf96f218af43e310e061f9b9ff41 = $(`<div id="html_4d76bf96f218af43e310e061f9b9ff41" style="width: 100.0%; height: 100.0%;"><b>Wadi Rum Protected Area</b><br>Score 34 (range 29 to 39)<br>Gap Index 46<br>Our candidate<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_6459357a5fbb4b792b8bf0ffe5ef9eb3.setContent(html_4d76bf96f218af43e310e061f9b9ff41);
             
         
 
-        circle_marker_c1f981b95267ccbe0bc3dda17e0d0faf.bindPopup(popup_f2967b9ce4eb62fd2d0ef9a302834b2d)
+        circle_marker_e18050f68b6e4e3e43c7f12ed3aa671c.bindPopup(popup_6459357a5fbb4b792b8bf0ffe5ef9eb3)
         ;
 
         
     
     
-            circle_marker_c1f981b95267ccbe0bc3dda17e0d0faf.bindTooltip(
+            circle_marker_e18050f68b6e4e3e43c7f12ed3aa671c.bindTooltip(
                 `<div>
                      Wadi Rum Protected Area
                  </div>`,
@@ -481,30 +481,30 @@
             );
         
     
-            var circle_marker_1d3c783cb2f7378d0a203d02e22d54a9 = L.circleMarker(
+            var circle_marker_cf78479719ae1a7b40647d2c630b2717 = L.circleMarker(
                 [64.85, -16.83],
                 {"bubblingMouseEvents": true, "color": "#5c6475", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5c6475", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
-            ).addTo(map_3985eb95edbf807bf822d7f91ce3d210);
+            ).addTo(map_4327b23aa5d2e7a5178b94b1f70dd2ff);
         
     
-        var popup_62f60b384b89c29413dbaea7fecb5816 = L.popup({
+        var popup_def004b645cd666c799242be0e71b62d = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_a8fbb75158e480a7c0a087956bc45a83 = $(`<div id="html_a8fbb75158e480a7c0a087956bc45a83" style="width: 100.0%; height: 100.0%;"><b>Holuhraun, Iceland</b><br>Score 35 (range 29 to 40)<br>Gap Index 48<br>Known analog<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
-                popup_62f60b384b89c29413dbaea7fecb5816.setContent(html_a8fbb75158e480a7c0a087956bc45a83);
+                var html_9df380b70f74f2f5f1487d27ead543ec = $(`<div id="html_9df380b70f74f2f5f1487d27ead543ec" style="width: 100.0%; height: 100.0%;"><b>Holuhraun, Iceland</b><br>Score 35 (range 29 to 40)<br>Gap Index 48<br>Known analog<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_def004b645cd666c799242be0e71b62d.setContent(html_9df380b70f74f2f5f1487d27ead543ec);
             
         
 
-        circle_marker_1d3c783cb2f7378d0a203d02e22d54a9.bindPopup(popup_62f60b384b89c29413dbaea7fecb5816)
+        circle_marker_cf78479719ae1a7b40647d2c630b2717.bindPopup(popup_def004b645cd666c799242be0e71b62d)
         ;
 
         
     
     
-            circle_marker_1d3c783cb2f7378d0a203d02e22d54a9.bindTooltip(
+            circle_marker_cf78479719ae1a7b40647d2c630b2717.bindTooltip(
                 `<div>
                      Holuhraun, Iceland
                  </div>`,
@@ -514,30 +514,30 @@
             );
         
     
-            var circle_marker_82120b7cb7ece18dbdb54dbd28934cc3 = L.circleMarker(
+            var circle_marker_3d94861bb9ab4d1325d34e4910b024ea = L.circleMarker(
                 [31.03, 35.26],
                 {"bubblingMouseEvents": true, "color": "#5c6475", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5c6475", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
-            ).addTo(map_3985eb95edbf807bf822d7f91ce3d210);
+            ).addTo(map_4327b23aa5d2e7a5178b94b1f70dd2ff);
         
     
-        var popup_da6d2652fe5ba20b69c25ade6167bf6d = L.popup({
+        var popup_781c4a0518cd32bc5366d79d732cfdd4 = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_1b2a4b392ad58179f3ebe6d96e45d204 = $(`<div id="html_1b2a4b392ad58179f3ebe6d96e45d204" style="width: 100.0%; height: 100.0%;"><b>Rotem Plain (west of Mount Sodom)</b><br>Score 35 (range 29 to 40)<br>Gap Index 45<br>Our candidate<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
-                popup_da6d2652fe5ba20b69c25ade6167bf6d.setContent(html_1b2a4b392ad58179f3ebe6d96e45d204);
+                var html_d0a3af4ff25eed9c97e5a0697365165d = $(`<div id="html_d0a3af4ff25eed9c97e5a0697365165d" style="width: 100.0%; height: 100.0%;"><b>Rotem Plain (west of Mount Sodom)</b><br>Score 35 (range 29 to 40)<br>Gap Index 45<br>Our candidate<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_781c4a0518cd32bc5366d79d732cfdd4.setContent(html_d0a3af4ff25eed9c97e5a0697365165d);
             
         
 
-        circle_marker_82120b7cb7ece18dbdb54dbd28934cc3.bindPopup(popup_da6d2652fe5ba20b69c25ade6167bf6d)
+        circle_marker_3d94861bb9ab4d1325d34e4910b024ea.bindPopup(popup_781c4a0518cd32bc5366d79d732cfdd4)
         ;
 
         
     
     
-            circle_marker_82120b7cb7ece18dbdb54dbd28934cc3.bindTooltip(
+            circle_marker_3d94861bb9ab4d1325d34e4910b024ea.bindTooltip(
                 `<div>
                      Rotem Plain (west of Mount Sodom)
                  </div>`,
@@ -547,30 +547,30 @@
             );
         
     
-            var circle_marker_be9de5ecc989604c8249f0c9d34f2236 = L.circleMarker(
+            var circle_marker_9efea764b27b919b6e690da3a8e3b6c6 = L.circleMarker(
                 [29.78, 34.96],
                 {"bubblingMouseEvents": true, "color": "#5c6475", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5c6475", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
-            ).addTo(map_3985eb95edbf807bf822d7f91ce3d210);
+            ).addTo(map_4327b23aa5d2e7a5178b94b1f70dd2ff);
         
     
-        var popup_55b391ff63c53e8938a6e957a0bd794b = L.popup({
+        var popup_f8868d2a66bd9f650605a917097604cc = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_00aeddc3da813ab1fd1ec88bf1bd008f = $(`<div id="html_00aeddc3da813ab1fd1ec88bf1bd008f" style="width: 100.0%; height: 100.0%;"><b>Timna Valley</b><br>Score 36 (range 30 to 41)<br>Gap Index 44<br>Our candidate<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
-                popup_55b391ff63c53e8938a6e957a0bd794b.setContent(html_00aeddc3da813ab1fd1ec88bf1bd008f);
+                var html_eb23fa71f29e196c75428d99455147eb = $(`<div id="html_eb23fa71f29e196c75428d99455147eb" style="width: 100.0%; height: 100.0%;"><b>Timna Valley</b><br>Score 36 (range 30 to 41)<br>Gap Index 44<br>Our candidate<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_f8868d2a66bd9f650605a917097604cc.setContent(html_eb23fa71f29e196c75428d99455147eb);
             
         
 
-        circle_marker_be9de5ecc989604c8249f0c9d34f2236.bindPopup(popup_55b391ff63c53e8938a6e957a0bd794b)
+        circle_marker_9efea764b27b919b6e690da3a8e3b6c6.bindPopup(popup_f8868d2a66bd9f650605a917097604cc)
         ;
 
         
     
     
-            circle_marker_be9de5ecc989604c8249f0c9d34f2236.bindTooltip(
+            circle_marker_9efea764b27b919b6e690da3a8e3b6c6.bindTooltip(
                 `<div>
                      Timna Valley
                  </div>`,
@@ -580,30 +580,30 @@
             );
         
     
-            var circle_marker_8c90457b68250ee0993dbe9236e775f0 = L.circleMarker(
+            var circle_marker_1991db9abe237d11f472fe8370db98e2 = L.circleMarker(
                 [30.93, 34.98],
                 {"bubblingMouseEvents": true, "color": "#5c6475", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5c6475", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
-            ).addTo(map_3985eb95edbf807bf822d7f91ce3d210);
+            ).addTo(map_4327b23aa5d2e7a5178b94b1f70dd2ff);
         
     
-        var popup_63eb04657fd6ff48b70b91151a835dc5 = L.popup({
+        var popup_3821dca219377fc3710f20c0d15cb412 = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_f84ffcc2c0e5655d64ee4b76320b54e5 = $(`<div id="html_f84ffcc2c0e5655d64ee4b76320b54e5" style="width: 100.0%; height: 100.0%;"><b>HaMakhtesh HaGadol</b><br>Score 36 (range 31 to 41)<br>Gap Index 43<br>Our candidate<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
-                popup_63eb04657fd6ff48b70b91151a835dc5.setContent(html_f84ffcc2c0e5655d64ee4b76320b54e5);
+                var html_61c485960efe18687449b64eb34410b0 = $(`<div id="html_61c485960efe18687449b64eb34410b0" style="width: 100.0%; height: 100.0%;"><b>HaMakhtesh HaGadol</b><br>Score 36 (range 31 to 41)<br>Gap Index 43<br>Our candidate<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_3821dca219377fc3710f20c0d15cb412.setContent(html_61c485960efe18687449b64eb34410b0);
             
         
 
-        circle_marker_8c90457b68250ee0993dbe9236e775f0.bindPopup(popup_63eb04657fd6ff48b70b91151a835dc5)
+        circle_marker_1991db9abe237d11f472fe8370db98e2.bindPopup(popup_3821dca219377fc3710f20c0d15cb412)
         ;
 
         
     
     
-            circle_marker_8c90457b68250ee0993dbe9236e775f0.bindTooltip(
+            circle_marker_1991db9abe237d11f472fe8370db98e2.bindTooltip(
                 `<div>
                      HaMakhtesh HaGadol
                  </div>`,
@@ -613,30 +613,30 @@
             );
         
     
-            var circle_marker_cd5974a558251a71756125f1b57aa1b1 = L.circleMarker(
+            var circle_marker_9d9ba06d04d4f8422857e17eec1c90b9 = L.circleMarker(
                 [30.58, 34.83],
                 {"bubblingMouseEvents": true, "color": "#5c6475", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5c6475", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
-            ).addTo(map_3985eb95edbf807bf822d7f91ce3d210);
+            ).addTo(map_4327b23aa5d2e7a5178b94b1f70dd2ff);
         
     
-        var popup_037684e7952ed9f5b1692ac425b9696a = L.popup({
+        var popup_ce97580401312f348a60fafef65c2ef5 = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_330eaadad8d9742ab25e9ad0802ff20e = $(`<div id="html_330eaadad8d9742ab25e9ad0802ff20e" style="width: 100.0%; height: 100.0%;"><b>Makhtesh Ramon (D-MARS)</b><br>Score 37 (range 31 to 42)<br>Gap Index 42<br>Our candidate<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
-                popup_037684e7952ed9f5b1692ac425b9696a.setContent(html_330eaadad8d9742ab25e9ad0802ff20e);
+                var html_35b5f910c1163868760a64ed1708f27f = $(`<div id="html_35b5f910c1163868760a64ed1708f27f" style="width: 100.0%; height: 100.0%;"><b>Makhtesh Ramon (D-MARS)</b><br>Score 37 (range 31 to 42)<br>Gap Index 42<br>Our candidate<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_ce97580401312f348a60fafef65c2ef5.setContent(html_35b5f910c1163868760a64ed1708f27f);
             
         
 
-        circle_marker_cd5974a558251a71756125f1b57aa1b1.bindPopup(popup_037684e7952ed9f5b1692ac425b9696a)
+        circle_marker_9d9ba06d04d4f8422857e17eec1c90b9.bindPopup(popup_ce97580401312f348a60fafef65c2ef5)
         ;
 
         
     
     
-            circle_marker_cd5974a558251a71756125f1b57aa1b1.bindTooltip(
+            circle_marker_9d9ba06d04d4f8422857e17eec1c90b9.bindTooltip(
                 `<div>
                      Makhtesh Ramon (D-MARS)
                  </div>`,
@@ -646,30 +646,30 @@
             );
         
     
-            var circle_marker_326a7d6e318865a4fdd06f2f1191f387 = L.circleMarker(
+            var circle_marker_72c927a87b76eafb6cdff8841c3b1043 = L.circleMarker(
                 [-20.13, -67.49],
                 {"bubblingMouseEvents": true, "color": "#5c6475", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5c6475", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
-            ).addTo(map_3985eb95edbf807bf822d7f91ce3d210);
+            ).addTo(map_4327b23aa5d2e7a5178b94b1f70dd2ff);
         
     
-        var popup_94ad0c1901c8cfb02a09af66a4864b38 = L.popup({
+        var popup_01879b25260244a51c82c104d5d057f6 = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_ed1fe5f0a8be1eb00fd1e5f772159f34 = $(`<div id="html_ed1fe5f0a8be1eb00fd1e5f772159f34" style="width: 100.0%; height: 100.0%;"><b>Salar de Uyuni</b><br>Score 39 (range 33 to 45)<br>Gap Index 40<br>Our candidate<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
-                popup_94ad0c1901c8cfb02a09af66a4864b38.setContent(html_ed1fe5f0a8be1eb00fd1e5f772159f34);
+                var html_0ff918ed7dd4914656c5536ca85a98b2 = $(`<div id="html_0ff918ed7dd4914656c5536ca85a98b2" style="width: 100.0%; height: 100.0%;"><b>Salar de Uyuni</b><br>Score 39 (range 33 to 45)<br>Gap Index 40<br>Our candidate<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_01879b25260244a51c82c104d5d057f6.setContent(html_0ff918ed7dd4914656c5536ca85a98b2);
             
         
 
-        circle_marker_326a7d6e318865a4fdd06f2f1191f387.bindPopup(popup_94ad0c1901c8cfb02a09af66a4864b38)
+        circle_marker_72c927a87b76eafb6cdff8841c3b1043.bindPopup(popup_01879b25260244a51c82c104d5d057f6)
         ;
 
         
     
     
-            circle_marker_326a7d6e318865a4fdd06f2f1191f387.bindTooltip(
+            circle_marker_72c927a87b76eafb6cdff8841c3b1043.bindTooltip(
                 `<div>
                      Salar de Uyuni
                  </div>`,
@@ -679,30 +679,30 @@
             );
         
     
-            var circle_marker_ec949b10552a31cde62726ab85a39b30 = L.circleMarker(
+            var circle_marker_c7097d75ff136d0d2fa5525fe8841ad9 = L.circleMarker(
                 [-24.73, 15.29],
                 {"bubblingMouseEvents": true, "color": "#5c6475", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5c6475", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
-            ).addTo(map_3985eb95edbf807bf822d7f91ce3d210);
+            ).addTo(map_4327b23aa5d2e7a5178b94b1f70dd2ff);
         
     
-        var popup_bb2ca121b062157d9c9da82083cdc0ca = L.popup({
+        var popup_6defac4683862aad8cbb8bf9f2b48541 = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_488d6a675e0c8bd70fe468c760f53360 = $(`<div id="html_488d6a675e0c8bd70fe468c760f53360" style="width: 100.0%; height: 100.0%;"><b>Namib (Sossusvlei)</b><br>Score 40 (range 33 to 45)<br>Gap Index 40<br>Our candidate<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
-                popup_bb2ca121b062157d9c9da82083cdc0ca.setContent(html_488d6a675e0c8bd70fe468c760f53360);
+                var html_6f2b1559b1b1a2b2aad6da2d36ec9b21 = $(`<div id="html_6f2b1559b1b1a2b2aad6da2d36ec9b21" style="width: 100.0%; height: 100.0%;"><b>Namib (Sossusvlei)</b><br>Score 40 (range 33 to 45)<br>Gap Index 40<br>Our candidate<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_6defac4683862aad8cbb8bf9f2b48541.setContent(html_6f2b1559b1b1a2b2aad6da2d36ec9b21);
             
         
 
-        circle_marker_ec949b10552a31cde62726ab85a39b30.bindPopup(popup_bb2ca121b062157d9c9da82083cdc0ca)
+        circle_marker_c7097d75ff136d0d2fa5525fe8841ad9.bindPopup(popup_6defac4683862aad8cbb8bf9f2b48541)
         ;
 
         
     
     
-            circle_marker_ec949b10552a31cde62726ab85a39b30.bindTooltip(
+            circle_marker_c7097d75ff136d0d2fa5525fe8841ad9.bindTooltip(
                 `<div>
                      Namib (Sossusvlei)
                  </div>`,
@@ -712,30 +712,30 @@
             );
         
     
-            var circle_marker_f8882fdb170050e1325f5d311f5123bd = L.circleMarker(
+            var circle_marker_70a852394c53cc954aa7705f033e168d = L.circleMarker(
                 [-24.08, -70.01],
                 {"bubblingMouseEvents": true, "color": "#5c6475", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5c6475", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
-            ).addTo(map_3985eb95edbf807bf822d7f91ce3d210);
+            ).addTo(map_4327b23aa5d2e7a5178b94b1f70dd2ff);
         
     
-        var popup_d5463dac4572715941cdcdfcf3953763 = L.popup({
+        var popup_8df40a7ad6397f2a18d852cf2ad3843d = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_bfcc2cfe6aaaf475fffae2af9c604a12 = $(`<div id="html_bfcc2cfe6aaaf475fffae2af9c604a12" style="width: 100.0%; height: 100.0%;"><b>Atacama (Yungay)</b><br>Score 41 (range 34 to 46)<br>Gap Index 39<br>Known analog<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
-                popup_d5463dac4572715941cdcdfcf3953763.setContent(html_bfcc2cfe6aaaf475fffae2af9c604a12);
+                var html_fe988b78677119cd9b57374d57150f8b = $(`<div id="html_fe988b78677119cd9b57374d57150f8b" style="width: 100.0%; height: 100.0%;"><b>Atacama (Yungay)</b><br>Score 41 (range 34 to 46)<br>Gap Index 39<br>Known analog<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_8df40a7ad6397f2a18d852cf2ad3843d.setContent(html_fe988b78677119cd9b57374d57150f8b);
             
         
 
-        circle_marker_f8882fdb170050e1325f5d311f5123bd.bindPopup(popup_d5463dac4572715941cdcdfcf3953763)
+        circle_marker_70a852394c53cc954aa7705f033e168d.bindPopup(popup_8df40a7ad6397f2a18d852cf2ad3843d)
         ;
 
         
     
     
-            circle_marker_f8882fdb170050e1325f5d311f5123bd.bindTooltip(
+            circle_marker_70a852394c53cc954aa7705f033e168d.bindTooltip(
                 `<div>
                      Atacama (Yungay)
                  </div>`,
@@ -745,30 +745,30 @@
             );
         
     
-            var circle_marker_479ef7d9f03c62ee6b80d82d1de89cf1 = L.circleMarker(
+            var circle_marker_bd94d218794a0fbc006f6541902f6e81 = L.circleMarker(
                 [38.41, -110.79],
                 {"bubblingMouseEvents": true, "color": "#5c6475", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5c6475", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
-            ).addTo(map_3985eb95edbf807bf822d7f91ce3d210);
+            ).addTo(map_4327b23aa5d2e7a5178b94b1f70dd2ff);
         
     
-        var popup_5d9a141935de4ec99f7523aee0e95036 = L.popup({
+        var popup_6da9b3d1433484941711311b7cd79211 = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_ade042aeb69bdbdee593e8d9df0c0b13 = $(`<div id="html_ade042aeb69bdbdee593e8d9df0c0b13" style="width: 100.0%; height: 100.0%;"><b>MDRS, Utah</b><br>Score 41 (range 36 to 47)<br>Gap Index 39<br>Known analog<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
-                popup_5d9a141935de4ec99f7523aee0e95036.setContent(html_ade042aeb69bdbdee593e8d9df0c0b13);
+                var html_6e17e78dd19d9d4c35a713a4db2030df = $(`<div id="html_6e17e78dd19d9d4c35a713a4db2030df" style="width: 100.0%; height: 100.0%;"><b>MDRS, Utah</b><br>Score 41 (range 36 to 47)<br>Gap Index 39<br>Known analog<br><i>Rejected: no ground ice or permafrost</i></div>`)[0];
+                popup_6da9b3d1433484941711311b7cd79211.setContent(html_6e17e78dd19d9d4c35a713a4db2030df);
             
         
 
-        circle_marker_479ef7d9f03c62ee6b80d82d1de89cf1.bindPopup(popup_5d9a141935de4ec99f7523aee0e95036)
+        circle_marker_bd94d218794a0fbc006f6541902f6e81.bindPopup(popup_6da9b3d1433484941711311b7cd79211)
         ;
 
         
     
     
-            circle_marker_479ef7d9f03c62ee6b80d82d1de89cf1.bindTooltip(
+            circle_marker_bd94d218794a0fbc006f6541902f6e81.bindTooltip(
                 `<div>
                      MDRS, Utah
                  </div>`,
@@ -778,30 +778,30 @@
             );
         
     
-            var circle_marker_c06330eb179c647ef2dec2f153969cbb = L.circleMarker(
+            var circle_marker_03eb8509ee1a5c34d4bc26f2d5924971 = L.circleMarker(
                 [79.43, 13.3],
                 {"bubblingMouseEvents": true, "color": "#c08a3e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c08a3e", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
-            ).addTo(map_3985eb95edbf807bf822d7f91ce3d210);
+            ).addTo(map_4327b23aa5d2e7a5178b94b1f70dd2ff);
         
     
-        var popup_c6233cf88a695fb472e25ebba322543d = L.popup({
+        var popup_24d0e2cda32132c1190dc5fb7c151f30 = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_a2cfaeaa31042f360594d97345f84cf4 = $(`<div id="html_a2cfaeaa31042f360594d97345f84cf4" style="width: 100.0%; height: 100.0%;"><b>Bockfjorden, Svalbard</b><br>Score 62 (range 57 to 67)<br>Gap Index 40<br>Known analog</div>`)[0];
-                popup_c6233cf88a695fb472e25ebba322543d.setContent(html_a2cfaeaa31042f360594d97345f84cf4);
+                var html_75c006fedb6dc085a82d30c870fc3dd6 = $(`<div id="html_75c006fedb6dc085a82d30c870fc3dd6" style="width: 100.0%; height: 100.0%;"><b>Bockfjorden, Svalbard</b><br>Score 62 (range 57 to 67)<br>Gap Index 40<br>Known analog</div>`)[0];
+                popup_24d0e2cda32132c1190dc5fb7c151f30.setContent(html_75c006fedb6dc085a82d30c870fc3dd6);
             
         
 
-        circle_marker_c06330eb179c647ef2dec2f153969cbb.bindPopup(popup_c6233cf88a695fb472e25ebba322543d)
+        circle_marker_03eb8509ee1a5c34d4bc26f2d5924971.bindPopup(popup_24d0e2cda32132c1190dc5fb7c151f30)
         ;
 
         
     
     
-            circle_marker_c06330eb179c647ef2dec2f153969cbb.bindTooltip(
+            circle_marker_03eb8509ee1a5c34d4bc26f2d5924971.bindTooltip(
                 `<div>
                      Bockfjorden, Svalbard
                  </div>`,
@@ -811,30 +811,30 @@
             );
         
     
-            var circle_marker_3721db43c901690ddc6cb441f22a2336 = L.circleMarker(
+            var circle_marker_9a1a241bff194ef76024b1be88898b4d = L.circleMarker(
                 [-77.52, 161.85],
                 {"bubblingMouseEvents": true, "color": "#c08a3e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c08a3e", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
-            ).addTo(map_3985eb95edbf807bf822d7f91ce3d210);
+            ).addTo(map_4327b23aa5d2e7a5178b94b1f70dd2ff);
         
     
-        var popup_3de6ff9b121bb93f22215b3055ac2cb0 = L.popup({
+        var popup_187b4b8eb9cd046b81ea69ff291713c0 = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_35d1f4e096b421d68b6ca70116a0f199 = $(`<div id="html_35d1f4e096b421d68b6ca70116a0f199" style="width: 100.0%; height: 100.0%;"><b>McMurdo Dry Valleys (Wright)</b><br>Score 66 (range 60 to 71)<br>Gap Index 36<br>Known analog</div>`)[0];
-                popup_3de6ff9b121bb93f22215b3055ac2cb0.setContent(html_35d1f4e096b421d68b6ca70116a0f199);
+                var html_f5dec9c191d91ae2113870c1ed223629 = $(`<div id="html_f5dec9c191d91ae2113870c1ed223629" style="width: 100.0%; height: 100.0%;"><b>McMurdo Dry Valleys (Wright)</b><br>Score 66 (range 60 to 71)<br>Gap Index 36<br>Known analog</div>`)[0];
+                popup_187b4b8eb9cd046b81ea69ff291713c0.setContent(html_f5dec9c191d91ae2113870c1ed223629);
             
         
 
-        circle_marker_3721db43c901690ddc6cb441f22a2336.bindPopup(popup_3de6ff9b121bb93f22215b3055ac2cb0)
+        circle_marker_9a1a241bff194ef76024b1be88898b4d.bindPopup(popup_187b4b8eb9cd046b81ea69ff291713c0)
         ;
 
         
     
     
-            circle_marker_3721db43c901690ddc6cb441f22a2336.bindTooltip(
+            circle_marker_9a1a241bff194ef76024b1be88898b4d.bindTooltip(
                 `<div>
                      McMurdo Dry Valleys (Wright)
                  </div>`,
@@ -844,30 +844,30 @@
             );
         
     
-            var circle_marker_44537360664d71492598f51ab85179c9 = L.circleMarker(
+            var circle_marker_f084c2c5f55c9719b23a968a5597be61 = L.circleMarker(
                 [75.38, -89.68],
                 {"bubblingMouseEvents": true, "color": "#c08a3e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c08a3e", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
-            ).addTo(map_3985eb95edbf807bf822d7f91ce3d210);
+            ).addTo(map_4327b23aa5d2e7a5178b94b1f70dd2ff);
         
     
-        var popup_b7e0114bec3e65445c3d73afde3a29be = L.popup({
+        var popup_320794eef1d5acb9854057e5a5298d92 = L.popup({
   "maxWidth": 260,
 });
 
         
             
-                var html_2f516d975e6baa84e6d125466fb13bcc = $(`<div id="html_2f516d975e6baa84e6d125466fb13bcc" style="width: 100.0%; height: 100.0%;"><b>Haughton Crater, Devon Is.</b><br>Score 68 (range 63 to 73)<br>Gap Index 33<br>Known analog</div>`)[0];
-                popup_b7e0114bec3e65445c3d73afde3a29be.setContent(html_2f516d975e6baa84e6d125466fb13bcc);
+                var html_496571b9812ff1bde213eac8fb36b586 = $(`<div id="html_496571b9812ff1bde213eac8fb36b586" style="width: 100.0%; height: 100.0%;"><b>Haughton Crater, Devon Is.</b><br>Score 68 (range 63 to 73)<br>Gap Index 33<br>Known analog</div>`)[0];
+                popup_320794eef1d5acb9854057e5a5298d92.setContent(html_496571b9812ff1bde213eac8fb36b586);
             
         
 
-        circle_marker_44537360664d71492598f51ab85179c9.bindPopup(popup_b7e0114bec3e65445c3d73afde3a29be)
+        circle_marker_f084c2c5f55c9719b23a968a5597be61.bindPopup(popup_320794eef1d5acb9854057e5a5298d92)
         ;
 
         
     
     
-            circle_marker_44537360664d71492598f51ab85179c9.bindTooltip(
+            circle_marker_f084c2c5f55c9719b23a968a5597be61.bindTooltip(
                 `<div>
                      Haughton Crater, Devon Is.
                  </div>`,
@@ -877,23 +877,23 @@
             );
         
     
-            var layer_control_338e95316b843f95a10ad59a33c67900_layers = {
+            var layer_control_79075b4872efcadedaacef9f54d0f673_layers = {
                 base_layers : {
-                    "cartodbdarkmatter" : tile_layer_3ddb94c73d4315a5e14a1fd8977699b6,
-                    "Satellite" : tile_layer_2b7925d25358c2e2d6417706e7fa62d1,
+                    "Dark map" : tile_layer_a4119de66820917c4620e334ad7f2b2b,
+                    "Satellite" : tile_layer_8052717a2877216160934a32e427cd3e,
                 },
                 overlays :  {
                 },
             };
-            let layer_control_338e95316b843f95a10ad59a33c67900 = L.control.layers(
-                layer_control_338e95316b843f95a10ad59a33c67900_layers.base_layers,
-                layer_control_338e95316b843f95a10ad59a33c67900_layers.overlays,
+            let layer_control_79075b4872efcadedaacef9f54d0f673 = L.control.layers(
+                layer_control_79075b4872efcadedaacef9f54d0f673_layers.base_layers,
+                layer_control_79075b4872efcadedaacef9f54d0f673_layers.overlays,
                 {
   "position": "topright",
   "collapsed": true,
   "autoZIndex": true,
 }
-            ).addTo(map_3985eb95edbf807bf822d7f91ce3d210);
+            ).addTo(map_4327b23aa5d2e7a5178b94b1f70dd2ff);
 
         
 </script>

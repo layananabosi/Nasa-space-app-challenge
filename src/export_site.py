@@ -8,6 +8,7 @@ GitHub Pages: Settings -> Pages -> Deploy from branch -> main, folder /docs.
 The briefs open straight from the disk. The maps load Leaflet and map tiles from the
 internet, so for a room without internet, keep screenshots of the maps in the slides.
 """
+import math
 import shutil
 from html import escape
 
@@ -108,7 +109,7 @@ h3{font-weight:650;font-size:18px;margin:0 0 4px}
 .ranked .no{font-stretch:var(--w-ex);font-weight:300;font-size:44px;line-height:1;color:var(--faint)}
 .ranked li:first-child .no{color:var(--butter);font-weight:700}
 .ranked h3{font-size:22px;font-weight:680}
-.ranked .tag{font-size:13px;margin-left:8px;padding:2px 9px;border-radius:99px;vertical-align:3px;
+.tag{font-size:13px;margin-left:8px;padding:2px 9px;border-radius:99px;vertical-align:3px;
   border:1px solid currentColor;white-space:nowrap;display:inline-block}
 .tag.positive{color:var(--earth)}.tag.candidate{color:var(--butter)}.tag.negative{color:var(--dust)}
 .ranked dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:12px 0 0;font-size:15px}
@@ -203,8 +204,16 @@ def reasons(row, feats, best=True, n=2):
     return ", ".join(PRETTY.get(f, f) for f in s.index) or "n/a"
 
 
+def dark_base(m):
+    """Esri dark gray basemap: free, no API key (CartoDB tiles now need one)."""
+    folium.TileLayer(
+        tiles="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+        attr="Esri, HERE, Garmin, OpenStreetMap contributors", name="Dark map", max_zoom=16).add_to(m)
+
+
 def site_map(g, path):
-    m = folium.Map(location=[20, 10], zoom_start=2, tiles="CartoDB dark_matter")
+    m = folium.Map(location=[20, 10], zoom_start=2, tiles=None)
+    dark_base(m)
     folium.TileLayer(
         tiles="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
         attr="Esri World Imagery", name="Satellite").add_to(m)
@@ -361,6 +370,11 @@ of those pairs ranked correctly: 1.00 is perfect, 0.50 is a coin flip.</p>
 <p class='muted small'>The thin line on each bar marks a coin flip. Weights were set before seeing any results.
 Landing tests score lowest, by design: on terrain alone, flat farmland resembles flat Mars plains.</p>"""
 
+    scan_path = PROCESSED / "scan_scores.csv"
+    scan = pd.read_csv(scan_path) if scan_path.exists() else None
+    if scan is not None and not scan.empty:
+        scan_page(scan, profiles, targets, sample)
+
     body = f"""{mast('')}
 <p class='kicker'>Built by two sisters over one weekend, for NASA Space Apps 2026</p>
 <h1 class='question'>If you had to rehearse a Mars mission tomorrow, where on Earth would you go?</h1>
@@ -368,6 +382,7 @@ Landing tests score lowest, by design: on terrain alone, flat farmland resembles
 those places were chosen by experience. We compared {n_earth} of them with {n_mars} sites on Mars, using open NASA
 and ESA data, to find out which place fits which mission, and why.</p>
 {validation_block}
+{scan_teaser(scan)}
 <h2>Mission briefs</h2>
 <p class='muted'>Each brief recommends three Earth sites, explains the match, lists which known analogs
 fail the mission's rules, and shows what no Earth site can simulate.</p>
@@ -394,6 +409,100 @@ instead of leaving them out.</p>
 </section>"""
     (SITE / "index.html").write_text(page("AnaloGraph: Mars analog sites on Earth", body, sample), encoding="utf-8")
     print(f"Site written to {SITE}/index.html")
+
+
+SCAN_REGION = "the Negev, Sinai and southern Jordan"
+
+
+def scan_teaser(sc):
+    """Short block for the landing page; empty when no scan has been run."""
+    if sc is None or sc.empty:
+        return ""
+    n = sc["id"].nunique()
+    beats = sc[sc["eligible"] & sc["new"] & (sc["afs"] > sc["best_site_afs"])]
+    n_new = beats["id"].nunique()
+    line = (f"{n_new} squares outside our starting list score higher than the best of our 23 sites "
+            f"for at least one mission." if n_new else
+            "No square outside our starting list beats our 23 sites, but several come close.")
+    return (f"<h2>Searching beyond the famous sites</h2>"
+            f"<p class='muted'>Ranking famous sites is not enough, so we split {SCAN_REGION} into {n} squares of "
+            f"20 by 20 km and scored every one of them. {line}</p>"
+            f"<p><a href='scan.html'>See the regional search</a></p>")
+
+
+def scan_page(sc, profiles, targets, sample):
+    cell_deg = 20 / 111.0
+    m = folium.Map(location=[sc["lat"].mean(), sc["lon"].mean()], zoom_start=7, tiles=None)
+    dark_base(m)
+    folium.TileLayer(
+        tiles="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+        attr="Esri World Imagery", name="Satellite").add_to(m)
+    sections, first = [], True
+    for pid, prof in profiles.items():
+        for tid in prof["targets"]:
+            g = sc[(sc["profile"] == pid) & (sc["target"] == tid)]
+            if g.empty:
+                continue
+            layer = folium.FeatureGroup(name=f"{prof['label']}: {targets[tid]['name']}", show=first)
+            first = False
+            for r in g.itertuples():
+                dlon = cell_deg / math.cos(math.radians(r.lat))
+                color = ramp(r.afs) if r.eligible else REJECTED
+                pop = (f"<b>{r.lat:.2f}, {r.lon:.2f}</b><br>Score {fmt(r.afs)}, Gap Index {fmt(r.gap_index)}"
+                       f"<br>{fmt(r.nearest_km)} km from {escape(r.nearest_site)}"
+                       + ("<br><b>New to our list</b>" if r.new else "")
+                       + ("" if r.eligible else f"<br><i>Rejected: {escape(r.failed)}</i>"))
+                folium.Rectangle([[r.lat - cell_deg / 2, r.lon - dlon / 2], [r.lat + cell_deg / 2, r.lon + dlon / 2]],
+                                 color=color, weight=0.5, fill=True, fill_color=color,
+                                 fill_opacity=0.65 if r.eligible else 0.15,
+                                 popup=folium.Popup(pop, max_width=260)).add_to(layer)
+            layer.add_to(m)
+
+            ok = g[g["eligible"]].head(5)
+            best = g["best_site_afs"].iloc[0]
+            beat = int((g["eligible"] & (g["afs"] > best)).sum()) if pd.notna(best) else 0
+            rows = "".join(
+                f"<tr><td class='num'><a href='https://www.google.com/maps/@{r.lat:.4f},{r.lon:.4f},11z/data=!3m1!1e3'>"
+                f"{r.lat:.2f}, {r.lon:.2f}</a></td>"
+                f"<td class='num'><span class='bar' style='width:{max(2, r.afs) * 0.9:.0f}px'></span>{fmt(r.afs)}</td>"
+                f"<td class='num'>{fmt(r.gap_index)}</td>"
+                f"<td>{fmt(r.nearest_km)} km from {escape(r.nearest_site)}"
+                + (" <span class='tag candidate'>New to our list</span>" if r.new else "") + "</td></tr>"
+                for r in ok.itertuples()) or "<tr><td colspan='4' class='muted'>No square passes this mission's rules.</td></tr>"
+            sections.append(
+                f"<h3 style='margin-top:36px'>{escape(prof['label'])} for {escape(targets[tid]['name'])}</h3>"
+                f"<p class='muted small'>Best of our 23 sites: {fmt(best)}. Squares in the region that score higher: "
+                f"{beat}.</p>"
+                f"<div class='scroll'><table><tr><th>Square (opens satellite view)</th><th>Score</th>"
+                f"<th>Gap Index</th><th>Nearest site on our list</th></tr>{rows}</table></div>")
+    folium.LayerControl(collapsed=False).add_to(m)
+    m.save(str(SITE / "maps" / "scan.html"))
+
+    n = sc["id"].nunique()
+    body = f"""{mast('')}
+<a class='crumb' href='index.html'>All missions</a>
+<p class='kicker'>Regional search, {n} squares of 20 by 20 km</p>
+<h1 class='question'>What if the best place to practice is not on anyone's list yet?</h1>
+<p class='lede'>We split {SCAN_REGION} into a grid and measured every square with exactly the same NASA and ESA
+data and the same mission rules as our 23 sites. Squares more than 30 km from every site we started with are
+marked "new to our list". Some may already be known to geologists; they are places worth checking.</p>
+<h2>Map</h2>
+<div class='mapwrap'><iframe src='maps/scan.html' title='Map of scored squares, one layer per mission and Mars site'></iframe>
+<div class='legend'><span><i class='dot' style='background:{RAMP[0][1]}'></i>Score 75 or more</span>
+<span><i class='dot' style='background:{RAMP[1][1]}'></i>55 to 74</span>
+<span><i class='dot' style='background:{RAMP[2][1]}'></i>Below 55</span>
+<span><i class='dot hollow'></i>Rejected by a mission rule</span></div></div>
+<p class='muted small'>Use the layer menu on the map to switch missions and Mars sites. Ice drilling is left out:
+there is no ground ice in this region.</p>
+<h2>Best squares for each mission</h2>
+<p class='muted'>Scores use the same 0 to 100 scale as the briefs, so a square scoring above the best of our 23
+sites is a better match than any place we started with.</p>
+{''.join(sections)}
+<h2>How to read this</h2>
+<p class='muted'>A square is an average over 400 square kilometres, so a high score points to an area worth a closer
+look, not a finished answer. Cities, farms and roads inside a square lower its bare-ground value.</p>"""
+    (SITE / "scan.html").write_text(page("Regional search: AnaloGraph", body, sample), encoding="utf-8")
+    print(f"Scan page written to {SITE}/scan.html")
 
 
 if __name__ == "__main__":

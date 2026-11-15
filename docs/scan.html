@@ -1,0 +1,150 @@
+<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><meta name='color-scheme' content='dark'><title>Regional search: AnaloGraph</title><link rel='preconnect' href='https://fonts.googleapis.com'><link rel='preconnect' href='https://fonts.gstatic.com' crossorigin><link href='https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&display=swap' rel='stylesheet'><style>
+:root{
+  --night:#141823; --panel:#1b2130; --raised:#232a3b; --line:#2e3648;
+  --regolith:#ebe5d9; --dust:#a3a9b8; --faint:#6f7789;
+  --butter:#f2c46d; --earth:#78aee6; --control:#5c6475;
+  --w-ex:125%;
+}
+*{box-sizing:border-box}
+html{background:var(--night)}
+body{margin:0;background:var(--night);color:var(--regolith);
+  font-family:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:16px;line-height:1.55;
+  font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
+main{max-width:1060px;margin:0 auto;padding:40px 20px 80px}
+a{color:var(--butter);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--butter);outline-offset:3px;border-radius:2px}
+p{max-width:68ch}
+.muted{color:var(--dust)}
+.small{font-size:14px}
+
+/* masthead */
+.mast{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;
+  padding-bottom:18px;border-bottom:1px solid var(--line)}
+.wordmark{font-stretch:var(--w-ex);font-weight:750;font-size:20px;letter-spacing:-.01em;color:var(--regolith);text-decoration:none}
+.wordmark span{color:var(--butter)}
+.mast .who{color:var(--dust);font-size:14px}
+
+/* type scale */
+h1{font-stretch:var(--w-ex);font-weight:780;font-size:clamp(34px,6.2vw,68px);line-height:1.02;
+  letter-spacing:-.025em;margin:48px 0 18px;max-width:16ch}
+h2{font-stretch:var(--w-ex);font-weight:700;font-size:22px;letter-spacing:-.01em;margin:64px 0 8px}
+h3{font-weight:650;font-size:18px;margin:0 0 4px}
+.lede{font-size:19px;color:var(--dust);max-width:60ch}
+
+/* validation */
+.versus{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);
+  border-radius:14px;overflow:hidden;margin-top:18px}
+.versus > div{background:var(--panel);padding:24px 24px 22px}
+.versus .big{font-stretch:var(--w-ex);font-weight:780;font-size:clamp(44px,7vw,72px);line-height:1;letter-spacing:-.03em}
+.versus .base .big{color:var(--dust)}
+.versus .ours .big{color:var(--butter)}
+.versus .what{font-weight:650;margin-top:10px}
+.meter{height:8px;background:var(--raised);border-radius:99px;margin-top:16px;position:relative}
+.meter i{position:absolute;inset:0 auto 0 0;border-radius:99px;background:var(--dust)}
+.ours .meter i{background:var(--butter)}
+.meter b{position:absolute;top:-4px;bottom:-4px;width:1px;background:var(--faint)}
+
+/* missions on the landing page */
+.mission{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:28px;padding:28px 0;
+  border-top:1px solid var(--line)}
+.mission:first-of-type{border-top:0}
+.mission h3{font-stretch:var(--w-ex);font-size:21px;font-weight:720}
+.targets{list-style:none;margin:0;padding:0}
+.targets li{border-bottom:1px solid var(--line)}
+.targets li:last-child{border-bottom:0}
+.targets a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;padding:12px 4px;
+  color:var(--regolith);text-decoration:none}
+.targets a:hover{background:var(--panel)}
+.targets .t{font-weight:600}
+.targets .auc{color:var(--dust);font-size:14px;text-align:right}
+.targets .pick{grid-column:1/-1;color:var(--dust);font-size:14px}
+.targets .pick strong{color:var(--butter);font-weight:600}
+
+/* brief: the match */
+.crumb{font-size:14px;margin-top:22px;display:inline-block}
+.kicker{color:var(--dust);font-size:15px;margin:36px 0 0}
+.brief h1{margin-top:6px;max-width:20ch}
+.ranked{list-style:none;margin:20px 0 0;padding:0;counter-reset:rank}
+.ranked li{display:grid;grid-template-columns:64px minmax(0,1fr) 170px;gap:8px 22px;align-items:start;
+  padding:24px 0;border-top:1px solid var(--line)}
+.ranked .no{font-stretch:var(--w-ex);font-weight:300;font-size:44px;line-height:1;color:var(--faint)}
+.ranked li:first-child .no{color:var(--butter);font-weight:700}
+.ranked h3{font-size:22px;font-weight:680}
+.tag{font-size:13px;margin-left:8px;padding:2px 9px;border-radius:99px;vertical-align:3px;
+  border:1px solid currentColor;white-space:nowrap;display:inline-block}
+.tag.positive{color:var(--earth)}.tag.candidate{color:var(--butter)}.tag.negative{color:var(--dust)}
+.ranked dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:12px 0 0;font-size:15px}
+.ranked dt{color:var(--dust)}.ranked dd{margin:0}
+.ranked .score{text-align:right}
+.ranked .score .big{font-stretch:var(--w-ex);font-weight:760;font-size:48px;line-height:1;letter-spacing:-.03em}
+.ranked .score .unit{color:var(--dust);font-size:13px}
+.range{height:6px;background:var(--raised);border-radius:99px;position:relative;margin-top:12px}
+.range i{position:absolute;top:0;bottom:0;background:var(--butter);opacity:.45;border-radius:99px}
+.range b{position:absolute;top:-4px;bottom:-4px;width:3px;margin-left:-1px;background:var(--butter);border-radius:2px}
+
+/* map */
+.mapwrap{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel)}
+iframe{display:block;width:100%;height:460px;border:0;background:var(--panel)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 22px;padding:12px 16px;font-size:14px;color:var(--dust);
+  border-top:1px solid var(--line)}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.dot{width:12px;height:12px;border-radius:50%;display:inline-block}
+.dot.hollow{background:transparent;border:2px solid var(--control)}
+
+/* tables */
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:14px}
+table{width:100%;border-collapse:collapse;font-size:15px;min-width:560px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+th{color:var(--dust);font-weight:600;font-size:14px;background:var(--panel)}
+td.num{white-space:nowrap}
+.bar{display:inline-block;height:6px;border-radius:99px;background:var(--butter);vertical-align:middle;
+  margin-right:10px;opacity:.85}
+.who-type{white-space:nowrap}
+.who-type .dot{width:9px;height:9px;margin-right:7px}
+
+.question{font-size:clamp(30px,4.8vw,54px);max-width:21ch;margin-top:10px}
+.note{margin-top:72px;padding:28px 30px;background:var(--panel);border-left:3px solid var(--butter);border-radius:4px 14px 14px 4px}
+.note h2{margin-top:0}
+.note p{font-size:17px}
+.note .sign{font-stretch:var(--w-ex);font-weight:700;color:var(--butter);margin-bottom:0}
+
+/* figure + footer */
+figure{margin:18px 0 0}
+figure img{display:block;max-width:100%;border-radius:12px;background:#fff}
+figcaption{color:var(--dust);font-size:14px;margin-top:8px}
+footer{margin-top:72px;padding-top:20px;border-top:1px solid var(--line);color:var(--dust);font-size:14px}
+footer p{max-width:none}
+
+@media (max-width:760px){
+  main{padding:28px 16px 64px}
+  .versus{grid-template-columns:1fr}
+  .mission{grid-template-columns:1fr;gap:10px}
+  .ranked li{grid-template-columns:44px minmax(0,1fr)}
+  .ranked .no{font-size:32px}
+  .ranked .score{grid-column:2;text-align:left}
+  iframe{height:360px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body><main><header class='mast'><a class='wordmark' href='index.html'>Analo<span>Graph</span></a><span class='who'>Layan Anabosi and Mia Anabosi</span></header>
+<a class='crumb' href='index.html'>All missions</a>
+<p class='kicker'>Regional search, 444 squares of 20 by 20 km</p>
+<h1 class='question'>What if the best place to practice is not on anyone's list yet?</h1>
+<p class='lede'>We split the Negev, Sinai and southern Jordan into a grid and measured every square with exactly the same NASA and ESA
+data and the same mission rules as our 23 sites. Squares more than 30 km from every site we started with are
+marked "new to our list". Some may already be known to geologists; they are places worth checking.</p>
+<h2>Map</h2>
+<div class='mapwrap'><iframe src='maps/scan.html' title='Map of scored squares, one layer per mission and Mars site'></iframe>
+<div class='legend'><span><i class='dot' style='background:#f2c46d'></i>Score 75 or more</span>
+<span><i class='dot' style='background:#c08a3e'></i>55 to 74</span>
+<span><i class='dot' style='background:#6e5536'></i>Below 55</span>
+<span><i class='dot hollow'></i>Rejected by a mission rule</span></div></div>
+<p class='muted small'>Use the layer menu on the map to switch missions and Mars sites. Ice drilling is left out:
+there is no ground ice in this region.</p>
+<h2>Best squares for each mission</h2>
+<p class='muted'>Scores use the same 0 to 100 scale as the briefs, so a square scoring above the best of our 23
+sites is a better match than any place we started with.</p>
+<h3 style='margin-top:36px'>Landing and rover traverse for Jezero Crater</h3><p class='muted small'>Best of our 23 sites: 93. Squares in the region that score higher: 25.</p><div class='scroll'><table><tr><th>Square (opens satellite view)</th><th>Score</th><th>Gap Index</th><th>Nearest site on our list</th></tr><tr><td class='num'><a href='https://www.google.com/maps/@27.8703,34.1325,11z/data=!3m1!1e3'>27.87, 34.13</a></td><td class='num'><span class='bar' style='width:87px'></span>96</td><td class='num'>3</td><td>221 km from Wadi Rum Protected Area <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@29.8523,34.9968,11z/data=!3m1!1e3'>29.85, 35.00</a></td><td class='num'><span class='bar' style='width:86px'></span>96</td><td class='num'>3</td><td>9 km from Timna Valley</td></tr><tr><td class='num'><a href='https://www.google.com/maps/@30.5730,33.9695,11z/data=!3m1!1e3'>30.57, 33.97</a></td><td class='num'><span class='bar' style='width:86px'></span>96</td><td class='num'>4</td><td>82 km from Makhtesh Ramon (D-MARS) <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@29.3117,34.9829,11z/data=!3m1!1e3'>29.31, 34.98</a></td><td class='num'><span class='bar' style='width:86px'></span>95</td><td class='num'>3</td><td>50 km from Wadi Rum Protected Area <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@27.6901,33.1122,11z/data=!3m1!1e3'>27.69, 33.11</a></td><td class='num'><span class='bar' style='width:86px'></span>95</td><td class='num'>4</td><td>294 km from Timna Valley <span class='tag candidate'>New to our list</span></td></tr></table></div><h3 style='margin-top:36px'>Landing and rover traverse for Gale Crater</h3><p class='muted small'>Best of our 23 sites: 92. Squares in the region that score higher: 8.</p><div class='scroll'><table><tr><th>Square (opens satellite view)</th><th>Score</th><th>Gap Index</th><th>Nearest site on our list</th></tr><tr><td class='num'><a href='https://www.google.com/maps/@28.2306,35.1608,11z/data=!3m1!1e3'>28.23, 35.16</a></td><td class='num'><span class='bar' style='width:86px'></span>96</td><td class='num'>2</td><td>142 km from Wadi Rum Protected Area <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@29.3117,32.5033,11z/data=!3m1!1e3'>29.31, 32.50</a></td><td class='num'><span class='bar' style='width:85px'></span>94</td><td class='num'>4</td><td>243 km from Timna Valley <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@29.4919,34.7805,11z/data=!3m1!1e3'>29.49, 34.78</a></td><td class='num'><span class='bar' style='width:84px'></span>94</td><td class='num'>4</td><td>36 km from Timna Valley <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@28.5910,34.7598,11z/data=!3m1!1e3'>28.59, 34.76</a></td><td class='num'><span class='bar' style='width:84px'></span>94</td><td class='num'>4</td><td>120 km from Wadi Rum Protected Area <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@29.1315,33.3282,11z/data=!3m1!1e3'>29.13, 33.33</a></td><td class='num'><span class='bar' style='width:83px'></span>93</td><td class='num'>5</td><td>174 km from Timna Valley <span class='tag candidate'>New to our list</span></td></tr></table></div><h3 style='margin-top:36px'>Landing and rover traverse for Meridiani Planum</h3><p class='muted small'>Best of our 23 sites: 98. Squares in the region that score higher: 55.</p><div class='scroll'><table><tr><th>Square (opens satellite view)</th><th>Score</th><th>Gap Index</th><th>Nearest site on our list</th></tr><tr><td class='num'><a href='https://www.google.com/maps/@29.4919,36.2295,11z/data=!3m1!1e3'>29.49, 36.23</a></td><td class='num'><span class='bar' style='width:90px'></span>99</td><td class='num'>1</td><td>74 km from Wadi Rum Protected Area <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@30.0324,33.3365,11z/data=!3m1!1e3'>30.03, 33.34</a></td><td class='num'><span class='bar' style='width:89px'></span>99</td><td class='num'>1</td><td>156 km from Makhtesh Ramon (D-MARS) <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@29.3117,36.2228,11z/data=!3m1!1e3'>29.31, 36.22</a></td><td class='num'><span class='bar' style='width:89px'></span>99</td><td class='num'>1</td><td>76 km from Wadi Rum Protected Area <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@30.9333,33.9754,11z/data=!3m1!1e3'>30.93, 33.98</a></td><td class='num'><span class='bar' style='width:89px'></span>99</td><td class='num'>1</td><td>91 km from Makhtesh Ramon (D-MARS) <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@28.0505,34.5437,11z/data=!3m1!1e3'>28.05, 34.54</a></td><td class='num'><span class='bar' style='width:89px'></span>99</td><td class='num'>1</td><td>182 km from Wadi Rum Protected Area <span class='tag candidate'>New to our list</span></td></tr></table></div><h3 style='margin-top:36px'>Landing and rover traverse for Elysium Planitia</h3><p class='muted small'>Best of our 23 sites: 98. Squares in the region that score higher: 59.</p><div class='scroll'><table><tr><th>Square (opens satellite view)</th><th>Score</th><th>Gap Index</th><th>Nearest site on our list</th></tr><tr><td class='num'><a href='https://www.google.com/maps/@30.0324,33.3365,11z/data=!3m1!1e3'>30.03, 33.34</a></td><td class='num'><span class='bar' style='width:90px'></span>100</td><td class='num'>1</td><td>156 km from Makhtesh Ramon (D-MARS) <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@30.0324,36.0421,11z/data=!3m1!1e3'>30.03, 36.04</a></td><td class='num'><span class='bar' style='width:90px'></span>100</td><td class='num'>1</td><td>83 km from Wadi Rum Protected Area <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@29.4919,36.2295,11z/data=!3m1!1e3'>29.49, 36.23</a></td><td class='num'><span class='bar' style='width:89px'></span>99</td><td class='num'>1</td><td>74 km from Wadi Rum Protected Area <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@30.0324,36.6665,11z/data=!3m1!1e3'>30.03, 36.67</a></td><td class='num'><span class='bar' style='width:89px'></span>99</td><td class='num'>1</td><td>132 km from Wadi Rum Protected Area <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@29.3117,36.2228,11z/data=!3m1!1e3'>29.31, 36.22</a></td><td class='num'><span class='bar' style='width:89px'></span>99</td><td class='num'>1</td><td>76 km from Wadi Rum Protected Area <span class='tag candidate'>New to our list</span></td></tr></table></div><h3 style='margin-top:36px'>Habitat and crew operations for Jezero Crater</h3><p class='muted small'>Best of our 23 sites: 66. Squares in the region that score higher: 0.</p><div class='scroll'><table><tr><th>Square (opens satellite view)</th><th>Score</th><th>Gap Index</th><th>Nearest site on our list</th></tr><tr><td class='num'><a href='https://www.google.com/maps/@28.7712,33.9417,11z/data=!3m1!1e3'>28.77, 33.94</a></td><td class='num'><span class='bar' style='width:56px'></span>63</td><td class='num'>23</td><td>149 km from Timna Valley <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@29.1315,33.9470,11z/data=!3m1!1e3'>29.13, 33.95</a></td><td class='num'><span class='bar' style='width:56px'></span>62</td><td class='num'>23</td><td>122 km from Timna Valley <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@29.1315,33.7408,11z/data=!3m1!1e3'>29.13, 33.74</a></td><td class='num'><span class='bar' style='width:56px'></span>62</td><td class='num'>23</td><td>138 km from Timna Valley <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@29.3117,33.7431,11z/data=!3m1!1e3'>29.31, 33.74</a></td><td class='num'><span class='bar' style='width:55px'></span>62</td><td class='num'>24</td><td>129 km from Timna Valley <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@28.4108,35.7801,11z/data=!3m1!1e3'>28.41, 35.78</a></td><td class='num'><span class='bar' style='width:55px'></span>62</td><td class='num'>23</td><td>123 km from Wadi Rum Protected Area <span class='tag candidate'>New to our list</span></td></tr></table></div><h3 style='margin-top:36px'>Habitat and crew operations for Gale Crater</h3><p class='muted small'>Best of our 23 sites: 65. Squares in the region that score higher: 0.</p><div class='scroll'><table><tr><th>Square (opens satellite view)</th><th>Score</th><th>Gap Index</th><th>Nearest site on our list</th></tr><tr><td class='num'><a href='https://www.google.com/maps/@29.1315,33.9470,11z/data=!3m1!1e3'>29.13, 33.95</a></td><td class='num'><span class='bar' style='width:54px'></span>61</td><td class='num'>27</td><td>122 km from Timna Valley <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@28.9514,33.7384,11z/data=!3m1!1e3'>28.95, 33.74</a></td><td class='num'><span class='bar' style='width:54px'></span>60</td><td class='num'>27</td><td>150 km from Timna Valley <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@29.1315,33.7408,11z/data=!3m1!1e3'>29.13, 33.74</a></td><td class='num'><span class='bar' style='width:54px'></span>60</td><td class='num'>27</td><td>138 km from Timna Valley <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@28.7712,33.9417,11z/data=!3m1!1e3'>28.77, 33.94</a></td><td class='num'><span class='bar' style='width:54px'></span>60</td><td class='num'>27</td><td>149 km from Timna Valley <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@29.1315,34.1533,11z/data=!3m1!1e3'>29.13, 34.15</a></td><td class='num'><span class='bar' style='width:54px'></span>60</td><td class='num'>27</td><td>106 km from Timna Valley <span class='tag candidate'>New to our list</span></td></tr></table></div><h3 style='margin-top:36px'>Habitat and crew operations for Arcadia Planitia</h3><p class='muted small'>Best of our 23 sites: 68. Squares in the region that score higher: 0.</p><div class='scroll'><table><tr><th>Square (opens satellite view)</th><th>Score</th><th>Gap Index</th><th>Nearest site on our list</th></tr><tr><td class='num'><a href='https://www.google.com/maps/@29.8523,36.0355,11z/data=!3m1!1e3'>29.85, 36.04</a></td><td class='num'><span class='bar' style='width:58px'></span>64</td><td class='num'>25</td><td>69 km from Wadi Rum Protected Area <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@29.3117,36.2228,11z/data=!3m1!1e3'>29.31, 36.22</a></td><td class='num'><span class='bar' style='width:58px'></span>64</td><td class='num'>25</td><td>76 km from Wadi Rum Protected Area <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@27.6901,32.7052,11z/data=!3m1!1e3'>27.69, 32.71</a></td><td class='num'><span class='bar' style='width:58px'></span>64</td><td class='num'>25</td><td>320 km from Timna Valley <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@30.0324,36.4584,11z/data=!3m1!1e3'>30.03, 36.46</a></td><td class='num'><span class='bar' style='width:58px'></span>64</td><td class='num'>25</td><td>114 km from Wadi Rum Protected Area <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@29.4919,36.2295,11z/data=!3m1!1e3'>29.49, 36.23</a></td><td class='num'><span class='bar' style='width:57px'></span>64</td><td class='num'>25</td><td>74 km from Wadi Rum Protected Area <span class='tag candidate'>New to our list</span></td></tr></table></div><h3 style='margin-top:36px'>Habitat and crew operations for Elysium Planitia</h3><p class='muted small'>Best of our 23 sites: 63. Squares in the region that score higher: 0.</p><div class='scroll'><table><tr><th>Square (opens satellite view)</th><th>Score</th><th>Gap Index</th><th>Nearest site on our list</th></tr><tr><td class='num'><a href='https://www.google.com/maps/@29.8523,36.0355,11z/data=!3m1!1e3'>29.85, 36.04</a></td><td class='num'><span class='bar' style='width:56px'></span>62</td><td class='num'>25</td><td>69 km from Wadi Rum Protected Area <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@29.3117,36.2228,11z/data=!3m1!1e3'>29.31, 36.22</a></td><td class='num'><span class='bar' style='width:55px'></span>62</td><td class='num'>24</td><td>76 km from Wadi Rum Protected Area <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@30.0324,36.4584,11z/data=!3m1!1e3'>30.03, 36.46</a></td><td class='num'><span class='bar' style='width:55px'></span>62</td><td class='num'>25</td><td>114 km from Wadi Rum Protected Area <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@27.6901,32.7052,11z/data=!3m1!1e3'>27.69, 32.71</a></td><td class='num'><span class='bar' style='width:55px'></span>62</td><td class='num'>25</td><td>320 km from Timna Valley <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@30.0324,36.2503,11z/data=!3m1!1e3'>30.03, 36.25</a></td><td class='num'><span class='bar' style='width:55px'></span>61</td><td class='num'>25</td><td>98 km from Wadi Rum Protected Area <span class='tag candidate'>New to our list</span></td></tr></table></div><h3 style='margin-top:36px'>Astrobiology and life detection for Jezero Crater</h3><p class='muted small'>Best of our 23 sites: 82. Squares in the region that score higher: 0.</p><div class='scroll'><table><tr><th>Square (opens satellite view)</th><th>Score</th><th>Gap Index</th><th>Nearest site on our list</th></tr><tr><td class='num'><a href='https://www.google.com/maps/@28.7712,33.9417,11z/data=!3m1!1e3'>28.77, 33.94</a></td><td class='num'><span class='bar' style='width:73px'></span>81</td><td class='num'>23</td><td>149 km from Timna Valley <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@28.2306,32.5023,11z/data=!3m1!1e3'>28.23, 32.50</a></td><td class='num'><span class='bar' style='width:73px'></span>81</td><td class='num'>23</td><td>295 km from Timna Valley <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@28.0505,32.7062,11z/data=!3m1!1e3'>28.05, 32.71</a></td><td class='num'><span class='bar' style='width:72px'></span>81</td><td class='num'>23</td><td>292 km from Timna Valley <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@29.3117,33.7431,11z/data=!3m1!1e3'>29.31, 33.74</a></td><td class='num'><span class='bar' style='width:72px'></span>80</td><td class='num'>23</td><td>129 km from Timna Valley <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@28.2306,32.7068,11z/data=!3m1!1e3'>28.23, 32.71</a></td><td class='num'><span class='bar' style='width:72px'></span>80</td><td class='num'>24</td><td>279 km from Timna Valley <span class='tag candidate'>New to our list</span></td></tr></table></div><h3 style='margin-top:36px'>Astrobiology and life detection for Gale Crater</h3><p class='muted small'>Best of our 23 sites: 82. Squares in the region that score higher: 0.</p><div class='scroll'><table><tr><th>Square (opens satellite view)</th><th>Score</th><th>Gap Index</th><th>Nearest site on our list</th></tr><tr><td class='num'><a href='https://www.google.com/maps/@27.6901,32.9087,11z/data=!3m1!1e3'>27.69, 32.91</a></td><td class='num'><span class='bar' style='width:72px'></span>80</td><td class='num'>27</td><td>307 km from Timna Valley <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@29.1315,33.7408,11z/data=!3m1!1e3'>29.13, 33.74</a></td><td class='num'><span class='bar' style='width:72px'></span>80</td><td class='num'>27</td><td>138 km from Timna Valley <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@29.1315,33.9470,11z/data=!3m1!1e3'>29.13, 33.95</a></td><td class='num'><span class='bar' style='width:72px'></span>80</td><td class='num'>27</td><td>122 km from Timna Valley <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@28.4108,32.5024,11z/data=!3m1!1e3'>28.41, 32.50</a></td><td class='num'><span class='bar' style='width:72px'></span>80</td><td class='num'>27</td><td>283 km from Timna Valley <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@28.9514,33.7384,11z/data=!3m1!1e3'>28.95, 33.74</a></td><td class='num'><span class='bar' style='width:72px'></span>80</td><td class='num'>27</td><td>150 km from Timna Valley <span class='tag candidate'>New to our list</span></td></tr></table></div><h3 style='margin-top:36px'>Astrobiology and life detection for Meridiani Planum</h3><p class='muted small'>Best of our 23 sites: 79. Squares in the region that score higher: 28.</p><div class='scroll'><table><tr><th>Square (opens satellite view)</th><th>Score</th><th>Gap Index</th><th>Nearest site on our list</th></tr><tr><td class='num'><a href='https://www.google.com/maps/@29.3117,36.2228,11z/data=!3m1!1e3'>29.31, 36.22</a></td><td class='num'><span class='bar' style='width:72px'></span>80</td><td class='num'>27</td><td>76 km from Wadi Rum Protected Area <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@27.6901,32.7052,11z/data=!3m1!1e3'>27.69, 32.71</a></td><td class='num'><span class='bar' style='width:72px'></span>80</td><td class='num'>27</td><td>320 km from Timna Valley <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@29.4919,36.2295,11z/data=!3m1!1e3'>29.49, 36.23</a></td><td class='num'><span class='bar' style='width:72px'></span>80</td><td class='num'>27</td><td>74 km from Wadi Rum Protected Area <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@29.4919,36.0225,11z/data=!3m1!1e3'>29.49, 36.02</a></td><td class='num'><span class='bar' style='width:72px'></span>80</td><td class='num'>27</td><td>54 km from Wadi Rum Protected Area <span class='tag candidate'>New to our list</span></td></tr><tr><td class='num'><a href='https://www.google.com/maps/@28.0505,32.5021,11z/data=!3m1!1e3'>28.05, 32.50</a></td><td class='num'><span class='bar' style='width:72px'></span>80</td><td class='num'>28</td><td>307 km from Timna Valley <span class='tag candidate'>New to our list</span></td></tr></table></div>
+<h2>How to read this</h2>
+<p class='muted'>A square is an average over 400 square kilometres, so a high score points to an area worth a closer
+look, not a finished answer. Cities, farms and roads inside a square lower its bare-ground value.</p><footer><p>Made by Layan Anabosi and Mia Anabosi for the 2026 NASA Space Apps Challenge.</p><p>Data: NASA MODIS land surface temperature, NASA MGS MOLA elevation, ESA Copernicus DEM, ESA WorldCover, TerraClimate precipitation, Mars Climate Database, NASA SWIM ice maps. Method and sources: <a href='https://github.com/layananabosi/Nasa-space-app-challenge'>GitHub repository</a>.</p></footer></main></body></html>

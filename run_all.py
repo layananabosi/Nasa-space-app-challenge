@@ -11,7 +11,7 @@ import argparse
 import subprocess
 import sys
 
-from src import export_site, score, validate
+from src import export_site, score, score_scan, validate
 from src.common import ensure_dirs
 
 
@@ -28,6 +28,8 @@ def main():
     score.run()
     print("[5] validation")
     print(validate.run().round(2).to_string(index=False))
+    if score_scan.run() is not None:
+        print("[5b] regional scan scored")
     print("[6] mission briefs + maps")
     export_site.run(sample=args.sample)
     print("\nDone. Open docs/index.html in a browser.")
