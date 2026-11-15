@@ -1,5 +1,7 @@
 # AnaloGraph
 
+This solution was developed as part of NASA Space Apps Tel Aviv 2026. The event was led by the Space Engineering Center (SEC) and SpaceTAU at Tel Aviv University, in partnership with the Rakia Mission and Space Campus IL.
+
 **Decision support for Mars analog missions.** AnaloGraph turns open NASA and partner-agency data into a mission brief: for a given mission and Mars target, it recommends where on Earth to practice, explains why, shows which known analogs were rejected, and states honestly what Earth cannot simulate.
 
 Built for the [2026 NASA Space Apps Challenge](https://www.spaceappschallenge.org/2026/), challenge *Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars*. See [CHALLENGE.md](CHALLENGE.md).
