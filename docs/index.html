@@ -1,24 +1,173 @@
-<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>AnaloGraph</title><style>
-:root{--bg:#fbfaf7;--fg:#1d1d1b;--muted:#6b6a66;--line:#e2e0da;--card:#ffffff;--accent:#2a6fdb;--warn:#b54708}
-@media (prefers-color-scheme:dark){:root{--bg:#161615;--fg:#ecebe7;--muted:#a3a29d;--line:#33322f;--card:#1f1f1d;--accent:#7aa7f0;--warn:#f0a35e}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-main{max-width:960px;margin:0 auto;padding:32px 16px 64px}
-h1{font-size:28px;margin:0 0 4px}h2{font-size:18px;margin:36px 0 12px}a{color:var(--accent)}
-.muted{color:var(--muted)}.banner{border:1px solid var(--warn);color:var(--warn);padding:10px 14px;border-radius:8px;margin:16px 0}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px}
-.score{font-size:30px;font-weight:650}.badge{display:inline-block;font-size:12px;border:1px solid var(--line);border-radius:99px;padding:1px 8px;color:var(--muted)}
-table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
-th{color:var(--muted);font-weight:600}iframe{width:100%;height:440px;border:1px solid var(--line);border-radius:10px}
-img{max-width:100%;border:1px solid var(--line);border-radius:10px;background:#fff}
-</style></head><body><main>
-<h1>AnaloGraph</h1>
-<p class='muted'>Decision support for Mars analog missions · NASA Space Apps 2026</p>
-<p>Pick a mission and a Mars target. Each brief recommends where on Earth to practice, explains why,
-shows which known analogs were rejected, and states what Earth cannot simulate.</p>
-<h2>Validation</h2><div class='cards'><div class='card'><h3>Naive baseline</h3><div class='score'>0.74</div><p class='muted'>Mean AUC when every feature counts equally, no mission rules.</p></div><div class='card'><h3>Mission-specific scoring</h3><div class='score'>0.89</div><p class='muted'>Mean AUC over all missions and targets, with weights set before seeing results. 9 of 13 at 0.95 or above.</p></div></div><p class='muted'>AUC = share of (known analog, negative control) pairs where the known analog scores higher. 1.00 is perfect, 0.50 is chance. Matching only what matters for each test separates Mars-like from non-Mars-like sites better than matching everything.</p>
+<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><meta name='color-scheme' content='dark'><title>AnaloGraph: Mars analog sites on Earth</title><link rel='preconnect' href='https://fonts.googleapis.com'><link rel='preconnect' href='https://fonts.gstatic.com' crossorigin><link href='https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&display=swap' rel='stylesheet'><style>
+:root{
+  --night:#141823; --panel:#1b2130; --raised:#232a3b; --line:#2e3648;
+  --regolith:#ebe5d9; --dust:#a3a9b8; --faint:#6f7789;
+  --butter:#f2c46d; --earth:#78aee6; --control:#5c6475;
+  --w-ex:125%;
+}
+*{box-sizing:border-box}
+html{background:var(--night)}
+body{margin:0;background:var(--night);color:var(--regolith);
+  font-family:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:16px;line-height:1.55;
+  font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
+main{max-width:1060px;margin:0 auto;padding:40px 20px 80px}
+a{color:var(--butter);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--butter);outline-offset:3px;border-radius:2px}
+p{max-width:68ch}
+.muted{color:var(--dust)}
+.small{font-size:14px}
+
+/* masthead */
+.mast{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;
+  padding-bottom:18px;border-bottom:1px solid var(--line)}
+.wordmark{font-stretch:var(--w-ex);font-weight:750;font-size:20px;letter-spacing:-.01em;color:var(--regolith);text-decoration:none}
+.wordmark span{color:var(--butter)}
+.mast .who{color:var(--dust);font-size:14px}
+
+/* type scale */
+h1{font-stretch:var(--w-ex);font-weight:780;font-size:clamp(34px,6.2vw,68px);line-height:1.02;
+  letter-spacing:-.025em;margin:48px 0 18px;max-width:16ch}
+h2{font-stretch:var(--w-ex);font-weight:700;font-size:22px;letter-spacing:-.01em;margin:64px 0 8px}
+h3{font-weight:650;font-size:18px;margin:0 0 4px}
+.lede{font-size:19px;color:var(--dust);max-width:60ch}
+
+/* validation */
+.versus{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);
+  border-radius:14px;overflow:hidden;margin-top:18px}
+.versus > div{background:var(--panel);padding:24px 24px 22px}
+.versus .big{font-stretch:var(--w-ex);font-weight:780;font-size:clamp(44px,7vw,72px);line-height:1;letter-spacing:-.03em}
+.versus .base .big{color:var(--dust)}
+.versus .ours .big{color:var(--butter)}
+.versus .what{font-weight:650;margin-top:10px}
+.meter{height:8px;background:var(--raised);border-radius:99px;margin-top:16px;position:relative}
+.meter i{position:absolute;inset:0 auto 0 0;border-radius:99px;background:var(--dust)}
+.ours .meter i{background:var(--butter)}
+.meter b{position:absolute;top:-4px;bottom:-4px;width:1px;background:var(--faint)}
+
+/* missions on the landing page */
+.mission{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:28px;padding:28px 0;
+  border-top:1px solid var(--line)}
+.mission:first-of-type{border-top:0}
+.mission h3{font-stretch:var(--w-ex);font-size:21px;font-weight:720}
+.targets{list-style:none;margin:0;padding:0}
+.targets li{border-bottom:1px solid var(--line)}
+.targets li:last-child{border-bottom:0}
+.targets a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;padding:12px 4px;
+  color:var(--regolith);text-decoration:none}
+.targets a:hover{background:var(--panel)}
+.targets .t{font-weight:600}
+.targets .auc{color:var(--dust);font-size:14px;text-align:right}
+.targets .pick{grid-column:1/-1;color:var(--dust);font-size:14px}
+.targets .pick strong{color:var(--butter);font-weight:600}
+
+/* brief: the match */
+.crumb{font-size:14px;margin-top:22px;display:inline-block}
+.kicker{color:var(--dust);font-size:15px;margin:36px 0 0}
+.brief h1{margin-top:6px;max-width:20ch}
+.ranked{list-style:none;margin:20px 0 0;padding:0;counter-reset:rank}
+.ranked li{display:grid;grid-template-columns:64px minmax(0,1fr) 170px;gap:8px 22px;align-items:start;
+  padding:24px 0;border-top:1px solid var(--line)}
+.ranked .no{font-stretch:var(--w-ex);font-weight:300;font-size:44px;line-height:1;color:var(--faint)}
+.ranked li:first-child .no{color:var(--butter);font-weight:700}
+.ranked h3{font-size:22px;font-weight:680}
+.ranked .tag{font-size:13px;margin-left:8px;padding:2px 9px;border-radius:99px;vertical-align:3px;
+  border:1px solid currentColor;white-space:nowrap;display:inline-block}
+.tag.positive{color:var(--earth)}.tag.candidate{color:var(--butter)}.tag.negative{color:var(--dust)}
+.ranked dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:12px 0 0;font-size:15px}
+.ranked dt{color:var(--dust)}.ranked dd{margin:0}
+.ranked .score{text-align:right}
+.ranked .score .big{font-stretch:var(--w-ex);font-weight:760;font-size:48px;line-height:1;letter-spacing:-.03em}
+.ranked .score .unit{color:var(--dust);font-size:13px}
+.range{height:6px;background:var(--raised);border-radius:99px;position:relative;margin-top:12px}
+.range i{position:absolute;top:0;bottom:0;background:var(--butter);opacity:.45;border-radius:99px}
+.range b{position:absolute;top:-4px;bottom:-4px;width:3px;margin-left:-1px;background:var(--butter);border-radius:2px}
+
+/* map */
+.mapwrap{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel)}
+iframe{display:block;width:100%;height:460px;border:0;background:var(--panel)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 22px;padding:12px 16px;font-size:14px;color:var(--dust);
+  border-top:1px solid var(--line)}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.dot{width:12px;height:12px;border-radius:50%;display:inline-block}
+.dot.hollow{background:transparent;border:2px solid var(--control)}
+
+/* tables */
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:14px}
+table{width:100%;border-collapse:collapse;font-size:15px;min-width:560px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+th{color:var(--dust);font-weight:600;font-size:14px;background:var(--panel)}
+td.num{white-space:nowrap}
+.bar{display:inline-block;height:6px;border-radius:99px;background:var(--butter);vertical-align:middle;
+  margin-right:10px;opacity:.85}
+.who-type{white-space:nowrap}
+.who-type .dot{width:9px;height:9px;margin-right:7px}
+
+.question{font-size:clamp(30px,4.8vw,54px);max-width:21ch;margin-top:10px}
+.note{margin-top:72px;padding:28px 30px;background:var(--panel);border-left:3px solid var(--butter);border-radius:4px 14px 14px 4px}
+.note h2{margin-top:0}
+.note p{font-size:17px}
+.note .sign{font-stretch:var(--w-ex);font-weight:700;color:var(--butter);margin-bottom:0}
+
+/* figure + footer */
+figure{margin:18px 0 0}
+figure img{display:block;max-width:100%;border-radius:12px;background:#fff}
+figcaption{color:var(--dust);font-size:14px;margin-top:8px}
+footer{margin-top:72px;padding-top:20px;border-top:1px solid var(--line);color:var(--dust);font-size:14px}
+footer p{max-width:none}
+
+@media (max-width:760px){
+  main{padding:28px 16px 64px}
+  .versus{grid-template-columns:1fr}
+  .mission{grid-template-columns:1fr;gap:10px}
+  .ranked li{grid-template-columns:44px minmax(0,1fr)}
+  .ranked .no{font-size:32px}
+  .ranked .score{grid-column:2;text-align:left}
+  iframe{height:360px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body><main><header class='mast'><a class='wordmark' href='index.html'>Analo<span>Graph</span></a><span class='who'>Layan Anabosi and Mia Anabosi</span></header>
+<p class='kicker'>Built by two sisters over one weekend, for NASA Space Apps 2026</p>
+<h1 class='question'>If you had to rehearse a Mars mission tomorrow, where on Earth would you go?</h1>
+<p class='lede'>Rovers and crews rehearse in deserts, craters and polar valleys long before they fly, and most of
+those places were chosen by experience. We compared 23 of them with 6 sites on Mars, using open NASA
+and ESA data, to find out which place fits which mission, and why.</p>
+
+<h2>Can you trust the rankings?</h2>
+<p class='muted'>The method is never told which sites are famous Mars analogs. If it works, those should
+still score above places that are clearly not Mars-like, such as rainforest and farmland. AUC is the share
+of those pairs ranked correctly: 1.00 is perfect, 0.50 is a coin flip.</p>
+<div class='versus'>
+<div class='base'><div class='big'>0.74</div><div class='what'>Every feature counts equally</div>
+<div class='muted small'>Naive baseline, no mission rules</div>
+<div class='meter'><i style='width:74%'></i><b style='left:50%'></b></div></div>
+<div class='ours'><div class='big'>0.89</div><div class='what'>Mission-specific scoring</div>
+<div class='muted small'>9 of 13 mission targets at 0.95 or above</div>
+<div class='meter'><i style='width:89%'></i><b style='left:50%'></b></div></div>
+</div>
+<p class='muted small'>The thin line on each bar marks a coin flip. Weights were set before seeing any results.
+Landing tests score lowest, by design: on terrain alone, flat farmland resembles flat Mars plains.</p>
 <h2>Mission briefs</h2>
-<p class='muted'>The AUC per mission shows how well that mission's scoring separates known analogs from
-non-Mars-like controls. Missions that use only some features (landing looks at terrain) can score lower
-by design: on terrain alone, flat farmland resembles flat Mars plains.</p>
-<div class='cards'><div class='card'><h3>Ice drilling</h3><p class='muted'>Where can a team practice drilling into ground ice before Arcadia Planitia or Deuteronilus Mensae?</p><table><tr><th>Mars target</th><th>AUC</th></tr><tr><td><a href='briefs/ice_drilling__arcadia.html'>Arcadia Planitia</a></td><td>1.00</td></tr><tr><td><a href='briefs/ice_drilling__deuteronilus.html'>Deuteronilus Mensae</a></td><td>1.00</td></tr></table></div><div class='card'><h3>Landing and rover traverse</h3><p class='muted'>Where can we test landing hazard detection and rover driving on Mars-like terrain?</p><table><tr><th>Mars target</th><th>AUC</th></tr><tr><td><a href='briefs/landing_rover__jezero.html'>Jezero Crater</a></td><td>0.73</td></tr><tr><td><a href='briefs/landing_rover__gale.html'>Gale Crater</a></td><td>0.76</td></tr><tr><td><a href='briefs/landing_rover__meridiani.html'>Meridiani Planum</a></td><td>0.53</td></tr><tr><td><a href='briefs/landing_rover__elysium_insight.html'>Elysium Planitia</a></td><td>0.53</td></tr></table></div><div class='card'><h3>Habitat and crew operations</h3><p class='muted'>Where can a crew live and work in conditions closest to a future base site?</p><table><tr><th>Mars target</th><th>AUC</th></tr><tr><td><a href='briefs/habitat__jezero.html'>Jezero Crater</a></td><td>1.00</td></tr><tr><td><a href='briefs/habitat__gale.html'>Gale Crater</a></td><td>1.00</td></tr><tr><td><a href='briefs/habitat__arcadia.html'>Arcadia Planitia</a></td><td>1.00</td></tr><tr><td><a href='briefs/habitat__elysium_insight.html'>Elysium Planitia</a></td><td>1.00</td></tr></table></div><div class='card'><h3>Astrobiology and life detection</h3><p class='muted'>Where can we test life-detection instruments in the most Mars-like dry, barren ground?</p><table><tr><th>Mars target</th><th>AUC</th></tr><tr><td><a href='briefs/astrobiology__jezero.html'>Jezero Crater</a></td><td>1.00</td></tr><tr><td><a href='briefs/astrobiology__gale.html'>Gale Crater</a></td><td>1.00</td></tr><tr><td><a href='briefs/astrobiology__meridiani.html'>Meridiani Planum</a></td><td>1.00</td></tr></table></div></div></main></body></html>
+<p class='muted'>Each brief recommends three Earth sites, explains the match, lists which known analogs
+fail the mission's rules, and shows what no Earth site can simulate.</p>
+<section class='mission'><div><h3>Ice drilling</h3><p class='muted'>Where can a team practice drilling into ground ice before Arcadia Planitia or Deuteronilus Mensae?</p></div><ul class='targets'><li><a href='briefs/ice_drilling__arcadia.html'><span class='t'>Arcadia Planitia</span><span class='auc'>AUC 1.00</span><span class='pick'>Top pick <strong>Haughton Crater, Devon Is.</strong>, score 68</span></a></li><li><a href='briefs/ice_drilling__deuteronilus.html'><span class='t'>Deuteronilus Mensae</span><span class='auc'>AUC 1.00</span><span class='pick'>Top pick <strong>Haughton Crater, Devon Is.</strong>, score 70</span></a></li></ul></section><section class='mission'><div><h3>Landing and rover traverse</h3><p class='muted'>Where can we test landing hazard detection and rover driving on Mars-like terrain?</p></div><ul class='targets'><li><a href='briefs/landing_rover__jezero.html'><span class='t'>Jezero Crater</span><span class='auc'>AUC 0.73</span><span class='pick'>Top pick <strong>Timna Valley</strong>, score 93</span></a></li><li><a href='briefs/landing_rover__gale.html'><span class='t'>Gale Crater</span><span class='auc'>AUC 0.76</span><span class='pick'>Top pick <strong>Timna Valley</strong>, score 92</span></a></li><li><a href='briefs/landing_rover__meridiani.html'><span class='t'>Meridiani Planum</span><span class='auc'>AUC 0.53</span><span class='pick'>Top pick <strong>Salar de Uyuni</strong>, score 98</span></a></li><li><a href='briefs/landing_rover__elysium_insight.html'><span class='t'>Elysium Planitia</span><span class='auc'>AUC 0.53</span><span class='pick'>Top pick <strong>Salar de Uyuni</strong>, score 98</span></a></li></ul></section><section class='mission'><div><h3>Habitat and crew operations</h3><p class='muted'>Where can a crew live and work in conditions closest to a future base site?</p></div><ul class='targets'><li><a href='briefs/habitat__jezero.html'><span class='t'>Jezero Crater</span><span class='auc'>AUC 1.00</span><span class='pick'>Top pick <strong>Atacama (Yungay)</strong>, score 66</span></a></li><li><a href='briefs/habitat__gale.html'><span class='t'>Gale Crater</span><span class='auc'>AUC 1.00</span><span class='pick'>Top pick <strong>Atacama (Yungay)</strong>, score 65</span></a></li><li><a href='briefs/habitat__arcadia.html'><span class='t'>Arcadia Planitia</span><span class='auc'>AUC 1.00</span><span class='pick'>Top pick <strong>Atacama (Yungay)</strong>, score 68</span></a></li><li><a href='briefs/habitat__elysium_insight.html'><span class='t'>Elysium Planitia</span><span class='auc'>AUC 1.00</span><span class='pick'>Top pick <strong>Atacama (Yungay)</strong>, score 63</span></a></li></ul></section><section class='mission'><div><h3>Astrobiology and life detection</h3><p class='muted'>Where can we test life-detection instruments in the most Mars-like dry, barren ground?</p></div><ul class='targets'><li><a href='briefs/astrobiology__jezero.html'><span class='t'>Jezero Crater</span><span class='auc'>AUC 1.00</span><span class='pick'>Top pick <strong>Atacama (Yungay)</strong>, score 82</span></a></li><li><a href='briefs/astrobiology__gale.html'><span class='t'>Gale Crater</span><span class='auc'>AUC 1.00</span><span class='pick'>Top pick <strong>Atacama (Yungay)</strong>, score 82</span></a></li><li><a href='briefs/astrobiology__meridiani.html'><span class='t'>Meridiani Planum</span><span class='auc'>AUC 1.00</span><span class='pick'>Top pick <strong>Atacama (Yungay)</strong>, score 79</span></a></li></ul></section>
+<section class='note'>
+<h2>How our weekend went</h2>
+<p>We started on Saturday morning with a list of famous Mars analogs and one question: are they really the best
+places to practice?</p>
+<p>By the afternoon, we had accidentally parked Curiosity on top of a 5 km mountain. We had typed in the middle of
+Gale Crater instead of the spot where the rover actually landed, and the middle of Gale Crater is Mount Sharp.
+We had also moved InSight about 1,100 km across Mars. Both are now back where they landed.</p>
+<p>Then our first results told us that a Dutch farm field is a lot like Mars. On terrain alone, it is: both are
+extremely flat. So the landing briefs now check for bare ground too, and landing still has the lowest score in our
+validation. We kept it that way, because it is true.</p>
+<p>Along the way, a Google form asked whether our project fights climate change. It does not. It looks for Mars on
+Earth.</p>
+<p>Some answers we did not see coming. The best match for the plains where Opportunity and InSight landed is
+Salar de Uyuni in Bolivia, one of the flattest places on Earth. For practice drives near Jezero and Gale, the top
+matches were all in the Negev. And without being told it was famous, our method put the Atacama Desert first for
+life detection at every Mars target. We are taking that as a good sign.</p>
+<p>No place on Earth has Mars's thin air, its cold nights or its radiation. We wrote those limits on every brief
+instead of leaving them out.</p>
+<p class='sign'>Layan and Mia</p>
+</section><footer><p>Made by Layan Anabosi and Mia Anabosi for the 2026 NASA Space Apps Challenge.</p><p>Data: NASA MODIS land surface temperature, NASA MGS MOLA elevation, ESA Copernicus DEM, ESA WorldCover, TerraClimate precipitation, Mars Climate Database, NASA SWIM ice maps. Method and sources: <a href='https://github.com/layananabosi/Nasa-space-app-challenge'>GitHub repository</a>.</p></footer></main></body></html>

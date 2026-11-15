@@ -1,30 +1,162 @@
-<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Astrobiology and life detection → Meridiani Planum</title><style>
-:root{--bg:#fbfaf7;--fg:#1d1d1b;--muted:#6b6a66;--line:#e2e0da;--card:#ffffff;--accent:#2a6fdb;--warn:#b54708}
-@media (prefers-color-scheme:dark){:root{--bg:#161615;--fg:#ecebe7;--muted:#a3a29d;--line:#33322f;--card:#1f1f1d;--accent:#7aa7f0;--warn:#f0a35e}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-main{max-width:960px;margin:0 auto;padding:32px 16px 64px}
-h1{font-size:28px;margin:0 0 4px}h2{font-size:18px;margin:36px 0 12px}a{color:var(--accent)}
-.muted{color:var(--muted)}.banner{border:1px solid var(--warn);color:var(--warn);padding:10px 14px;border-radius:8px;margin:16px 0}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px}
-.score{font-size:30px;font-weight:650}.badge{display:inline-block;font-size:12px;border:1px solid var(--line);border-radius:99px;padding:1px 8px;color:var(--muted)}
-table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
-th{color:var(--muted);font-weight:600}iframe{width:100%;height:440px;border:1px solid var(--line);border-radius:10px}
-img{max-width:100%;border:1px solid var(--line);border-radius:10px;background:#fff}
-</style></head><body><main>
-<p class='muted'><a href='../index.html'>AnaloGraph</a> · mission brief</p>
-<h1>Astrobiology and life detection → Meridiani Planum</h1>
-<p class='muted'>Mars target: Meridiani Planum (Opportunity)</p>
-<p>Where can we test life-detection instruments in the most Mars-like dry, barren ground?</p>
-<h2>Recommended Earth sites</h2><div class='cards'><div class='card'><div class='badge'>known analog</div><h3>1. Atacama (Yungay)</h3><div class='score'>79</div><div class='muted'>AFS, range 74-84</div><p><b>Why:</b> dryness, bare ground</p><p><b>Weakest match:</b> cold nights, day-night temperature swing</p><p><b>Gap Index:</b> 29 / 100</p></div><div class='card'><div class='badge'>new candidate</div><h3>2. Salar de Uyuni</h3><div class='score'>78</div><div class='muted'>AFS, range 72-84</div><p><b>Why:</b> bare ground, roughness</p><p><b>Weakest match:</b> day-night temperature swing, cold nights</p><p><b>Gap Index:</b> 30 / 100</p></div><div class='card'><div class='badge'>new candidate</div><h3>3. Namib (Sossusvlei)</h3><div class='score'>78</div><div class='muted'>AFS, range 72-83</div><p><b>Why:</b> dryness, bare ground</p><p><b>Weakest match:</b> cold nights, day-night temperature swing</p><p><b>Gap Index:</b> 30 / 100</p></div></div>
-<h2>Map</h2><iframe src='../maps/astrobiology__meridiani.html' title='map'></iframe>
-<h2>Full ranking (sites that passed the constraints)</h2>
-<table><tr><th>#</th><th>Site</th><th>Type</th><th>AFS (5-95%)</th><th>Gap Index</th></tr><tr><td>1</td><td>Atacama (Yungay)</td><td>known analog</td><td>79 (74-84)</td><td>29</td></tr><tr><td>2</td><td>Salar de Uyuni</td><td>new candidate</td><td>78 (72-84)</td><td>30</td></tr><tr><td>3</td><td>Namib (Sossusvlei)</td><td>new candidate</td><td>78 (72-83)</td><td>30</td></tr><tr><td>4</td><td>MDRS, Utah</td><td>known analog</td><td>78 (73-82)</td><td>29</td></tr><tr><td>5</td><td>Makhtesh Ramon (D-MARS)</td><td>new candidate</td><td>75 (69-80)</td><td>33</td></tr><tr><td>6</td><td>Timna Valley</td><td>new candidate</td><td>75 (69-81)</td><td>35</td></tr><tr><td>7</td><td>HaMakhtesh HaGadol</td><td>new candidate</td><td>74 (68-79)</td><td>34</td></tr><tr><td>8</td><td>Rotem Plain (west of Mount Sodom)</td><td>new candidate</td><td>73 (67-79)</td><td>36</td></tr><tr><td>9</td><td>Wadi Rum Protected Area</td><td>new candidate</td><td>73 (67-78)</td><td>38</td></tr><tr><td>10</td><td>Death Valley</td><td>known analog</td><td>70 (65-76)</td><td>39</td></tr><tr><td>11</td><td>McMurdo Dry Valleys (Wright)</td><td>known analog</td><td>69 (63-76)</td><td>45</td></tr><tr><td>12</td><td>Lanzarote</td><td>known analog</td><td>69 (63-74)</td><td>38</td></tr></table>
-<h2>Rejected and why</h2><p class='muted'>Constraints: bare ground &gt;= 0.5; dryness &lt; 250</p>
-<table><tr><th>Site</th><th>Type</th><th>Failed rule</th></tr><tr><td>Haughton Crater, Devon Is.</td><td>known analog</td><td>too much vegetation</td></tr><tr><td>Holuhraun, Iceland</td><td>known analog</td><td>not a desert (250 mm/year or more rain)</td></tr><tr><td>Bockfjorden, Svalbard</td><td>known analog</td><td>not a desert (250 mm/year or more rain)</td></tr><tr><td>Pilbara, Australia</td><td>known analog</td><td>too much vegetation</td></tr><tr><td>Rio Tinto (Peña de Hierro)</td><td>known analog</td><td>too much vegetation; not a desert (250 mm/year or more rain)</td></tr><tr><td>Mauna Kea, Hawaii</td><td>known analog</td><td>too much vegetation; not a desert (250 mm/year or more rain)</td></tr></table>
-<h2>What Earth cannot simulate</h2>
-<table><tr><th>Factor</th><th>Earth</th><th>Mars</th><th>Impact</th><th>Source</th></tr><tr><td>Surface gravity</td><td>9.81 m/s^2</td><td>3.71 m/s^2 (0.38 g)</td><td>Drilling forces, rover traction and human movement differ</td><td class='muted'>NASA Mars Fact Sheet (NSSDCA)</td></tr><tr><td>Atmospheric pressure</td><td>~1013 hPa</td><td>~6 hPa (under 1% of Earth)</td><td>Water ice sublimates instead of melting; dust and heat behave differently</td><td class='muted'>NASA Mars Fact Sheet (NSSDCA)</td></tr><tr><td>Surface radiation</td><td>~2.4 mSv per year (natural background)</td><td>~0.64 mSv per day measured at Gale Crater</td><td>Crew dose and radiation effects on organics cannot be tested on Earth</td><td class='muted'>Hassler et al. (2014) Science 343, 1244797</td></tr><tr><td>Magnetic field</td><td>~25-65 uT, everywhere</td><td>No global field; local crustal fields, ~2 uT at the InSight site</td><td>Earth sites are always shielded; magnetic navigation does not transfer</td><td class='muted'>Johnson et al. (2020) Nature Geoscience 13, 199-204</td></tr><tr><td>Coldest temperatures</td><td>Rarely below ~-60 C outside Antarctica</td><td>Night surface temperatures far below Earth deserts</td><td>Cold-soak tests need a thermal chamber on top of the field site</td><td class='muted'>TODO: Mars Climate Database</td></tr></table>
+<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><meta name='color-scheme' content='dark'><title>Astrobiology and life detection for Meridiani Planum: AnaloGraph</title><link rel='preconnect' href='https://fonts.googleapis.com'><link rel='preconnect' href='https://fonts.gstatic.com' crossorigin><link href='https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&display=swap' rel='stylesheet'><style>
+:root{
+  --night:#141823; --panel:#1b2130; --raised:#232a3b; --line:#2e3648;
+  --regolith:#ebe5d9; --dust:#a3a9b8; --faint:#6f7789;
+  --butter:#f2c46d; --earth:#78aee6; --control:#5c6475;
+  --w-ex:125%;
+}
+*{box-sizing:border-box}
+html{background:var(--night)}
+body{margin:0;background:var(--night);color:var(--regolith);
+  font-family:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:16px;line-height:1.55;
+  font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
+main{max-width:1060px;margin:0 auto;padding:40px 20px 80px}
+a{color:var(--butter);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--butter);outline-offset:3px;border-radius:2px}
+p{max-width:68ch}
+.muted{color:var(--dust)}
+.small{font-size:14px}
 
-<h2>How to read this</h2><p class='muted'>AFS (0-100) ranks Earth sites against each other for this target and
-mission. The range shows how much it moves when the weights change. Gap Index (0-100) is the absolute distance
-that remains: lower is closer. Method and data sources are in the project README.</p></main></body></html>
+/* masthead */
+.mast{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;
+  padding-bottom:18px;border-bottom:1px solid var(--line)}
+.wordmark{font-stretch:var(--w-ex);font-weight:750;font-size:20px;letter-spacing:-.01em;color:var(--regolith);text-decoration:none}
+.wordmark span{color:var(--butter)}
+.mast .who{color:var(--dust);font-size:14px}
+
+/* type scale */
+h1{font-stretch:var(--w-ex);font-weight:780;font-size:clamp(34px,6.2vw,68px);line-height:1.02;
+  letter-spacing:-.025em;margin:48px 0 18px;max-width:16ch}
+h2{font-stretch:var(--w-ex);font-weight:700;font-size:22px;letter-spacing:-.01em;margin:64px 0 8px}
+h3{font-weight:650;font-size:18px;margin:0 0 4px}
+.lede{font-size:19px;color:var(--dust);max-width:60ch}
+
+/* validation */
+.versus{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);
+  border-radius:14px;overflow:hidden;margin-top:18px}
+.versus > div{background:var(--panel);padding:24px 24px 22px}
+.versus .big{font-stretch:var(--w-ex);font-weight:780;font-size:clamp(44px,7vw,72px);line-height:1;letter-spacing:-.03em}
+.versus .base .big{color:var(--dust)}
+.versus .ours .big{color:var(--butter)}
+.versus .what{font-weight:650;margin-top:10px}
+.meter{height:8px;background:var(--raised);border-radius:99px;margin-top:16px;position:relative}
+.meter i{position:absolute;inset:0 auto 0 0;border-radius:99px;background:var(--dust)}
+.ours .meter i{background:var(--butter)}
+.meter b{position:absolute;top:-4px;bottom:-4px;width:1px;background:var(--faint)}
+
+/* missions on the landing page */
+.mission{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:28px;padding:28px 0;
+  border-top:1px solid var(--line)}
+.mission:first-of-type{border-top:0}
+.mission h3{font-stretch:var(--w-ex);font-size:21px;font-weight:720}
+.targets{list-style:none;margin:0;padding:0}
+.targets li{border-bottom:1px solid var(--line)}
+.targets li:last-child{border-bottom:0}
+.targets a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;padding:12px 4px;
+  color:var(--regolith);text-decoration:none}
+.targets a:hover{background:var(--panel)}
+.targets .t{font-weight:600}
+.targets .auc{color:var(--dust);font-size:14px;text-align:right}
+.targets .pick{grid-column:1/-1;color:var(--dust);font-size:14px}
+.targets .pick strong{color:var(--butter);font-weight:600}
+
+/* brief: the match */
+.crumb{font-size:14px;margin-top:22px;display:inline-block}
+.kicker{color:var(--dust);font-size:15px;margin:36px 0 0}
+.brief h1{margin-top:6px;max-width:20ch}
+.ranked{list-style:none;margin:20px 0 0;padding:0;counter-reset:rank}
+.ranked li{display:grid;grid-template-columns:64px minmax(0,1fr) 170px;gap:8px 22px;align-items:start;
+  padding:24px 0;border-top:1px solid var(--line)}
+.ranked .no{font-stretch:var(--w-ex);font-weight:300;font-size:44px;line-height:1;color:var(--faint)}
+.ranked li:first-child .no{color:var(--butter);font-weight:700}
+.ranked h3{font-size:22px;font-weight:680}
+.ranked .tag{font-size:13px;margin-left:8px;padding:2px 9px;border-radius:99px;vertical-align:3px;
+  border:1px solid currentColor;white-space:nowrap;display:inline-block}
+.tag.positive{color:var(--earth)}.tag.candidate{color:var(--butter)}.tag.negative{color:var(--dust)}
+.ranked dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:12px 0 0;font-size:15px}
+.ranked dt{color:var(--dust)}.ranked dd{margin:0}
+.ranked .score{text-align:right}
+.ranked .score .big{font-stretch:var(--w-ex);font-weight:760;font-size:48px;line-height:1;letter-spacing:-.03em}
+.ranked .score .unit{color:var(--dust);font-size:13px}
+.range{height:6px;background:var(--raised);border-radius:99px;position:relative;margin-top:12px}
+.range i{position:absolute;top:0;bottom:0;background:var(--butter);opacity:.45;border-radius:99px}
+.range b{position:absolute;top:-4px;bottom:-4px;width:3px;margin-left:-1px;background:var(--butter);border-radius:2px}
+
+/* map */
+.mapwrap{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel)}
+iframe{display:block;width:100%;height:460px;border:0;background:var(--panel)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 22px;padding:12px 16px;font-size:14px;color:var(--dust);
+  border-top:1px solid var(--line)}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.dot{width:12px;height:12px;border-radius:50%;display:inline-block}
+.dot.hollow{background:transparent;border:2px solid var(--control)}
+
+/* tables */
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:14px}
+table{width:100%;border-collapse:collapse;font-size:15px;min-width:560px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+th{color:var(--dust);font-weight:600;font-size:14px;background:var(--panel)}
+td.num{white-space:nowrap}
+.bar{display:inline-block;height:6px;border-radius:99px;background:var(--butter);vertical-align:middle;
+  margin-right:10px;opacity:.85}
+.who-type{white-space:nowrap}
+.who-type .dot{width:9px;height:9px;margin-right:7px}
+
+.question{font-size:clamp(30px,4.8vw,54px);max-width:21ch;margin-top:10px}
+.note{margin-top:72px;padding:28px 30px;background:var(--panel);border-left:3px solid var(--butter);border-radius:4px 14px 14px 4px}
+.note h2{margin-top:0}
+.note p{font-size:17px}
+.note .sign{font-stretch:var(--w-ex);font-weight:700;color:var(--butter);margin-bottom:0}
+
+/* figure + footer */
+figure{margin:18px 0 0}
+figure img{display:block;max-width:100%;border-radius:12px;background:#fff}
+figcaption{color:var(--dust);font-size:14px;margin-top:8px}
+footer{margin-top:72px;padding-top:20px;border-top:1px solid var(--line);color:var(--dust);font-size:14px}
+footer p{max-width:none}
+
+@media (max-width:760px){
+  main{padding:28px 16px 64px}
+  .versus{grid-template-columns:1fr}
+  .mission{grid-template-columns:1fr;gap:10px}
+  .ranked li{grid-template-columns:44px minmax(0,1fr)}
+  .ranked .no{font-size:32px}
+  .ranked .score{grid-column:2;text-align:left}
+  iframe{height:360px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body><main><header class='mast'><a class='wordmark' href='../index.html'>Analo<span>Graph</span></a><span class='who'>Layan Anabosi and Mia Anabosi</span></header>
+<div class='brief'>
+<a class='crumb' href='../index.html'>All missions</a>
+<p class='kicker'>Astrobiology and life detection for Meridiani Planum, the Opportunity site</p>
+<h1>Practice at Atacama (Yungay)</h1>
+<p class='lede'>Where can we test life-detection instruments in the most Mars-like dry, barren ground?</p>
+
+<h2>Recommended Earth sites</h2>
+<p class='muted small'>Ranked among sites that pass this mission's rules. Scores compare Earth sites with
+each other for this target, from 0 to 100.</p>
+<ol class='ranked'><li><div class='no'>1</div><div><h3>Atacama (Yungay)<span class='tag positive'>Known analog</span></h3><dl><dt>Matches best on</dt><dd>dryness, bare ground</dd><dt>Weakest match</dt><dd>cold nights, day-night temperature swing</dd><dt>Gap Index</dt><dd>29 of 100, lower is closer to Mars</dd></dl></div><div class='score'><div class='big'>79</div><div class='unit'>score, range 74 to 84</div><div class='range' aria-hidden='true'><i style='left:73.62387246156817%;width:10.258703003954622%'></i><b style='left:79.06766389624953%'></b></div></div></li><li><div class='no'>2</div><div><h3>Salar de Uyuni<span class='tag candidate'>Our candidate</span></h3><dl><dt>Matches best on</dt><dd>bare ground, roughness</dd><dt>Weakest match</dt><dd>day-night temperature swing, cold nights</dd><dt>Gap Index</dt><dd>30 of 100, lower is closer to Mars</dd></dl></div><div class='score'><div class='big'>78</div><div class='unit'>score, range 72 to 84</div><div class='range' aria-hidden='true'><i style='left:71.71021623494964%;width:12.227766673338778%'></i><b style='left:77.95869873069259%'></b></div></div></li><li><div class='no'>3</div><div><h3>Namib (Sossusvlei)<span class='tag candidate'>Our candidate</span></h3><dl><dt>Matches best on</dt><dd>dryness, bare ground</dd><dt>Weakest match</dt><dd>cold nights, day-night temperature swing</dd><dt>Gap Index</dt><dd>30 of 100, lower is closer to Mars</dd></dl></div><div class='score'><div class='big'>78</div><div class='unit'>score, range 72 to 83</div><div class='range' aria-hidden='true'><i style='left:72.40868608818755%;width:10.381700868638532%'></i><b style='left:77.63002513213468%'></b></div></div></li></ol>
+
+<h2>Map</h2>
+<div class='mapwrap'><iframe src='../maps/astrobiology__meridiani.html' title='Map of all Earth sites scored for this mission'></iframe>
+<div class='legend'><span><i class='dot' style='background:#f2c46d'></i>Score 75 or more</span>
+<span><i class='dot' style='background:#c08a3e'></i>55 to 74</span>
+<span><i class='dot' style='background:#6e5536'></i>Below 55</span>
+<span><i class='dot hollow'></i>Rejected by a mission rule</span></div></div>
+
+<h2>Full ranking</h2>
+<div class='scroll'><table><tr><th>Rank</th><th>Site</th><th>Type</th><th>Score (range)</th><th>Gap Index</th></tr><tr><td class='num'>1</td><td>Atacama (Yungay)</td><td><span class='who-type'><span class='dot' style='background:var(--earth)'></span>Known analog</span></td><td class='num'><span class='bar' style='width:71px'></span>79 <span class='muted small'>(74 to 84)</span></td><td class='num'>29</td></tr><tr><td class='num'>2</td><td>Salar de Uyuni</td><td><span class='who-type'><span class='dot' style='background:var(--butter)'></span>Our candidate</span></td><td class='num'><span class='bar' style='width:70px'></span>78 <span class='muted small'>(72 to 84)</span></td><td class='num'>30</td></tr><tr><td class='num'>3</td><td>Namib (Sossusvlei)</td><td><span class='who-type'><span class='dot' style='background:var(--butter)'></span>Our candidate</span></td><td class='num'><span class='bar' style='width:70px'></span>78 <span class='muted small'>(72 to 83)</span></td><td class='num'>30</td></tr><tr><td class='num'>4</td><td>MDRS, Utah</td><td><span class='who-type'><span class='dot' style='background:var(--earth)'></span>Known analog</span></td><td class='num'><span class='bar' style='width:70px'></span>78 <span class='muted small'>(73 to 82)</span></td><td class='num'>29</td></tr><tr><td class='num'>5</td><td>Makhtesh Ramon (D-MARS)</td><td><span class='who-type'><span class='dot' style='background:var(--butter)'></span>Our candidate</span></td><td class='num'><span class='bar' style='width:67px'></span>75 <span class='muted small'>(69 to 80)</span></td><td class='num'>33</td></tr><tr><td class='num'>6</td><td>Timna Valley</td><td><span class='who-type'><span class='dot' style='background:var(--butter)'></span>Our candidate</span></td><td class='num'><span class='bar' style='width:67px'></span>75 <span class='muted small'>(69 to 81)</span></td><td class='num'>35</td></tr><tr><td class='num'>7</td><td>HaMakhtesh HaGadol</td><td><span class='who-type'><span class='dot' style='background:var(--butter)'></span>Our candidate</span></td><td class='num'><span class='bar' style='width:66px'></span>74 <span class='muted small'>(68 to 79)</span></td><td class='num'>34</td></tr><tr><td class='num'>8</td><td>Rotem Plain (west of Mount Sodom)</td><td><span class='who-type'><span class='dot' style='background:var(--butter)'></span>Our candidate</span></td><td class='num'><span class='bar' style='width:66px'></span>73 <span class='muted small'>(67 to 79)</span></td><td class='num'>36</td></tr><tr><td class='num'>9</td><td>Wadi Rum Protected Area</td><td><span class='who-type'><span class='dot' style='background:var(--butter)'></span>Our candidate</span></td><td class='num'><span class='bar' style='width:65px'></span>73 <span class='muted small'>(67 to 78)</span></td><td class='num'>38</td></tr><tr><td class='num'>10</td><td>Death Valley</td><td><span class='who-type'><span class='dot' style='background:var(--earth)'></span>Known analog</span></td><td class='num'><span class='bar' style='width:63px'></span>70 <span class='muted small'>(65 to 76)</span></td><td class='num'>39</td></tr><tr><td class='num'>11</td><td>McMurdo Dry Valleys (Wright)</td><td><span class='who-type'><span class='dot' style='background:var(--earth)'></span>Known analog</span></td><td class='num'><span class='bar' style='width:63px'></span>69 <span class='muted small'>(63 to 76)</span></td><td class='num'>45</td></tr><tr><td class='num'>12</td><td>Lanzarote</td><td><span class='who-type'><span class='dot' style='background:var(--earth)'></span>Known analog</span></td><td class='num'><span class='bar' style='width:62px'></span>69 <span class='muted small'>(63 to 74)</span></td><td class='num'>38</td></tr></table></div>
+
+<h2>Rejected and why</h2>
+<p class='muted small'>Mission rules: bare ground &gt;= 0.5; dryness &lt; 250. Negative controls are left out of this list.</p>
+<div class='scroll'><table><tr><th>Site</th><th>Type</th><th>Rule it failed</th></tr><tr><td>Haughton Crater, Devon Is.</td><td><span class='who-type'><span class='dot' style='background:var(--earth)'></span>Known analog</span></td><td>too much vegetation</td></tr><tr><td>Holuhraun, Iceland</td><td><span class='who-type'><span class='dot' style='background:var(--earth)'></span>Known analog</span></td><td>not a desert (250 mm/year or more rain)</td></tr><tr><td>Bockfjorden, Svalbard</td><td><span class='who-type'><span class='dot' style='background:var(--earth)'></span>Known analog</span></td><td>not a desert (250 mm/year or more rain)</td></tr><tr><td>Pilbara, Australia</td><td><span class='who-type'><span class='dot' style='background:var(--earth)'></span>Known analog</span></td><td>too much vegetation</td></tr><tr><td>Rio Tinto (Peña de Hierro)</td><td><span class='who-type'><span class='dot' style='background:var(--earth)'></span>Known analog</span></td><td>too much vegetation; not a desert (250 mm/year or more rain)</td></tr><tr><td>Mauna Kea, Hawaii</td><td><span class='who-type'><span class='dot' style='background:var(--earth)'></span>Known analog</span></td><td>too much vegetation; not a desert (250 mm/year or more rain)</td></tr></table></div>
+
+<h2>What Earth cannot simulate</h2>
+<div class='scroll'><table><tr><th>Factor</th><th>Earth</th><th>Mars</th><th>What it means for the test</th><th>Source</th></tr><tr><td>Surface gravity</td><td>9.81 m/s^2</td><td>3.71 m/s^2 (0.38 g)</td><td>Drilling forces, rover traction and human movement differ</td><td class='muted small'>NASA Mars Fact Sheet (NSSDCA)</td></tr><tr><td>Atmospheric pressure</td><td>~1013 hPa</td><td>~6 hPa (under 1% of Earth)</td><td>Water ice sublimates instead of melting; dust and heat behave differently</td><td class='muted small'>NASA Mars Fact Sheet (NSSDCA)</td></tr><tr><td>Surface radiation</td><td>~2.4 mSv per year (natural background)</td><td>~0.64 mSv per day measured at Gale Crater</td><td>Crew dose and radiation effects on organics cannot be tested on Earth</td><td class='muted small'>Hassler et al. (2014) Science 343, 1244797</td></tr><tr><td>Magnetic field</td><td>~25-65 uT, everywhere</td><td>No global field; local crustal fields, ~2 uT at the InSight site</td><td>Earth sites are always shielded; magnetic navigation does not transfer</td><td class='muted small'>Johnson et al. (2020) Nature Geoscience 13, 199-204</td></tr><tr><td>Coldest temperatures</td><td>Rarely below ~-60 C outside Antarctica</td><td>Night surface temperatures far below Earth deserts</td><td>Cold-soak tests need a thermal chamber on top of the field site</td><td class='muted small'>TODO: Mars Climate Database</td></tr></table></div>
+
+<h2>How to read this brief</h2>
+<p class='muted'>The score ranks Earth sites against each other for this target and mission, using only
+the properties that matter for the test. The range shows how much it moves when the weights change. The
+Gap Index is the distance that remains in absolute terms: no place on Earth is Mars.</p>
+</div><footer><p>Made by Layan Anabosi and Mia Anabosi for the 2026 NASA Space Apps Challenge.</p><p>Data: NASA MODIS land surface temperature, NASA MGS MOLA elevation, ESA Copernicus DEM, ESA WorldCover, TerraClimate precipitation, Mars Climate Database, NASA SWIM ice maps. Method and sources: <a href='https://github.com/layananabosi/Nasa-space-app-challenge'>GitHub repository</a>.</p></footer></main></body></html>
